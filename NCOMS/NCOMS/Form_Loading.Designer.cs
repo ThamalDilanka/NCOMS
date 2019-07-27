@@ -84,6 +84,7 @@
             this.Name = "Form_Loading";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loading_Form";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form_Loading_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

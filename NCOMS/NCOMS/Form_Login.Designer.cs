@@ -42,8 +42,14 @@
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuLogin_FormFadeTransition = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
+            this.panel_clock = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.lbl_clock = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.panel_clock.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -54,7 +60,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(117, 92);
+            this.pictureBox1.Location = new System.Drawing.Point(545, 91);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(196, 162);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -65,21 +71,21 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Black", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label1.Location = new System.Drawing.Point(161, 21);
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(583, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 42);
+            this.label1.Size = new System.Drawing.Size(120, 42);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Login";
+            this.label1.Text = "Signin";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label2.Location = new System.Drawing.Point(111, 63);
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(87, 325);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(208, 20);
+            this.label2.Size = new System.Drawing.Size(238, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nipunajith Constructions (Pvt) LTD";
             // 
@@ -93,7 +99,7 @@
             this.lf_UserName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lf_UserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lf_UserName.isPassword = false;
-            this.lf_UserName.Location = new System.Drawing.Point(67, 289);
+            this.lf_UserName.Location = new System.Drawing.Point(495, 288);
             this.lf_UserName.Margin = new System.Windows.Forms.Padding(4);
             this.lf_UserName.Name = "lf_UserName";
             this.lf_UserName.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -112,7 +118,7 @@
             this.lf_Password.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lf_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lf_Password.isPassword = true;
-            this.lf_Password.Location = new System.Drawing.Point(67, 358);
+            this.lf_Password.Location = new System.Drawing.Point(495, 357);
             this.lf_Password.Margin = new System.Windows.Forms.Padding(4);
             this.lf_Password.Name = "lf_Password";
             this.lf_Password.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -126,7 +132,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label3.Location = new System.Drawing.Point(63, 265);
+            this.label3.Location = new System.Drawing.Point(492, 264);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 20);
             this.label3.TabIndex = 5;
@@ -137,7 +143,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label4.Location = new System.Drawing.Point(63, 334);
+            this.label4.Location = new System.Drawing.Point(492, 333);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 6;
@@ -165,7 +171,7 @@
             this.btn_Login.IconVisible = true;
             this.btn_Login.IconZoom = 90D;
             this.btn_Login.IsTab = false;
-            this.btn_Login.Location = new System.Drawing.Point(140, 422);
+            this.btn_Login.Location = new System.Drawing.Point(568, 413);
             this.btn_Login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Normalcolor = System.Drawing.Color.DodgerBlue;
@@ -192,7 +198,7 @@
             this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(400, 12);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(824, 12);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
             this.bunifuImageButton1.Size = new System.Drawing.Size(24, 25);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -205,19 +211,80 @@
             // 
             this.bunifuLogin_FormFadeTransition.Delay = 1;
             // 
+            // panel_clock
+            // 
+            this.panel_clock.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel_clock.Controls.Add(this.lbl_clock);
+            this.panel_clock.Controls.Add(this.label5);
+            this.panel_clock.Controls.Add(this.label2);
+            this.panel_clock.Controls.Add(this.bunifuSeparator1);
+            this.panel_clock.Controls.Add(this.bunifuSeparator2);
+            this.panel_clock.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel_clock.Location = new System.Drawing.Point(0, 0);
+            this.panel_clock.Name = "panel_clock";
+            this.panel_clock.Size = new System.Drawing.Size(430, 500);
+            this.panel_clock.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(78, 270);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(256, 42);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Welcome Back!";
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.White;
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(59, 299);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(295, 35);
+            this.bunifuSeparator1.TabIndex = 5;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.bunifuSeparator2.LineThickness = 1;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(59, 249);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Size = new System.Drawing.Size(295, 35);
+            this.bunifuSeparator2.TabIndex = 6;
+            this.bunifuSeparator2.Transparency = 255;
+            this.bunifuSeparator2.Vertical = false;
+            // 
+            // lbl_clock
+            // 
+            this.lbl_clock.AutoSize = true;
+            this.lbl_clock.Font = new System.Drawing.Font("Gadugi", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_clock.ForeColor = System.Drawing.Color.White;
+            this.lbl_clock.Location = new System.Drawing.Point(89, 140);
+            this.lbl_clock.Name = "lbl_clock";
+            this.lbl_clock.Size = new System.Drawing.Size(234, 95);
+            this.lbl_clock.TabIndex = 7;
+            this.lbl_clock.Text = "-- : --";
+            this.lbl_clock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(436, 501);
+            this.ClientSize = new System.Drawing.Size(860, 500);
+            this.Controls.Add(this.panel_clock);
             this.Controls.Add(this.bunifuImageButton1);
             this.Controls.Add(this.btn_Login);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lf_Password);
             this.Controls.Add(this.lf_UserName);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -228,6 +295,8 @@
             this.Load += new System.EventHandler(this.Form_Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            this.panel_clock.ResumeLayout(false);
+            this.panel_clock.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,6 +316,11 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private Bunifu.Framework.UI.BunifuFormFadeTransition bunifuLogin_FormFadeTransition;
+        private System.Windows.Forms.Panel panel_clock;
+        private System.Windows.Forms.Label label5;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
+        private System.Windows.Forms.Label lbl_clock;
     }
 }
 

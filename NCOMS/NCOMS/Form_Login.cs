@@ -12,6 +12,8 @@ namespace NCOMS
 {
     public partial class Form_Login : Form
     {
+        Timer timer = new Timer();
+
         public Form_Login()
         {
             InitializeComponent();
@@ -24,6 +26,11 @@ namespace NCOMS
 
         private void Form_Login_Load(object sender, EventArgs e)
         {
+            
+            timer.Interval = 1000;
+            timer.Tick += new EventHandler(this.timer_Tick);
+            timer.Start();
+
             bunifuLogin_FormFadeTransition.ShowAsyc(this);
         }
 
@@ -58,8 +65,41 @@ namespace NCOMS
             }
         }
 
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            int hh = DateTime.Now.Hour;
+            int mm = DateTime.Now.Minute;
+
+            string time = "";
+
+            if(hh < 10)
+            {
+                time += "0" + hh;
+            }
+            else
+            {
+                time += hh;
+            }
+
+            time += ":";
+
+            if (mm < 10)
+            {
+                time += "0" + mm;
+            }
+            else
+            {
+                time += mm;
+            }
+
+            lbl_clock.Text = time;
+            lbl_clock.Left = (this.panel_clock.Width - lbl_clock.Width) / 2;
+
+        }
+
         private void Btn_Login_Click(object sender, EventArgs e)
         {
+            // this should be login process with database
             MessageBox.Show("Loging successful");
         }
         

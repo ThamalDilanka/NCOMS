@@ -44,5 +44,13 @@ namespace NCOMS
         {
             this.Close();
         }
+
+        private void Form_Loading_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                MessageBox.Show("This is for server configuration");
+            }
+        }
     }
 }
