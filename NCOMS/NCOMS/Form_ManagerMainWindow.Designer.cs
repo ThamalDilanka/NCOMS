@@ -109,7 +109,7 @@
             this.bunifuDragControl1.TargetControl = this.panel_header;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // Form_MainWindow
+            // Form_ManagerMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -120,7 +120,7 @@
             this.Controls.Add(this.panel_header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form_MainWindow";
+            this.Name = "Form_ManagerMainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainWindowForm";
             this.panel_header.ResumeLayout(false);

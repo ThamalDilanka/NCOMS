@@ -56,17 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connectivity.cs" />
-    <Compile Include="Form_StoreKeeperMainWindow.cs">
+    <Compile Include="Form_ClerkMainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_StoreKeeperMainWindow.Designer.cs">
-      <DependentUpon>Form_StoreKeeperMainWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_SupervisorMainWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_SupervisorMainWindow.Designer.cs">
-      <DependentUpon>Form_SupervisorMainWindow.cs</DependentUpon>
+    <Compile Include="Form_ClerkMainWindow.Designer.cs">
+      <DependentUpon>Form_ClerkMainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
@@ -80,25 +74,28 @@
     <Compile Include="Form_Loading.Designer.cs">
       <DependentUpon>Form_Loading.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_ClerkMainWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_ClerkMainWindow.Designer.cs">
-      <DependentUpon>Form_ClerkMainWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_ManagerMainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_ManagerMainWindow.Designer.cs">
       <DependentUpon>Form_ManagerMainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_StoreKeeperMainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_StoreKeeperMainWindow.Designer.cs">
+      <DependentUpon>Form_StoreKeeperMainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SupervisorMainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SupervisorMainWindow.Designer.cs">
+      <DependentUpon>Form_SupervisorMainWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_StoreKeeperMainWindow.resx">
-      <DependentUpon>Form_StoreKeeperMainWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_SupervisorMainWindow.resx">
-      <DependentUpon>Form_SupervisorMainWindow.cs</DependentUpon>
+    <EmbeddedResource Include="Form_ClerkMainWindow.resx">
+      <DependentUpon>Form_ClerkMainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
@@ -106,11 +103,14 @@
     <EmbeddedResource Include="Form_Loading.resx">
       <DependentUpon>Form_Loading.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_ClerkMainWindow.resx">
-      <DependentUpon>Form_ClerkMainWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form_ManagerMainWindow.resx">
       <DependentUpon>Form_ManagerMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_StoreKeeperMainWindow.resx">
+      <DependentUpon>Form_StoreKeeperMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SupervisorMainWindow.resx">
+      <DependentUpon>Form_SupervisorMainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

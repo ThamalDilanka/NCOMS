@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace NCOMS
 {
-    public partial class Form_ManagerMainWindow : Form
+    public partial class Form_ClerkMainWindow : Form
     {
-        public Form_ManagerMainWindow()
+        public Form_ClerkMainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Btn_close_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void Btn_minimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Btn_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

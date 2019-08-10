@@ -1,6 +1,6 @@
 ﻿namespace NCOMS
 {
-    partial class Form_ManagerMainWindow
+    partial class Form_ClerkMainWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ManagerMainWindow));
-            this.FormCurve = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_ClerkMainWindow));
             this.panel_header = new System.Windows.Forms.Panel();
             this.btn_minimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_close = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel_container = new System.Windows.Forms.Panel();
             this.panel_navigation_container = new System.Windows.Forms.Panel();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).BeginInit();
             this.SuspendLayout();
-            // 
-            // FormCurve
-            // 
-            this.FormCurve.ElipseRadius = 15;
-            this.FormCurve.TargetControl = this;
             // 
             // panel_header
             // 
@@ -56,7 +48,7 @@
             this.panel_header.Location = new System.Drawing.Point(0, 0);
             this.panel_header.Name = "panel_header";
             this.panel_header.Size = new System.Drawing.Size(1350, 30);
-            this.panel_header.TabIndex = 11;
+            this.panel_header.TabIndex = 12;
             // 
             // btn_minimize
             // 
@@ -92,7 +84,7 @@
             this.panel_container.Location = new System.Drawing.Point(260, 30);
             this.panel_container.Name = "panel_container";
             this.panel_container.Size = new System.Drawing.Size(1090, 690);
-            this.panel_container.TabIndex = 12;
+            this.panel_container.TabIndex = 13;
             // 
             // panel_navigation_container
             // 
@@ -100,16 +92,9 @@
             this.panel_navigation_container.Location = new System.Drawing.Point(0, 30);
             this.panel_navigation_container.Name = "panel_navigation_container";
             this.panel_navigation_container.Size = new System.Drawing.Size(260, 690);
-            this.panel_navigation_container.TabIndex = 13;
+            this.panel_navigation_container.TabIndex = 14;
             // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.panel_header;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // Form_MainWindow
+            // Form_ClerkMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -120,9 +105,8 @@
             this.Controls.Add(this.panel_header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form_MainWindow";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainWindowForm";
+            this.Name = "Form_ClerkMainWindow";
+            this.Text = "Form_ClerkMainWindow";
             this.panel_header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).EndInit();
@@ -132,12 +116,10 @@
 
         #endregion
 
-        private Bunifu.Framework.UI.BunifuElipse FormCurve;
         private System.Windows.Forms.Panel panel_header;
+        private Bunifu.Framework.UI.BunifuImageButton btn_minimize;
+        private Bunifu.Framework.UI.BunifuImageButton btn_close;
         private System.Windows.Forms.Panel panel_container;
         private System.Windows.Forms.Panel panel_navigation_container;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private Bunifu.Framework.UI.BunifuImageButton btn_close;
-        private Bunifu.Framework.UI.BunifuImageButton btn_minimize;
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NCOMS
 {
-    public partial class Form_ManagerMainWindow : Form
+    public partial class Form_StoreKeeperMainWindow : Form
     {
-        public Form_ManagerMainWindow()
+        public Form_StoreKeeperMainWindow()
         {
             InitializeComponent();
         }
