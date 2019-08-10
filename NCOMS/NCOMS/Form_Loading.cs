@@ -13,6 +13,9 @@ namespace NCOMS
 {
     public partial class Form_Loading : Form
     {
+
+        Form_Login form_Login = new Form_Login();
+
         public Form_Loading()
         {
             InitializeComponent();

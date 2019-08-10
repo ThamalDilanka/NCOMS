@@ -19,10 +19,6 @@ namespace NCOMS
             InitializeComponent();
         }
 
-        private void BunifuImageButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void Form_Login_Load(object sender, EventArgs e)
         {
@@ -100,8 +96,18 @@ namespace NCOMS
         private void Btn_Login_Click(object sender, EventArgs e)
         {
             // this should be login process with database
-            MessageBox.Show("Loging successful");
+            // MessageBox.Show("Loging successful");
+            this.Close();
         }
-        
+
+        private void Btn_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Btn_signin_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
