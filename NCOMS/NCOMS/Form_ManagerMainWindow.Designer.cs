@@ -37,19 +37,22 @@
             this.panel_container = new System.Windows.Forms.Panel();
             this.panel_navigation_container = new System.Windows.Forms.Panel();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.btn_signout = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel_header.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_signout)).BeginInit();
             this.SuspendLayout();
             // 
             // FormCurve
             // 
-            this.FormCurve.ElipseRadius = 15;
+            this.FormCurve.ElipseRadius = 5;
             this.FormCurve.TargetControl = this;
             // 
             // panel_header
             // 
             this.panel_header.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel_header.Controls.Add(this.btn_signout);
             this.panel_header.Controls.Add(this.btn_minimize);
             this.panel_header.Controls.Add(this.btn_close);
             this.panel_header.Dock = System.Windows.Forms.DockStyle.Top;
@@ -109,6 +112,20 @@
             this.bunifuDragControl1.TargetControl = this.panel_header;
             this.bunifuDragControl1.Vertical = true;
             // 
+            // btn_signout
+            // 
+            this.btn_signout.BackColor = System.Drawing.Color.Transparent;
+            this.btn_signout.Image = ((System.Drawing.Image)(resources.GetObject("btn_signout.Image")));
+            this.btn_signout.ImageActive = null;
+            this.btn_signout.Location = new System.Drawing.Point(1240, 4);
+            this.btn_signout.Name = "btn_signout";
+            this.btn_signout.Size = new System.Drawing.Size(24, 24);
+            this.btn_signout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_signout.TabIndex = 13;
+            this.btn_signout.TabStop = false;
+            this.btn_signout.Zoom = 10;
+            this.btn_signout.Click += new System.EventHandler(this.Btn_signout_Click);
+            // 
             // Form_ManagerMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +143,7 @@
             this.panel_header.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_signout)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -139,5 +157,6 @@
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuImageButton btn_close;
         private Bunifu.Framework.UI.BunifuImageButton btn_minimize;
+        private Bunifu.Framework.UI.BunifuImageButton btn_signout;
     }
 }

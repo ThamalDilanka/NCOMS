@@ -34,13 +34,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lf_UserName = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.lf_Password = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.tb_UserName = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.tb_Password = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.btn_close = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bunifuLogin_FormFadeTransition = new Bunifu.Framework.UI.BunifuFormFadeTransition(this.components);
             this.panel_clock = new System.Windows.Forms.Panel();
             this.lbl_clock = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,7 +47,6 @@
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_signin = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).BeginInit();
             this.panel_clock.SuspendLayout();
@@ -92,43 +90,43 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Nipunajith Constructions (Pvt) LTD";
             // 
-            // lf_UserName
+            // tb_UserName
             // 
-            this.lf_UserName.BorderColorFocused = System.Drawing.Color.RoyalBlue;
-            this.lf_UserName.BorderColorIdle = System.Drawing.Color.Gray;
-            this.lf_UserName.BorderColorMouseHover = System.Drawing.Color.RoyalBlue;
-            this.lf_UserName.BorderThickness = 1;
-            this.lf_UserName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lf_UserName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lf_UserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lf_UserName.isPassword = false;
-            this.lf_UserName.Location = new System.Drawing.Point(496, 288);
-            this.lf_UserName.Margin = new System.Windows.Forms.Padding(4);
-            this.lf_UserName.Name = "lf_UserName";
-            this.lf_UserName.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lf_UserName.Size = new System.Drawing.Size(297, 33);
-            this.lf_UserName.TabIndex = 3;
-            this.lf_UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.lf_UserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Lf_UserName_KeyDown);
+            this.tb_UserName.BorderColorFocused = System.Drawing.Color.RoyalBlue;
+            this.tb_UserName.BorderColorIdle = System.Drawing.Color.Gray;
+            this.tb_UserName.BorderColorMouseHover = System.Drawing.Color.RoyalBlue;
+            this.tb_UserName.BorderThickness = 1;
+            this.tb_UserName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_UserName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_UserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tb_UserName.isPassword = false;
+            this.tb_UserName.Location = new System.Drawing.Point(496, 288);
+            this.tb_UserName.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_UserName.Name = "tb_UserName";
+            this.tb_UserName.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.tb_UserName.Size = new System.Drawing.Size(297, 33);
+            this.tb_UserName.TabIndex = 3;
+            this.tb_UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tb_UserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Lf_UserName_KeyDown);
             // 
-            // lf_Password
+            // tb_Password
             // 
-            this.lf_Password.BorderColorFocused = System.Drawing.Color.RoyalBlue;
-            this.lf_Password.BorderColorIdle = System.Drawing.Color.Gray;
-            this.lf_Password.BorderColorMouseHover = System.Drawing.Color.RoyalBlue;
-            this.lf_Password.BorderThickness = 1;
-            this.lf_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lf_Password.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lf_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lf_Password.isPassword = true;
-            this.lf_Password.Location = new System.Drawing.Point(496, 357);
-            this.lf_Password.Margin = new System.Windows.Forms.Padding(4);
-            this.lf_Password.Name = "lf_Password";
-            this.lf_Password.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.lf_Password.Size = new System.Drawing.Size(297, 33);
-            this.lf_Password.TabIndex = 4;
-            this.lf_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.lf_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Lf_Password_KeyDown);
+            this.tb_Password.BorderColorFocused = System.Drawing.Color.RoyalBlue;
+            this.tb_Password.BorderColorIdle = System.Drawing.Color.Gray;
+            this.tb_Password.BorderColorMouseHover = System.Drawing.Color.RoyalBlue;
+            this.tb_Password.BorderThickness = 1;
+            this.tb_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tb_Password.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tb_Password.isPassword = true;
+            this.tb_Password.Location = new System.Drawing.Point(496, 357);
+            this.tb_Password.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_Password.Name = "tb_Password";
+            this.tb_Password.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.tb_Password.Size = new System.Drawing.Size(297, 33);
+            this.tb_Password.TabIndex = 4;
+            this.tb_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tb_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Lf_Password_KeyDown);
             // 
             // label3
             // 
@@ -172,10 +170,6 @@
             this.btn_close.TabStop = false;
             this.btn_close.Zoom = 10;
             this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
-            // 
-            // bunifuLogin_FormFadeTransition
-            // 
-            this.bunifuLogin_FormFadeTransition.Delay = 1;
             // 
             // panel_clock
             // 
@@ -275,14 +269,13 @@
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lf_Password);
-            this.Controls.Add(this.lf_UserName);
+            this.Controls.Add(this.tb_Password);
+            this.Controls.Add(this.tb_UserName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Login";
-            this.Opacity = 0.1D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form_Login_Load);
@@ -303,12 +296,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuMetroTextbox lf_Password;
-        private Bunifu.Framework.UI.BunifuMetroTextbox lf_UserName;
+        private Bunifu.Framework.UI.BunifuMetroTextbox tb_Password;
+        private Bunifu.Framework.UI.BunifuMetroTextbox tb_UserName;
         private System.Windows.Forms.Label label2;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private Bunifu.Framework.UI.BunifuImageButton btn_close;
-        private Bunifu.Framework.UI.BunifuFormFadeTransition bunifuLogin_FormFadeTransition;
         private System.Windows.Forms.Panel panel_clock;
         private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
@@ -316,7 +308,6 @@
         private System.Windows.Forms.Label lbl_clock;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btn_signin;
-        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

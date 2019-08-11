@@ -26,20 +26,18 @@ namespace NCOMS
             timer.Interval = 1000;
             timer.Tick += new EventHandler(this.timer_Tick);
             timer.Start();
-
-            bunifuLogin_FormFadeTransition.ShowAsyc(this);
         }
 
         private void Lf_UserName_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
             {
-                lf_Password.Focus();
+                tb_Password.Focus();
             }
 
             if(e.KeyCode == Keys.Delete)
             {
-                lf_UserName.Text = "";
+                tb_UserName.Text = "";
             }
         }
 
@@ -47,17 +45,17 @@ namespace NCOMS
         {
             if(e.KeyCode == Keys.Up)
             {
-                lf_UserName.Focus();
+                tb_UserName.Focus();
             }
 
             if(e.KeyCode == Keys.Delete)
             {
-                lf_Password.Text = "";
+                tb_Password.Text = "";
             }
 
             if(e.KeyCode == Keys.Enter)
             {
-                Btn_Login_Click(sender, e);
+                Btn_signin_Click(sender, e);
             }
         }
 
@@ -93,13 +91,6 @@ namespace NCOMS
 
         }
 
-        private void Btn_Login_Click(object sender, EventArgs e)
-        {
-            // this should be login process with database
-            // MessageBox.Show("Loging successful");
-            this.Close();
-        }
-
         private void Btn_close_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -107,7 +98,34 @@ namespace NCOMS
 
         private void Btn_signin_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            if (tb_UserName.Text.Equals("Manager"))
+            {
+                Form_ManagerMainWindow form_ManagerMainWindow = new Form_ManagerMainWindow();
+                form_ManagerMainWindow.Show();
+                this.Hide();
+            }
+
+            else if (tb_UserName.Text.Equals("Clerk"))
+            {
+                Form_ClerkMainWindow form_ClerkMainWindow = new Form_ClerkMainWindow();
+                form_ClerkMainWindow.Show();
+                this.Hide();
+            }
+
+            else if (tb_UserName.Text.Equals("Supervisor"))
+            {
+                Form_SupervisorMainWindow form_SupervisorMainWindow = new Form_SupervisorMainWindow();
+                form_SupervisorMainWindow.Show();
+                this.Hide();
+            }
+
+            else if (tb_UserName.Text.Equals("Storekeeper"))
+            {
+                Form_StoreKeeperMainWindow form_StoreKeeperMainWindow = new Form_StoreKeeperMainWindow();
+                form_StoreKeeperMainWindow.Show();
+                this.Hide();
+            }
         }
     }
 }

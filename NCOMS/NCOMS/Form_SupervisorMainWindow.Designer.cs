@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_SupervisorMainWindow));
             this.panel_header = new System.Windows.Forms.Panel();
+            this.btn_signout = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_minimize = new Bunifu.Framework.UI.BunifuImageButton();
             this.btn_close = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel_container = new System.Windows.Forms.Panel();
             this.panel_navigation_container = new System.Windows.Forms.Panel();
+            this.form_curve = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel_header.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_signout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).BeginInit();
             this.SuspendLayout();
@@ -42,6 +46,7 @@
             // panel_header
             // 
             this.panel_header.BackColor = System.Drawing.Color.DodgerBlue;
+            this.panel_header.Controls.Add(this.btn_signout);
             this.panel_header.Controls.Add(this.btn_minimize);
             this.panel_header.Controls.Add(this.btn_close);
             this.panel_header.Dock = System.Windows.Forms.DockStyle.Top;
@@ -49,6 +54,20 @@
             this.panel_header.Name = "panel_header";
             this.panel_header.Size = new System.Drawing.Size(1350, 30);
             this.panel_header.TabIndex = 12;
+            // 
+            // btn_signout
+            // 
+            this.btn_signout.BackColor = System.Drawing.Color.Transparent;
+            this.btn_signout.Image = ((System.Drawing.Image)(resources.GetObject("btn_signout.Image")));
+            this.btn_signout.ImageActive = null;
+            this.btn_signout.Location = new System.Drawing.Point(1240, 4);
+            this.btn_signout.Name = "btn_signout";
+            this.btn_signout.Size = new System.Drawing.Size(24, 24);
+            this.btn_signout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_signout.TabIndex = 15;
+            this.btn_signout.TabStop = false;
+            this.btn_signout.Zoom = 10;
+            this.btn_signout.Click += new System.EventHandler(this.Btn_signout_Click);
             // 
             // btn_minimize
             // 
@@ -94,6 +113,11 @@
             this.panel_navigation_container.Size = new System.Drawing.Size(260, 690);
             this.panel_navigation_container.TabIndex = 14;
             // 
+            // form_curve
+            // 
+            this.form_curve.ElipseRadius = 5;
+            this.form_curve.TargetControl = this;
+            // 
             // Form_SupervisorMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,8 +130,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_SupervisorMainWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_SupervisorMainWindow";
             this.panel_header.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btn_signout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_minimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).EndInit();
             this.ResumeLayout(false);
@@ -121,5 +147,7 @@
         private Bunifu.Framework.UI.BunifuImageButton btn_close;
         private System.Windows.Forms.Panel panel_container;
         private System.Windows.Forms.Panel panel_navigation_container;
+        private Bunifu.Framework.UI.BunifuElipse form_curve;
+        private Bunifu.Framework.UI.BunifuImageButton btn_signout;
     }
 }

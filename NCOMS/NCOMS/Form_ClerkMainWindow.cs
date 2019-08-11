@@ -26,5 +26,12 @@ namespace NCOMS
         {
             Application.Exit();
         }
+
+        private void Btn_signout_Click(object sender, EventArgs e)
+        {
+            Form_Login form_Login = new Form_Login();
+            form_Login.Show();
+            this.Hide();
+        }
     }
 }
