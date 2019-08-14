@@ -252,6 +252,7 @@
           <Property Name="start_date" Type="date" />
           <Property Name="deadline" Type="date" />
           <Property Name="estimated_cost" Type="real" />
+          <Property Name="state" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Site_Material_Report">
           <Key>
@@ -1440,6 +1441,7 @@
           <Property Name="start_date" Type="DateTime" Precision="0" />
           <Property Name="deadline" Type="DateTime" Precision="0" />
           <Property Name="estimated_cost" Type="Single" />
+          <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="GRNs" Relationship="Self.fk_site_grn" FromRole="Site" ToRole="GRN" />
           <NavigationProperty Name="Issue_From_Stock" Relationship="Self.fk_site_issue_from_store" FromRole="Site" ToRole="Issue_From_Stock" />
           <NavigationProperty Name="Labors" Relationship="Self.fk_site_lobor" FromRole="Site" ToRole="Labor" />
@@ -2628,6 +2630,7 @@
                 <ScalarProperty Name="start_date" ColumnName="start_date" />
                 <ScalarProperty Name="deadline" ColumnName="deadline" />
                 <ScalarProperty Name="estimated_cost" ColumnName="estimated_cost" />
+                <ScalarProperty Name="state" ColumnName="state" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

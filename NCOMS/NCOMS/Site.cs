@@ -35,6 +35,7 @@ namespace NCOMS
         public Nullable<System.DateTime> start_date { get; set; }
         public Nullable<System.DateTime> deadline { get; set; }
         public Nullable<float> estimated_cost { get; set; }
+        public string state { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GRN> GRNs { get; set; }

@@ -24,7 +24,27 @@ namespace NCOMS
             foreach(Site site in siteList)
             {
                 UserControl_Site_Item siteItem = new UserControl_Site_Item();
+                siteItem.SiteId = site.site_id;
                 siteItem.Title = site.title;
+                siteItem.Description = site.description;
+                siteItem.Address = site.address;
+                siteItem.StartDate = Convert.ToDateTime(site.start_date).ToString("yyyy-MM-dd");
+                siteItem.EndDate = Convert.ToDateTime(site.deadline).ToString("yyyy-MM-dd");
+                siteItem.EstimatedCost = site.estimated_cost.ToString();
+
+                int totalDays = Convert.ToDateTime(site.deadline).Subtract(Convert.ToDateTime(site.start_date)).Days;
+                int pasedDays = Convert.ToDateTime(site.deadline).Subtract(DateTime.Today).Days;
+                int percentage;
+
+                if (pasedDays <= 0)
+                    percentage = 100;
+                else if (Convert.ToDateTime(site.start_date).Subtract(DateTime.Today).Days >= 0)
+                    percentage = 0;
+                else
+                    percentage = 100 - (Convert.ToInt32(((pasedDays / (double)totalDays) * 100)));
+               
+                siteItem.TimeLine = percentage;
+                
                 flp_site_item_container.Controls.Add(siteItem);
             }
         }
@@ -43,5 +63,6 @@ namespace NCOMS
             Form_Add_New_Site form_Add_New_Site = new Form_Add_New_Site();
             form_Add_New_Site.Show();
         }
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace NCOMS
 {
-    partial class Form_Add_New_Site
+    partial class Form_Update_Site
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Add_New_Site));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Update_Site));
             this.panel_header = new System.Windows.Forms.Panel();
             this.label_header_title = new System.Windows.Forms.Label();
             this.btn_close = new Bunifu.Framework.UI.BunifuImageButton();
             this.form_curve = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_update = new System.Windows.Forms.Button();
             this.tb_title = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,9 +70,9 @@
             this.label_header_title.ForeColor = System.Drawing.Color.White;
             this.label_header_title.Location = new System.Drawing.Point(219, 7);
             this.label_header_title.Name = "label_header_title";
-            this.label_header_title.Size = new System.Drawing.Size(62, 18);
+            this.label_header_title.Size = new System.Drawing.Size(84, 18);
             this.label_header_title.TabIndex = 21;
-            this.label_header_title.Text = "Add Site";
+            this.label_header_title.Text = "Update Site";
             this.label_header_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_close
@@ -94,19 +94,19 @@
             this.form_curve.ElipseRadius = 5;
             this.form_curve.TargetControl = this;
             // 
-            // btn_save
+            // btn_update
             // 
-            this.btn_save.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_save.ForeColor = System.Drawing.Color.White;
-            this.btn_save.Location = new System.Drawing.Point(359, 560);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(118, 36);
-            this.btn_save.TabIndex = 14;
-            this.btn_save.Text = "Save";
-            this.btn_save.UseVisualStyleBackColor = false;
-            this.btn_save.Click += new System.EventHandler(this.Btn_save_Click);
+            this.btn_update.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_update.ForeColor = System.Drawing.Color.White;
+            this.btn_update.Location = new System.Drawing.Point(359, 560);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(118, 36);
+            this.btn_update.TabIndex = 14;
+            this.btn_update.Text = "Update";
+            this.btn_update.UseVisualStyleBackColor = false;
+            this.btn_update.Click += new System.EventHandler(this.Btn_update_Click);
             // 
             // tb_title
             // 
@@ -237,7 +237,7 @@
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
             // 
-            // Form_Add_New_Site
+            // Form_Update_Site
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -256,12 +256,13 @@
             this.Controls.Add(this.tb_description);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_title);
-            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.panel_header);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form_Add_New_Site";
+            this.Name = "Form_Update_Site";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Add_New_Site";
+            this.Load += new System.EventHandler(this.Form_Update_Site_Load);
             this.panel_header.ResumeLayout(false);
             this.panel_header.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_close)).EndInit();
@@ -288,7 +289,7 @@
         private System.Windows.Forms.TextBox tb_description;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_title;
-        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_clear;
     }
 }

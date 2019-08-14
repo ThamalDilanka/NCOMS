@@ -38,15 +38,15 @@
             // flp_site_item_container
             // 
             this.flp_site_item_container.AutoScroll = true;
-            this.flp_site_item_container.Location = new System.Drawing.Point(32, 71);
+            this.flp_site_item_container.Location = new System.Drawing.Point(22, 64);
             this.flp_site_item_container.Name = "flp_site_item_container";
-            this.flp_site_item_container.Size = new System.Drawing.Size(1070, 607);
+            this.flp_site_item_container.Size = new System.Drawing.Size(1096, 614);
             this.flp_site_item_container.TabIndex = 0;
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(764, 17);
+            this.textBox1.Location = new System.Drawing.Point(761, 17);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(257, 26);
             this.textBox1.TabIndex = 1;
@@ -56,7 +56,7 @@
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1027, 17);
+            this.button1.Location = new System.Drawing.Point(1024, 17);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 2;

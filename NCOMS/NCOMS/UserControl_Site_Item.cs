@@ -19,13 +19,21 @@ namespace NCOMS
 
         #region Properties
 
+        private int _site_id;
         private string _title;
         private string _address;
         private string _description;
         private string _start_date;
         private string _end_date;
-        private double _estimated_cost;
+        private string _estimated_cost;
         private int _time_passed;
+
+        [Category("Site Item")]
+        public int SiteId
+        {
+            get { return _site_id; }
+            set { _site_id = value; label_site_id.Text = value.ToString(); }
+        }
 
         [Category("Site Item")]
         public string Title
@@ -42,10 +50,10 @@ namespace NCOMS
         }
 
         [Category("Site Item")]
-        public double EstimatedCost
+        public string EstimatedCost
         {
             get { return _estimated_cost; }
-            set { _estimated_cost = value; label_estimated_cost.Text = value.ToString(); }
+            set { _estimated_cost = value; label_estimated_cost.Text = value; }
         }
 
         [Category("Site Item")]
@@ -78,9 +86,27 @@ namespace NCOMS
 
         #endregion
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Btn_update_Click(object sender, EventArgs e)
         {
-            
+            Site site = new Site();
+
+            site.site_id = _site_id;
+            site.title = _title;
+            site.address = _address;
+            site.description = _description;
+            site.estimated_cost = float.Parse(_estimated_cost.ToString());
+            site.start_date = Convert.ToDateTime(_start_date);
+            site.deadline = Convert.ToDateTime(_end_date);
+
+            DataExchanger.site = site;
+
+            Form_Update_Site form_Update_Site = new Form_Update_Site();
+            form_Update_Site.Show();
+        }
+
+        private void Btn_more_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
