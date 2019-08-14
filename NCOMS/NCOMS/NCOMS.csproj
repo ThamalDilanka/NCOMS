@@ -36,11 +36,20 @@
     <Reference Include="Bunifu_UI_v1.5.3">
       <HintPath>C:\Users\thama\OneDrive - Sri Lanka Institute of Information Technology\ITP Resources\Bunifu UI Framework\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,11 +65,38 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connectivity.cs" />
+    <Compile Include="DBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Add_New_Site.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Add_New_Site.Designer.cs">
+      <DependentUpon>Form_Add_New_Site.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_ClerkMainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_ClerkMainWindow.Designer.cs">
       <DependentUpon>Form_ClerkMainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_CMW_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CMW_Dashboard.Designer.cs">
+      <DependentUpon>Form_CMW_Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Login.cs">
       <SubType>Form</SubType>
@@ -80,6 +116,12 @@
     <Compile Include="Form_ManagerMainWindow.Designer.cs">
       <DependentUpon>Form_ManagerMainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_SMW_Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SMW_Dashboard.Designer.cs">
+      <DependentUpon>Form_SMW_Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_StoreKeeperMainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,10 +134,133 @@
     <Compile Include="Form_SupervisorMainWindow.Designer.cs">
       <DependentUpon>Form_SupervisorMainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="GO.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GOS_Material.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GOS_Money_Status.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GRN.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GRN_Material.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Head_Office_Expenses.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Issue_From_Stock.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Issue_From_Stock_Material.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Labor.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Labor_advance.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Labor_Attendance.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Labor_Mobile.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Labor_OT.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Money_Request.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Money_Request_Status.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Material.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Status.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Petty_Cash.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase_InTo_Stock.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase_InTo_Stock_Material.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Site.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Site_Material_Report.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Site_Note.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Site_Other_Expenses.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_Allocated_Site.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_Attendance.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_Mobile.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Staff_OT.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stock.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tool.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tool_Allocation.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tool_Repairs.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl_Site_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_Site_Item.Designer.cs">
+      <DependentUpon>UserControl_Site_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vehicle_Repairs.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Weather_Report.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form_Add_New_Site.resx">
+      <DependentUpon>Form_Add_New_Site.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_ClerkMainWindow.resx">
       <DependentUpon>Form_ClerkMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_CMW_Dashboard.resx">
+      <DependentUpon>Form_CMW_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login.resx">
       <DependentUpon>Form_Login.cs</DependentUpon>
@@ -105,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_ManagerMainWindow.resx">
       <DependentUpon>Form_ManagerMainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_SMW_Dashboard.resx">
+      <DependentUpon>Form_SMW_Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_StoreKeeperMainWindow.resx">
       <DependentUpon>Form_StoreKeeperMainWindow.cs</DependentUpon>
@@ -121,6 +289,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControl_Site_Item.resx">
+      <DependentUpon>UserControl_Site_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DBModel.edmx.diagram">
+      <DependentUpon>DBModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -133,6 +312,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBModel.Context.cs</LastGenOutput>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+      <LastGenOutput>DBModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
