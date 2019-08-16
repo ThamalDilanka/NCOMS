@@ -28,18 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login));
-            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_UserName = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.tb_Password = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.btn_close = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel_clock = new System.Windows.Forms.Panel();
             this.lbl_clock = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,26 +42,12 @@
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_signin = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_close)).BeginInit();
+            this.btn_close = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_clock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 15;
-            this.bunifuElipse1.TargetControl = this;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(546, 91);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 162);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -149,27 +130,6 @@
             this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 6;
             this.label4.Text = "Password";
-            // 
-            // bunifuDragControl1
-            // 
-            this.bunifuDragControl1.Fixed = true;
-            this.bunifuDragControl1.Horizontal = true;
-            this.bunifuDragControl1.TargetControl = this.pictureBox1;
-            this.bunifuDragControl1.Vertical = true;
-            // 
-            // btn_close
-            // 
-            this.btn_close.BackColor = System.Drawing.Color.Transparent;
-            this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
-            this.btn_close.ImageActive = null;
-            this.btn_close.Location = new System.Drawing.Point(824, 12);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(24, 25);
-            this.btn_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_close.TabIndex = 9;
-            this.btn_close.TabStop = false;
-            this.btn_close.Zoom = 10;
-            this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
             // 
             // panel_clock
             // 
@@ -258,15 +218,37 @@
             this.btn_signin.UseVisualStyleBackColor = false;
             this.btn_signin.Click += new System.EventHandler(this.Btn_signin_Click);
             // 
+            // btn_close
+            // 
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
+            this.btn_close.Location = new System.Drawing.Point(829, 0);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(30, 29);
+            this.btn_close.TabIndex = 12;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(546, 91);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(196, 162);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(860, 500);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_signin);
             this.Controls.Add(this.panel_clock);
-            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tb_Password);
@@ -279,19 +261,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form_Login_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_close)).EndInit();
             this.panel_clock.ResumeLayout(false);
             this.panel_clock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
@@ -299,8 +278,6 @@
         private Bunifu.Framework.UI.BunifuMetroTextbox tb_Password;
         private Bunifu.Framework.UI.BunifuMetroTextbox tb_UserName;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private Bunifu.Framework.UI.BunifuImageButton btn_close;
         private System.Windows.Forms.Panel panel_clock;
         private System.Windows.Forms.Label label5;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
@@ -308,6 +285,7 @@
         private System.Windows.Forms.Label lbl_clock;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btn_signin;
+        private System.Windows.Forms.Button btn_close;
     }
 }
 

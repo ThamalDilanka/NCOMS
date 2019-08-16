@@ -1,0 +1,2829 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NCOMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GOS">
+          <Key>
+            <PropertyRef Name="gos_id" />
+          </Key>
+          <Property Name="gos_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order_id" Type="int" />
+          <Property Name="driver_id" Type="int" />
+          <Property Name="vehicle_id" Type="int" />
+          <Property Name="shop" Type="varchar" MaxLength="100" />
+          <Property Name="bill_no" Type="int" />
+          <Property Name="total_amount" Type="real" />
+        </EntityType>
+        <EntityType Name="GOS_Material">
+          <Key>
+            <PropertyRef Name="gos_id" />
+            <PropertyRef Name="material" />
+          </Key>
+          <Property Name="gos_id" Type="int" Nullable="false" />
+          <Property Name="material" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="unit" Type="varchar" MaxLength="10" />
+          <Property Name="unit_price" Type="real" />
+        </EntityType>
+        <EntityType Name="GOS_Money_Status">
+          <Key>
+            <PropertyRef Name="gos_id" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="gos_id" Type="int" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date" Type="date" />
+          <Property Name="time" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="GRN">
+          <Key>
+            <PropertyRef Name="grn_id" />
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="grn_id" Type="int" Nullable="false" />
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="accepted_by" Type="int" />
+          <Property Name="date" Type="date" />
+          <Property Name="time" Type="time" Precision="7" />
+          <Property Name="vehicle_no" Type="varchar" MaxLength="10" />
+          <Property Name="vahicle_type" Type="varchar" MaxLength="50" />
+          <Property Name="driver_name" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="GRN_Material">
+          <Key>
+            <PropertyRef Name="grn_id" />
+            <PropertyRef Name="material" />
+          </Key>
+          <Property Name="grn_id" Type="int" Nullable="false" />
+          <Property Name="site_id" Type="int" />
+          <Property Name="material" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="unit" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Head_Office_Expenses">
+          <Key>
+            <PropertyRef Name="expense_id" />
+          </Key>
+          <Property Name="expense_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="amount" Type="real" />
+          <Property Name="bill_no" Type="int" />
+          <Property Name="entered_by" Type="int" />
+        </EntityType>
+        <EntityType Name="Issue_From_Stock">
+          <Key>
+            <PropertyRef Name="issue_id" />
+          </Key>
+          <Property Name="issue_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="order_id" Type="int" />
+          <Property Name="site_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Issue_From_Stock_Material">
+          <Key>
+            <PropertyRef Name="issue_id" />
+            <PropertyRef Name="material_id" />
+          </Key>
+          <Property Name="issue_id" Type="int" Nullable="false" />
+          <Property Name="material_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Labor">
+          <Key>
+            <PropertyRef Name="labor_id" />
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="labor_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="last_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="gender" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="date_of_birth" Type="date" />
+          <Property Name="designation" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nic" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="255" />
+          <Property Name="join_on" Type="date" />
+          <Property Name="civil_status" Type="varchar" MaxLength="100" />
+          <Property Name="hourly_rate" Type="real" />
+          <Property Name="ot_rate" Type="real" />
+        </EntityType>
+        <EntityType Name="Labor_advance">
+          <Key>
+            <PropertyRef Name="labor_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="labor_id" Type="int" Nullable="false" />
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="amount" Type="real" />
+          <Property Name="issued_by" Type="int" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="time" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="Labor_Attendance">
+          <Key>
+            <PropertyRef Name="labor_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="labor_id" Type="int" Nullable="false" />
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="in_time" Type="time" Precision="7" />
+          <Property Name="out_time" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="Labor_Mobile">
+          <Key>
+            <PropertyRef Name="labor_id" />
+            <PropertyRef Name="mobile" />
+          </Key>
+          <Property Name="labor_id" Type="int" Nullable="false" />
+          <Property Name="site_id" Type="int" />
+          <Property Name="mobile" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Labor_OT">
+          <Key>
+            <PropertyRef Name="labor_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="labor_id" Type="int" Nullable="false" />
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="ot_hours" Type="int" />
+        </EntityType>
+        <EntityType Name="Money_Request">
+          <Key>
+            <PropertyRef Name="request_id" />
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="request_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" Nullable="false" />
+          <Property Name="amount" Type="real" />
+          <Property Name="requested_on" Type="date" />
+          <Property Name="requested_at" Type="time" Precision="7" />
+          <Property Name="approved_by" Type="int" />
+          <Property Name="status" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Money_Request_Status">
+          <Key>
+            <PropertyRef Name="request_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="request_id" Type="int" Nullable="false" />
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order_Material">
+          <Key>
+            <PropertyRef Name="order_id" />
+            <PropertyRef Name="material" />
+          </Key>
+          <Property Name="order_id" Type="int" Nullable="false" />
+          <Property Name="material" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="unit" Type="varchar" MaxLength="10" />
+          <Property Name="note" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Order_Status">
+          <Key>
+            <PropertyRef Name="order_id" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="order_id" Type="int" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="date" Type="date" />
+          <Property Name="time" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="approved_by" Type="int" />
+        </EntityType>
+        <EntityType Name="Petty_Cash">
+          <Key>
+            <PropertyRef Name="petty_cash_id" />
+            <PropertyRef Name="request_id" />
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="petty_cash_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="request_id" Type="int" Nullable="false" />
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="deliverer" Type="int" />
+          <Property Name="amount" Type="real" />
+          <Property Name="date" Type="date" />
+          <Property Name="balance" Type="real" />
+          <Property Name="status" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Purchase_InTo_Stock">
+          <Key>
+            <PropertyRef Name="purchase_id" />
+          </Key>
+          <Property Name="purchase_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dealer" Type="varchar" MaxLength="255" />
+          <Property Name="total_amount" Type="real" />
+          <Property Name="date" Type="date" />
+          <Property Name="bill_no" Type="int" />
+        </EntityType>
+        <EntityType Name="Purchase_InTo_Stock_Material">
+          <Key>
+            <PropertyRef Name="material_id" />
+            <PropertyRef Name="purchase_id" />
+          </Key>
+          <Property Name="material_id" Type="int" Nullable="false" />
+          <Property Name="purchase_id" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="unit_price" Type="real" />
+        </EntityType>
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="site_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="address" Type="varchar" MaxLength="255" />
+          <Property Name="start_date" Type="date" />
+          <Property Name="deadline" Type="date" />
+          <Property Name="estimated_cost" Type="real" />
+          <Property Name="state" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Site_Material_Report">
+          <Key>
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="date" />
+            <PropertyRef Name="material_id" />
+          </Key>
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="material_id" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="unit" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Site_Note">
+          <Key>
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="note_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="note" Type="text" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Site_Other_Expenses">
+          <Key>
+            <PropertyRef Name="site_expense_id" />
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="site_expense_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="amount" Type="real" />
+          <Property Name="bill_no" Type="int" />
+          <Property Name="date" Type="date" />
+          <Property Name="time" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="staff_id" />
+          </Key>
+          <Property Name="staff_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="last_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="gender" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="date_of_birth" Type="date" />
+          <Property Name="designation" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="nic" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="user_level" Type="varchar" MaxLength="50" />
+          <Property Name="user_name" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="255" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="address" Type="varchar" MaxLength="255" />
+          <Property Name="join_on" Type="date" />
+          <Property Name="basic_salary" Type="real" />
+          <Property Name="hourly_rate" Type="real" />
+          <Property Name="ot_rate" Type="real" />
+        </EntityType>
+        <EntityType Name="Staff_Allocated_Site">
+          <Key>
+            <PropertyRef Name="staff_id" />
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="staff_id" Type="int" Nullable="false" />
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="started_date" Type="date" />
+          <Property Name="end_date" Type="date" />
+        </EntityType>
+        <EntityType Name="Staff_Attendance">
+          <Key>
+            <PropertyRef Name="staff_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="staff_id" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="attendance" Type="bit" />
+          <Property Name="time_in" Type="time" Precision="7" />
+          <Property Name="time_out" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="Staff_Mobile">
+          <Key>
+            <PropertyRef Name="staff_id" />
+            <PropertyRef Name="mobile" />
+          </Key>
+          <Property Name="staff_id" Type="int" Nullable="false" />
+          <Property Name="mobile" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Staff_OT">
+          <Key>
+            <PropertyRef Name="staff_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="staff_id" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="hours" Type="int" />
+        </EntityType>
+        <EntityType Name="Stock">
+          <Key>
+            <PropertyRef Name="material_id" />
+          </Key>
+          <Property Name="material_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="material_name" Type="varchar" MaxLength="255" />
+          <Property Name="brand" Type="varchar" MaxLength="100" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="unit" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Tool">
+          <Key>
+            <PropertyRef Name="tool_id" />
+          </Key>
+          <Property Name="tool_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="date_of_purchase" Type="date" />
+          <Property Name="price" Type="real" />
+          <Property Name="condition" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Tool_Allocation">
+          <Key>
+            <PropertyRef Name="tool_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="allocated_date" />
+          </Key>
+          <Property Name="tool_id" Type="int" Nullable="false" />
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="allocated_date" Type="date" Nullable="false" />
+          <Property Name="release_date" Type="date" />
+        </EntityType>
+        <EntityType Name="Tool_Repairs">
+          <Key>
+            <PropertyRef Name="tool_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="tool_id" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="service_station" Type="varchar" MaxLength="255" />
+          <Property Name="bill_no" Type="int" />
+          <Property Name="cost" Type="real" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="reg_no" Type="varchar" MaxLength="10" />
+          <Property Name="description" Type="text" />
+          <Property Name="date_of_purchase" Type="date" />
+        </EntityType>
+        <EntityType Name="Vehicle_Repairs">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="vehicle_id" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="service_station" Type="varchar" MaxLength="255" />
+          <Property Name="cost" Type="real" />
+        </EntityType>
+        <EntityType Name="Weather_Report">
+          <Key>
+            <PropertyRef Name="weather_report_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="date" />
+            <PropertyRef Name="time" />
+          </Key>
+          <Property Name="weather_report_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="site_id" Type="int" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="time" Type="time" Precision="7" Nullable="false" />
+          <Property Name="condition" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="fk_gos_gos_material">
+          <End Role="GOS" Type="Self.GOS" Multiplicity="1" />
+          <End Role="GOS_Material" Type="Self.GOS_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GOS">
+              <PropertyRef Name="gos_id" />
+            </Principal>
+            <Dependent Role="GOS_Material">
+              <PropertyRef Name="gos_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gos_gos_money_status">
+          <End Role="GOS" Type="Self.GOS" Multiplicity="1" />
+          <End Role="GOS_Money_Status" Type="Self.GOS_Money_Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GOS">
+              <PropertyRef Name="gos_id" />
+            </Principal>
+            <Dependent Role="GOS_Money_Status">
+              <PropertyRef Name="gos_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_grn_grn_material">
+          <End Role="GRN" Type="Self.GRN" Multiplicity="0..1" />
+          <End Role="GRN_Material" Type="Self.GRN_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRN">
+              <PropertyRef Name="grn_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="GRN_Material">
+              <PropertyRef Name="grn_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_labor_gos">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="GOS" Type="Self.GOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="GOS">
+              <PropertyRef Name="driver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_labor_labor_advance">
+          <End Role="Labor" Type="Self.Labor" Multiplicity="1" />
+          <End Role="Labor_advance" Type="Self.Labor_advance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Labor">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Labor_advance">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_labor_labor_attendance">
+          <End Role="Labor" Type="Self.Labor" Multiplicity="1" />
+          <End Role="Labor_Attendance" Type="Self.Labor_Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Labor">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Labor_Attendance">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_labor_labor_ot">
+          <End Role="Labor" Type="Self.Labor" Multiplicity="1" />
+          <End Role="Labor_OT" Type="Self.Labor_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Labor">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Labor_OT">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_labor_lobor_mobile">
+          <End Role="Labor" Type="Self.Labor" Multiplicity="0..1" />
+          <End Role="Labor_Mobile" Type="Self.Labor_Mobile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Labor">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Labor_Mobile">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_material_site_material_report">
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Site_Material_Report" Type="Self.Site_Material_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stock">
+              <PropertyRef Name="material_id" />
+            </Principal>
+            <Dependent Role="Site_Material_Report">
+              <PropertyRef Name="material_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_money_request_money_request_status">
+          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="1" />
+          <End Role="Money_Request_Status" Type="Self.Money_Request_Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Money_Request">
+              <PropertyRef Name="request_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Money_Request_Status">
+              <PropertyRef Name="request_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_money_request_petty_cash">
+          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="1" />
+          <End Role="Petty_Cash" Type="Self.Petty_Cash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Money_Request">
+              <PropertyRef Name="request_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Petty_Cash">
+              <PropertyRef Name="request_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_order_gos">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="GOS" Type="Self.GOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="GOS">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orders_issue_from_store">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="Issue_From_Stock" Type="Self.Issue_From_Stock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="Issue_From_Stock">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orders_order_status">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Order_Status" Type="Self.Order_Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="Order_Status">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orders_orders_material">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Order_Material" Type="Self.Order_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="Order_Material">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_purchase_into_stock_purchase_into_stock_material">
+          <End Role="Purchase_InTo_Stock" Type="Self.Purchase_InTo_Stock" Multiplicity="1" />
+          <End Role="Purchase_InTo_Stock_Material" Type="Self.Purchase_InTo_Stock_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purchase_InTo_Stock">
+              <PropertyRef Name="purchase_id" />
+            </Principal>
+            <Dependent Role="Purchase_InTo_Stock_Material">
+              <PropertyRef Name="purchase_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_grn">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="GRN" Type="Self.GRN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="GRN">
+              <PropertyRef Name="grn_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_issue_from_store">
+          <End Role="Site" Type="Self.Site" Multiplicity="0..1" />
+          <End Role="Issue_From_Stock" Type="Self.Issue_From_Stock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Issue_From_Stock">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_lobor">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Labor" Type="Self.Labor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Labor">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_money_request">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Money_Request">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_site_material_report">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site_Material_Report" Type="Self.Site_Material_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Site_Material_Report">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_site_note">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site_Note" Type="Self.Site_Note" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Site_Note">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_site_other_expenses">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site_Other_Expenses" Type="Self.Site_Other_Expenses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Site_Other_Expenses">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_staff_allocated_site">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Staff_Allocated_Site" Type="Self.Staff_Allocated_Site" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Staff_Allocated_Site">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_tool_allocation">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Tool_Allocation" Type="Self.Tool_Allocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Tool_Allocation">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_weather_report">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Weather_Report" Type="Self.Weather_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Weather_Report">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_grn">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="GRN" Type="Self.GRN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="GRN">
+              <PropertyRef Name="accepted_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_head_office_expenses">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Head_Office_Expenses" Type="Self.Head_Office_Expenses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Head_Office_Expenses">
+              <PropertyRef Name="entered_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_money_request">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Money_Request">
+              <PropertyRef Name="approved_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_orders">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="approved_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_petty_cash">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Petty_Cash" Type="Self.Petty_Cash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Petty_Cash">
+              <PropertyRef Name="deliverer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_staff_allocated_site">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff_Allocated_Site" Type="Self.Staff_Allocated_Site" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Staff_Allocated_Site">
+              <PropertyRef Name="staff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_staff_attendance">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff_Attendance" Type="Self.Staff_Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Staff_Attendance">
+              <PropertyRef Name="staff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_staff_mobile">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff_Mobile" Type="Self.Staff_Mobile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Staff_Mobile">
+              <PropertyRef Name="staff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_staff_ot">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff_OT" Type="Self.Staff_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Staff_OT">
+              <PropertyRef Name="staff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stafflabor_advance">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Labor_advance" Type="Self.Labor_advance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Labor_advance">
+              <PropertyRef Name="issued_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_purchase_into_stock_material">
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Purchase_InTo_Stock_Material" Type="Self.Purchase_InTo_Stock_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stock">
+              <PropertyRef Name="material_id" />
+            </Principal>
+            <Dependent Role="Purchase_InTo_Stock_Material">
+              <PropertyRef Name="material_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_store_issue_from_store_material">
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Issue_From_Stock_Material" Type="Self.Issue_From_Stock_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stock">
+              <PropertyRef Name="material_id" />
+            </Principal>
+            <Dependent Role="Issue_From_Stock_Material">
+              <PropertyRef Name="material_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tool_tool_allocation">
+          <End Role="Tool" Type="Self.Tool" Multiplicity="1" />
+          <End Role="Tool_Allocation" Type="Self.Tool_Allocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tool">
+              <PropertyRef Name="tool_id" />
+            </Principal>
+            <Dependent Role="Tool_Allocation">
+              <PropertyRef Name="tool_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tool_tool_repairs">
+          <End Role="Tool" Type="Self.Tool" Multiplicity="1" />
+          <End Role="Tool_Repairs" Type="Self.Tool_Repairs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tool">
+              <PropertyRef Name="tool_id" />
+            </Principal>
+            <Dependent Role="Tool_Repairs">
+              <PropertyRef Name="tool_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_vehicle_gos">
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+          <End Role="GOS" Type="Self.GOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="GOS">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_vehicle_vehicle_repairs">
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="1" />
+          <End Role="Vehicle_Repairs" Type="Self.Vehicle_Repairs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="Vehicle_Repairs">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NCOMSModelStoreContainer">
+          <EntitySet Name="GOS" EntityType="Self.GOS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GOS_Material" EntityType="Self.GOS_Material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GOS_Money_Status" EntityType="Self.GOS_Money_Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GRN" EntityType="Self.GRN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GRN_Material" EntityType="Self.GRN_Material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Head_Office_Expenses" EntityType="Self.Head_Office_Expenses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Issue_From_Stock" EntityType="Self.Issue_From_Stock" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Issue_From_Stock_Material" EntityType="Self.Issue_From_Stock_Material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Labor" EntityType="Self.Labor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Labor_advance" EntityType="Self.Labor_advance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Labor_Attendance" EntityType="Self.Labor_Attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Labor_Mobile" EntityType="Self.Labor_Mobile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Labor_OT" EntityType="Self.Labor_OT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Money_Request" EntityType="Self.Money_Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Money_Request_Status" EntityType="Self.Money_Request_Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_Material" EntityType="Self.Order_Material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_Status" EntityType="Self.Order_Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Petty_Cash" EntityType="Self.Petty_Cash" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Purchase_InTo_Stock" EntityType="Self.Purchase_InTo_Stock" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Purchase_InTo_Stock_Material" EntityType="Self.Purchase_InTo_Stock_Material" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Site" EntityType="Self.Site" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Site_Material_Report" EntityType="Self.Site_Material_Report" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Site_Note" EntityType="Self.Site_Note" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Site_Other_Expenses" EntityType="Self.Site_Other_Expenses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff_Allocated_Site" EntityType="Self.Staff_Allocated_Site" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff_Attendance" EntityType="Self.Staff_Attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff_Mobile" EntityType="Self.Staff_Mobile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff_OT" EntityType="Self.Staff_OT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stock" EntityType="Self.Stock" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tool" EntityType="Self.Tool" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tool_Allocation" EntityType="Self.Tool_Allocation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tool_Repairs" EntityType="Self.Tool_Repairs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicle" EntityType="Self.Vehicle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vehicle_Repairs" EntityType="Self.Vehicle_Repairs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Weather_Report" EntityType="Self.Weather_Report" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_gos_gos_material" Association="Self.fk_gos_gos_material">
+            <End Role="GOS" EntitySet="GOS" />
+            <End Role="GOS_Material" EntitySet="GOS_Material" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gos_gos_money_status" Association="Self.fk_gos_gos_money_status">
+            <End Role="GOS" EntitySet="GOS" />
+            <End Role="GOS_Money_Status" EntitySet="GOS_Money_Status" />
+          </AssociationSet>
+          <AssociationSet Name="fk_grn_grn_material" Association="Self.fk_grn_grn_material">
+            <End Role="GRN" EntitySet="GRN" />
+            <End Role="GRN_Material" EntitySet="GRN_Material" />
+          </AssociationSet>
+          <AssociationSet Name="fk_labor_gos" Association="Self.fk_labor_gos">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="GOS" EntitySet="GOS" />
+          </AssociationSet>
+          <AssociationSet Name="fk_labor_labor_advance" Association="Self.fk_labor_labor_advance">
+            <End Role="Labor" EntitySet="Labor" />
+            <End Role="Labor_advance" EntitySet="Labor_advance" />
+          </AssociationSet>
+          <AssociationSet Name="fk_labor_labor_attendance" Association="Self.fk_labor_labor_attendance">
+            <End Role="Labor" EntitySet="Labor" />
+            <End Role="Labor_Attendance" EntitySet="Labor_Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="fk_labor_labor_ot" Association="Self.fk_labor_labor_ot">
+            <End Role="Labor" EntitySet="Labor" />
+            <End Role="Labor_OT" EntitySet="Labor_OT" />
+          </AssociationSet>
+          <AssociationSet Name="fk_labor_lobor_mobile" Association="Self.fk_labor_lobor_mobile">
+            <End Role="Labor" EntitySet="Labor" />
+            <End Role="Labor_Mobile" EntitySet="Labor_Mobile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_material_site_material_report" Association="Self.fk_material_site_material_report">
+            <End Role="Stock" EntitySet="Stock" />
+            <End Role="Site_Material_Report" EntitySet="Site_Material_Report" />
+          </AssociationSet>
+          <AssociationSet Name="fk_money_request_money_request_status" Association="Self.fk_money_request_money_request_status">
+            <End Role="Money_Request" EntitySet="Money_Request" />
+            <End Role="Money_Request_Status" EntitySet="Money_Request_Status" />
+          </AssociationSet>
+          <AssociationSet Name="fk_money_request_petty_cash" Association="Self.fk_money_request_petty_cash">
+            <End Role="Money_Request" EntitySet="Money_Request" />
+            <End Role="Petty_Cash" EntitySet="Petty_Cash" />
+          </AssociationSet>
+          <AssociationSet Name="fk_order_gos" Association="Self.fk_order_gos">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="GOS" EntitySet="GOS" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orders_issue_from_store" Association="Self.fk_orders_issue_from_store">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Issue_From_Stock" EntitySet="Issue_From_Stock" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orders_order_status" Association="Self.fk_orders_order_status">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Order_Status" EntitySet="Order_Status" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orders_orders_material" Association="Self.fk_orders_orders_material">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Order_Material" EntitySet="Order_Material" />
+          </AssociationSet>
+          <AssociationSet Name="fk_purchase_into_stock_purchase_into_stock_material" Association="Self.fk_purchase_into_stock_purchase_into_stock_material">
+            <End Role="Purchase_InTo_Stock" EntitySet="Purchase_InTo_Stock" />
+            <End Role="Purchase_InTo_Stock_Material" EntitySet="Purchase_InTo_Stock_Material" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_grn" Association="Self.fk_site_grn">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="GRN" EntitySet="GRN" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_issue_from_store" Association="Self.fk_site_issue_from_store">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="Issue_From_Stock" EntitySet="Issue_From_Stock" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_lobor" Association="Self.fk_site_lobor">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="Labor" EntitySet="Labor" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_money_request" Association="Self.fk_site_money_request">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="Money_Request" EntitySet="Money_Request" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_site_material_report" Association="Self.fk_site_site_material_report">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="Site_Material_Report" EntitySet="Site_Material_Report" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_site_note" Association="Self.fk_site_site_note">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="Site_Note" EntitySet="Site_Note" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_site_other_expenses" Association="Self.fk_site_site_other_expenses">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="Site_Other_Expenses" EntitySet="Site_Other_Expenses" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_staff_allocated_site" Association="Self.fk_site_staff_allocated_site">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="Staff_Allocated_Site" EntitySet="Staff_Allocated_Site" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_tool_allocation" Association="Self.fk_site_tool_allocation">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="Tool_Allocation" EntitySet="Tool_Allocation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_weather_report" Association="Self.fk_site_weather_report">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="Weather_Report" EntitySet="Weather_Report" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_grn" Association="Self.fk_staff_grn">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="GRN" EntitySet="GRN" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_head_office_expenses" Association="Self.fk_staff_head_office_expenses">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Head_Office_Expenses" EntitySet="Head_Office_Expenses" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_money_request" Association="Self.fk_staff_money_request">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Money_Request" EntitySet="Money_Request" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_orders" Association="Self.fk_staff_orders">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_petty_cash" Association="Self.fk_staff_petty_cash">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Petty_Cash" EntitySet="Petty_Cash" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_staff_allocated_site" Association="Self.fk_staff_staff_allocated_site">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Staff_Allocated_Site" EntitySet="Staff_Allocated_Site" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_staff_attendance" Association="Self.fk_staff_staff_attendance">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Staff_Attendance" EntitySet="Staff_Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_staff_mobile" Association="Self.fk_staff_staff_mobile">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Staff_Mobile" EntitySet="Staff_Mobile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_staff_ot" Association="Self.fk_staff_staff_ot">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Staff_OT" EntitySet="Staff_OT" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stafflabor_advance" Association="Self.fk_stafflabor_advance">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="Labor_advance" EntitySet="Labor_advance" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_purchase_into_stock_material" Association="Self.fk_stock_purchase_into_stock_material">
+            <End Role="Stock" EntitySet="Stock" />
+            <End Role="Purchase_InTo_Stock_Material" EntitySet="Purchase_InTo_Stock_Material" />
+          </AssociationSet>
+          <AssociationSet Name="fk_store_issue_from_store_material" Association="Self.fk_store_issue_from_store_material">
+            <End Role="Stock" EntitySet="Stock" />
+            <End Role="Issue_From_Stock_Material" EntitySet="Issue_From_Stock_Material" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tool_tool_allocation" Association="Self.fk_tool_tool_allocation">
+            <End Role="Tool" EntitySet="Tool" />
+            <End Role="Tool_Allocation" EntitySet="Tool_Allocation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tool_tool_repairs" Association="Self.fk_tool_tool_repairs">
+            <End Role="Tool" EntitySet="Tool" />
+            <End Role="Tool_Repairs" EntitySet="Tool_Repairs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_vehicle_gos" Association="Self.fk_vehicle_gos">
+            <End Role="Vehicle" EntitySet="Vehicle" />
+            <End Role="GOS" EntitySet="GOS" />
+          </AssociationSet>
+          <AssociationSet Name="fk_vehicle_vehicle_repairs" Association="Self.fk_vehicle_vehicle_repairs">
+            <End Role="Vehicle" EntitySet="Vehicle" />
+            <End Role="Vehicle_Repairs" EntitySet="Vehicle_Repairs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NCOMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="GO">
+          <Key>
+            <PropertyRef Name="gos_id" />
+          </Key>
+          <Property Name="gos_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_id" Type="Int32" />
+          <Property Name="driver_id" Type="Int32" />
+          <Property Name="vehicle_id" Type="Int32" />
+          <Property Name="shop" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="bill_no" Type="Int32" />
+          <Property Name="total_amount" Type="Single" />
+          <NavigationProperty Name="GOS_Material" Relationship="Self.fk_gos_gos_material" FromRole="GOS" ToRole="GOS_Material" />
+          <NavigationProperty Name="GOS_Money_Status" Relationship="Self.fk_gos_gos_money_status" FromRole="GOS" ToRole="GOS_Money_Status" />
+          <NavigationProperty Name="Staff" Relationship="Self.fk_labor_gos" FromRole="GOS" ToRole="Staff" />
+          <NavigationProperty Name="Order" Relationship="Self.fk_order_gos" FromRole="GOS" ToRole="Orders" />
+          <NavigationProperty Name="Vehicle" Relationship="Self.fk_vehicle_gos" FromRole="GOS" ToRole="Vehicle" />
+        </EntityType>
+        <EntityType Name="GOS_Material">
+          <Key>
+            <PropertyRef Name="gos_id" />
+            <PropertyRef Name="material" />
+          </Key>
+          <Property Name="gos_id" Type="Int32" Nullable="false" />
+          <Property Name="material" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="unit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="unit_price" Type="Single" />
+          <NavigationProperty Name="GO" Relationship="Self.fk_gos_gos_material" FromRole="GOS_Material" ToRole="GOS" />
+        </EntityType>
+        <EntityType Name="GOS_Money_Status">
+          <Key>
+            <PropertyRef Name="gos_id" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="gos_id" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="time" Type="Time" Precision="7" />
+          <NavigationProperty Name="GO" Relationship="Self.fk_gos_gos_money_status" FromRole="GOS_Money_Status" ToRole="GOS" />
+        </EntityType>
+        <EntityType Name="GRN">
+          <Key>
+            <PropertyRef Name="grn_id" />
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="grn_id" Type="Int32" Nullable="false" />
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="accepted_by" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="time" Type="Time" Precision="7" />
+          <Property Name="vehicle_no" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="vahicle_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="driver_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GRN_Material" Relationship="Self.fk_grn_grn_material" FromRole="GRN" ToRole="GRN_Material" />
+          <NavigationProperty Name="Site" Relationship="Self.fk_site_grn" FromRole="GRN" ToRole="Site" />
+          <NavigationProperty Name="Staff" Relationship="Self.fk_staff_grn" FromRole="GRN" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="GRN_Material">
+          <Key>
+            <PropertyRef Name="grn_id" />
+            <PropertyRef Name="material" />
+          </Key>
+          <Property Name="grn_id" Type="Int32" Nullable="false" />
+          <Property Name="site_id" Type="Int32" />
+          <Property Name="material" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="unit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GRN" Relationship="Self.fk_grn_grn_material" FromRole="GRN_Material" ToRole="GRN" />
+        </EntityType>
+        <EntityType Name="Head_Office_Expenses">
+          <Key>
+            <PropertyRef Name="expense_id" />
+          </Key>
+          <Property Name="expense_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="Single" />
+          <Property Name="bill_no" Type="Int32" />
+          <Property Name="entered_by" Type="Int32" />
+          <NavigationProperty Name="Staff" Relationship="Self.fk_staff_head_office_expenses" FromRole="Head_Office_Expenses" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Issue_From_Stock">
+          <Key>
+            <PropertyRef Name="issue_id" />
+          </Key>
+          <Property Name="issue_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="order_id" Type="Int32" />
+          <Property Name="site_id" Type="Int32" />
+          <NavigationProperty Name="Order" Relationship="Self.fk_orders_issue_from_store" FromRole="Issue_From_Stock" ToRole="Orders" />
+          <NavigationProperty Name="Site" Relationship="Self.fk_site_issue_from_store" FromRole="Issue_From_Stock" ToRole="Site" />
+        </EntityType>
+        <EntityType Name="Issue_From_Stock_Material">
+          <Key>
+            <PropertyRef Name="issue_id" />
+            <PropertyRef Name="material_id" />
+          </Key>
+          <Property Name="issue_id" Type="Int32" Nullable="false" />
+          <Property Name="material_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Stock" Relationship="Self.fk_store_issue_from_store_material" FromRole="Issue_From_Stock_Material" ToRole="Stock" />
+        </EntityType>
+        <EntityType Name="Labor">
+          <Key>
+            <PropertyRef Name="labor_id" />
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="labor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date_of_birth" Type="DateTime" Precision="0" />
+          <Property Name="designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nic" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="join_on" Type="DateTime" Precision="0" />
+          <Property Name="civil_status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="hourly_rate" Type="Single" />
+          <Property Name="ot_rate" Type="Single" />
+          <NavigationProperty Name="Labor_advance" Relationship="Self.fk_labor_labor_advance" FromRole="Labor" ToRole="Labor_advance" />
+          <NavigationProperty Name="Labor_Attendance" Relationship="Self.fk_labor_labor_attendance" FromRole="Labor" ToRole="Labor_Attendance" />
+          <NavigationProperty Name="Labor_OT" Relationship="Self.fk_labor_labor_ot" FromRole="Labor" ToRole="Labor_OT" />
+          <NavigationProperty Name="Labor_Mobile" Relationship="Self.fk_labor_lobor_mobile" FromRole="Labor" ToRole="Labor_Mobile" />
+          <NavigationProperty Name="Site" Relationship="Self.fk_site_lobor" FromRole="Labor" ToRole="Site" />
+        </EntityType>
+        <EntityType Name="Labor_advance">
+          <Key>
+            <PropertyRef Name="labor_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="labor_id" Type="Int32" Nullable="false" />
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="amount" Type="Single" />
+          <Property Name="issued_by" Type="Int32" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="time" Type="Time" Precision="7" />
+          <NavigationProperty Name="Labor" Relationship="Self.fk_labor_labor_advance" FromRole="Labor_advance" ToRole="Labor" />
+          <NavigationProperty Name="Staff" Relationship="Self.fk_stafflabor_advance" FromRole="Labor_advance" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Labor_Attendance">
+          <Key>
+            <PropertyRef Name="labor_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="labor_id" Type="Int32" Nullable="false" />
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="in_time" Type="Time" Precision="7" />
+          <Property Name="out_time" Type="Time" Precision="7" />
+          <NavigationProperty Name="Labor" Relationship="Self.fk_labor_labor_attendance" FromRole="Labor_Attendance" ToRole="Labor" />
+        </EntityType>
+        <EntityType Name="Labor_Mobile">
+          <Key>
+            <PropertyRef Name="labor_id" />
+            <PropertyRef Name="mobile" />
+          </Key>
+          <Property Name="labor_id" Type="Int32" Nullable="false" />
+          <Property Name="site_id" Type="Int32" />
+          <Property Name="mobile" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Labor" Relationship="Self.fk_labor_lobor_mobile" FromRole="Labor_Mobile" ToRole="Labor" />
+        </EntityType>
+        <EntityType Name="Labor_OT">
+          <Key>
+            <PropertyRef Name="labor_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="labor_id" Type="Int32" Nullable="false" />
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ot_hours" Type="Int32" />
+          <NavigationProperty Name="Labor" Relationship="Self.fk_labor_labor_ot" FromRole="Labor_OT" ToRole="Labor" />
+        </EntityType>
+        <EntityType Name="Money_Request">
+          <Key>
+            <PropertyRef Name="request_id" />
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="request_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="amount" Type="Single" />
+          <Property Name="requested_on" Type="DateTime" Precision="0" />
+          <Property Name="requested_at" Type="Time" Precision="7" />
+          <Property Name="approved_by" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Money_Request_Status" Relationship="Self.fk_money_request_money_request_status" FromRole="Money_Request" ToRole="Money_Request_Status" />
+          <NavigationProperty Name="Petty_Cash" Relationship="Self.fk_money_request_petty_cash" FromRole="Money_Request" ToRole="Petty_Cash" />
+          <NavigationProperty Name="Site" Relationship="Self.fk_site_money_request" FromRole="Money_Request" ToRole="Site" />
+          <NavigationProperty Name="Staff" Relationship="Self.fk_staff_money_request" FromRole="Money_Request" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Money_Request_Status">
+          <Key>
+            <PropertyRef Name="request_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="request_id" Type="Int32" Nullable="false" />
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Money_Request" Relationship="Self.fk_money_request_money_request_status" FromRole="Money_Request_Status" ToRole="Money_Request" />
+        </EntityType>
+        <EntityType Name="Order_Material">
+          <Key>
+            <PropertyRef Name="order_id" />
+            <PropertyRef Name="material" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" />
+          <Property Name="material" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="unit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="note" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Order" Relationship="Self.fk_orders_orders_material" FromRole="Order_Material" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Order_Status">
+          <Key>
+            <PropertyRef Name="order_id" />
+            <PropertyRef Name="status" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="time" Type="Time" Precision="7" />
+          <NavigationProperty Name="Order" Relationship="Self.fk_orders_order_status" FromRole="Order_Status" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="order_id" />
+          </Key>
+          <Property Name="order_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="approved_by" Type="Int32" />
+          <NavigationProperty Name="GOS" Relationship="Self.fk_order_gos" FromRole="Orders" ToRole="GOS" />
+          <NavigationProperty Name="Issue_From_Stock" Relationship="Self.fk_orders_issue_from_store" FromRole="Orders" ToRole="Issue_From_Stock" />
+          <NavigationProperty Name="Order_Material" Relationship="Self.fk_orders_orders_material" FromRole="Orders" ToRole="Order_Material" />
+          <NavigationProperty Name="Order_Status" Relationship="Self.fk_orders_order_status" FromRole="Orders" ToRole="Order_Status" />
+          <NavigationProperty Name="Staff" Relationship="Self.fk_staff_orders" FromRole="Orders" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Petty_Cash">
+          <Key>
+            <PropertyRef Name="petty_cash_id" />
+            <PropertyRef Name="request_id" />
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="petty_cash_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="request_id" Type="Int32" Nullable="false" />
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="deliverer" Type="Int32" />
+          <Property Name="amount" Type="Single" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="balance" Type="Single" />
+          <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Money_Request" Relationship="Self.fk_money_request_petty_cash" FromRole="Petty_Cash" ToRole="Money_Request" />
+          <NavigationProperty Name="Staff" Relationship="Self.fk_staff_petty_cash" FromRole="Petty_Cash" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Purchase_InTo_Stock">
+          <Key>
+            <PropertyRef Name="purchase_id" />
+          </Key>
+          <Property Name="purchase_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dealer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="total_amount" Type="Single" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="bill_no" Type="Int32" />
+          <NavigationProperty Name="Purchase_InTo_Stock_Material" Relationship="Self.fk_purchase_into_stock_purchase_into_stock_material" FromRole="Purchase_InTo_Stock" ToRole="Purchase_InTo_Stock_Material" />
+        </EntityType>
+        <EntityType Name="Purchase_InTo_Stock_Material">
+          <Key>
+            <PropertyRef Name="material_id" />
+            <PropertyRef Name="purchase_id" />
+          </Key>
+          <Property Name="material_id" Type="Int32" Nullable="false" />
+          <Property Name="purchase_id" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="unit_price" Type="Single" />
+          <NavigationProperty Name="Purchase_InTo_Stock" Relationship="Self.fk_purchase_into_stock_purchase_into_stock_material" FromRole="Purchase_InTo_Stock_Material" ToRole="Purchase_InTo_Stock" />
+          <NavigationProperty Name="Stock" Relationship="Self.fk_stock_purchase_into_stock_material" FromRole="Purchase_InTo_Stock_Material" ToRole="Stock" />
+        </EntityType>
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="site_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="start_date" Type="DateTime" Precision="0" />
+          <Property Name="deadline" Type="DateTime" Precision="0" />
+          <Property Name="estimated_cost" Type="Single" />
+          <Property Name="state" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="GRNs" Relationship="Self.fk_site_grn" FromRole="Site" ToRole="GRN" />
+          <NavigationProperty Name="Issue_From_Stock" Relationship="Self.fk_site_issue_from_store" FromRole="Site" ToRole="Issue_From_Stock" />
+          <NavigationProperty Name="Labors" Relationship="Self.fk_site_lobor" FromRole="Site" ToRole="Labor" />
+          <NavigationProperty Name="Money_Request" Relationship="Self.fk_site_money_request" FromRole="Site" ToRole="Money_Request" />
+          <NavigationProperty Name="Site_Material_Report" Relationship="Self.fk_site_site_material_report" FromRole="Site" ToRole="Site_Material_Report" />
+          <NavigationProperty Name="Site_Note" Relationship="Self.fk_site_site_note" FromRole="Site" ToRole="Site_Note" />
+          <NavigationProperty Name="Site_Other_Expenses" Relationship="Self.fk_site_site_other_expenses" FromRole="Site" ToRole="Site_Other_Expenses" />
+          <NavigationProperty Name="Staff_Allocated_Site" Relationship="Self.fk_site_staff_allocated_site" FromRole="Site" ToRole="Staff_Allocated_Site" />
+          <NavigationProperty Name="Tool_Allocation" Relationship="Self.fk_site_tool_allocation" FromRole="Site" ToRole="Tool_Allocation" />
+          <NavigationProperty Name="Weather_Report" Relationship="Self.fk_site_weather_report" FromRole="Site" ToRole="Weather_Report" />
+        </EntityType>
+        <EntityType Name="Site_Material_Report">
+          <Key>
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="date" />
+            <PropertyRef Name="material_id" />
+          </Key>
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="material_id" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="unit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Site" Relationship="Self.fk_site_site_material_report" FromRole="Site_Material_Report" ToRole="Site" />
+          <NavigationProperty Name="Stock" Relationship="Self.fk_material_site_material_report" FromRole="Site_Material_Report" ToRole="Stock" />
+        </EntityType>
+        <EntityType Name="Site_Note">
+          <Key>
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="note_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="note" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Site" Relationship="Self.fk_site_site_note" FromRole="Site_Note" ToRole="Site" />
+        </EntityType>
+        <EntityType Name="Site_Other_Expenses">
+          <Key>
+            <PropertyRef Name="site_expense_id" />
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="site_expense_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="Single" />
+          <Property Name="bill_no" Type="Int32" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="time" Type="Time" Precision="7" />
+          <NavigationProperty Name="Site" Relationship="Self.fk_site_site_other_expenses" FromRole="Site_Other_Expenses" ToRole="Site" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="staff_id" />
+          </Key>
+          <Property Name="staff_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date_of_birth" Type="DateTime" Precision="0" />
+          <Property Name="designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nic" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="user_level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="join_on" Type="DateTime" Precision="0" />
+          <Property Name="basic_salary" Type="Single" />
+          <Property Name="hourly_rate" Type="Single" />
+          <Property Name="ot_rate" Type="Single" />
+          <NavigationProperty Name="GOS" Relationship="Self.fk_labor_gos" FromRole="Staff" ToRole="GOS" />
+          <NavigationProperty Name="GRNs" Relationship="Self.fk_staff_grn" FromRole="Staff" ToRole="GRN" />
+          <NavigationProperty Name="Head_Office_Expenses" Relationship="Self.fk_staff_head_office_expenses" FromRole="Staff" ToRole="Head_Office_Expenses" />
+          <NavigationProperty Name="Labor_advance" Relationship="Self.fk_stafflabor_advance" FromRole="Staff" ToRole="Labor_advance" />
+          <NavigationProperty Name="Money_Request" Relationship="Self.fk_staff_money_request" FromRole="Staff" ToRole="Money_Request" />
+          <NavigationProperty Name="Orders" Relationship="Self.fk_staff_orders" FromRole="Staff" ToRole="Orders" />
+          <NavigationProperty Name="Petty_Cash" Relationship="Self.fk_staff_petty_cash" FromRole="Staff" ToRole="Petty_Cash" />
+          <NavigationProperty Name="Staff_Allocated_Site" Relationship="Self.fk_staff_staff_allocated_site" FromRole="Staff" ToRole="Staff_Allocated_Site" />
+          <NavigationProperty Name="Staff_Attendance" Relationship="Self.fk_staff_staff_attendance" FromRole="Staff" ToRole="Staff_Attendance" />
+          <NavigationProperty Name="Staff_Mobile" Relationship="Self.fk_staff_staff_mobile" FromRole="Staff" ToRole="Staff_Mobile" />
+          <NavigationProperty Name="Staff_OT" Relationship="Self.fk_staff_staff_ot" FromRole="Staff" ToRole="Staff_OT" />
+        </EntityType>
+        <EntityType Name="Staff_Allocated_Site">
+          <Key>
+            <PropertyRef Name="staff_id" />
+            <PropertyRef Name="site_id" />
+          </Key>
+          <Property Name="staff_id" Type="Int32" Nullable="false" />
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="started_date" Type="DateTime" Precision="0" />
+          <Property Name="end_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Site" Relationship="Self.fk_site_staff_allocated_site" FromRole="Staff_Allocated_Site" ToRole="Site" />
+          <NavigationProperty Name="Staff" Relationship="Self.fk_staff_staff_allocated_site" FromRole="Staff_Allocated_Site" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Staff_Attendance">
+          <Key>
+            <PropertyRef Name="staff_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="staff_id" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="attendance" Type="Boolean" />
+          <Property Name="time_in" Type="Time" Precision="7" />
+          <Property Name="time_out" Type="Time" Precision="7" />
+          <NavigationProperty Name="Staff" Relationship="Self.fk_staff_staff_attendance" FromRole="Staff_Attendance" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Staff_Mobile">
+          <Key>
+            <PropertyRef Name="staff_id" />
+            <PropertyRef Name="mobile" />
+          </Key>
+          <Property Name="staff_id" Type="Int32" Nullable="false" />
+          <Property Name="mobile" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Staff" Relationship="Self.fk_staff_staff_mobile" FromRole="Staff_Mobile" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Staff_OT">
+          <Key>
+            <PropertyRef Name="staff_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="staff_id" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="hours" Type="Int32" />
+          <NavigationProperty Name="Staff" Relationship="Self.fk_staff_staff_ot" FromRole="Staff_OT" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Stock">
+          <Key>
+            <PropertyRef Name="material_id" />
+          </Key>
+          <Property Name="material_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="material_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="brand" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="unit" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Issue_From_Stock_Material" Relationship="Self.fk_store_issue_from_store_material" FromRole="Stock" ToRole="Issue_From_Stock_Material" />
+          <NavigationProperty Name="Purchase_InTo_Stock_Material" Relationship="Self.fk_stock_purchase_into_stock_material" FromRole="Stock" ToRole="Purchase_InTo_Stock_Material" />
+          <NavigationProperty Name="Site_Material_Report" Relationship="Self.fk_material_site_material_report" FromRole="Stock" ToRole="Site_Material_Report" />
+        </EntityType>
+        <EntityType Name="Tool">
+          <Key>
+            <PropertyRef Name="tool_id" />
+          </Key>
+          <Property Name="tool_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="date_of_purchase" Type="DateTime" Precision="0" />
+          <Property Name="price" Type="Single" />
+          <Property Name="condition" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tool_Allocation" Relationship="Self.fk_tool_tool_allocation" FromRole="Tool" ToRole="Tool_Allocation" />
+          <NavigationProperty Name="Tool_Repairs" Relationship="Self.fk_tool_tool_repairs" FromRole="Tool" ToRole="Tool_Repairs" />
+        </EntityType>
+        <EntityType Name="Tool_Allocation">
+          <Key>
+            <PropertyRef Name="tool_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="allocated_date" />
+          </Key>
+          <Property Name="tool_id" Type="Int32" Nullable="false" />
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="allocated_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="release_date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Site" Relationship="Self.fk_site_tool_allocation" FromRole="Tool_Allocation" ToRole="Site" />
+          <NavigationProperty Name="Tool" Relationship="Self.fk_tool_tool_allocation" FromRole="Tool_Allocation" ToRole="Tool" />
+        </EntityType>
+        <EntityType Name="Tool_Repairs">
+          <Key>
+            <PropertyRef Name="tool_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="tool_id" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="service_station" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="bill_no" Type="Int32" />
+          <Property Name="cost" Type="Single" />
+          <NavigationProperty Name="Tool" Relationship="Self.fk_tool_tool_repairs" FromRole="Tool_Repairs" ToRole="Tool" />
+        </EntityType>
+        <EntityType Name="Vehicle">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+          </Key>
+          <Property Name="vehicle_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="reg_no" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="date_of_purchase" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="GOS" Relationship="Self.fk_vehicle_gos" FromRole="Vehicle" ToRole="GOS" />
+          <NavigationProperty Name="Vehicle_Repairs" Relationship="Self.fk_vehicle_vehicle_repairs" FromRole="Vehicle" ToRole="Vehicle_Repairs" />
+        </EntityType>
+        <EntityType Name="Vehicle_Repairs">
+          <Key>
+            <PropertyRef Name="vehicle_id" />
+            <PropertyRef Name="date" />
+          </Key>
+          <Property Name="vehicle_id" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="service_station" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="cost" Type="Single" />
+          <NavigationProperty Name="Vehicle" Relationship="Self.fk_vehicle_vehicle_repairs" FromRole="Vehicle_Repairs" ToRole="Vehicle" />
+        </EntityType>
+        <EntityType Name="Weather_Report">
+          <Key>
+            <PropertyRef Name="weather_report_id" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="date" />
+            <PropertyRef Name="time" />
+          </Key>
+          <Property Name="weather_report_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="site_id" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="time" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="condition" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Site" Relationship="Self.fk_site_weather_report" FromRole="Weather_Report" ToRole="Site" />
+        </EntityType>
+        <Association Name="fk_gos_gos_material">
+          <End Role="GOS" Type="Self.GO" Multiplicity="1" />
+          <End Role="GOS_Material" Type="Self.GOS_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GOS">
+              <PropertyRef Name="gos_id" />
+            </Principal>
+            <Dependent Role="GOS_Material">
+              <PropertyRef Name="gos_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_gos_gos_money_status">
+          <End Role="GOS" Type="Self.GO" Multiplicity="1" />
+          <End Role="GOS_Money_Status" Type="Self.GOS_Money_Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GOS">
+              <PropertyRef Name="gos_id" />
+            </Principal>
+            <Dependent Role="GOS_Money_Status">
+              <PropertyRef Name="gos_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_labor_gos">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="GOS" Type="Self.GO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="GOS">
+              <PropertyRef Name="driver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_order_gos">
+          <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="GOS" Type="Self.GO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="GOS">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_vehicle_gos">
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+          <End Role="GOS" Type="Self.GO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="GOS">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_grn_grn_material">
+          <End Role="GRN" Type="Self.GRN" Multiplicity="0..1" />
+          <End Role="GRN_Material" Type="Self.GRN_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRN">
+              <PropertyRef Name="grn_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="GRN_Material">
+              <PropertyRef Name="grn_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_grn">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="GRN" Type="Self.GRN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="GRN">
+              <PropertyRef Name="grn_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_grn">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="GRN" Type="Self.GRN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="GRN">
+              <PropertyRef Name="accepted_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_head_office_expenses">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Head_Office_Expenses" Type="Self.Head_Office_Expenses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Head_Office_Expenses">
+              <PropertyRef Name="entered_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orders_issue_from_store">
+          <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="Issue_From_Stock" Type="Self.Issue_From_Stock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="Issue_From_Stock">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_issue_from_store">
+          <End Role="Site" Type="Self.Site" Multiplicity="0..1" />
+          <End Role="Issue_From_Stock" Type="Self.Issue_From_Stock" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Issue_From_Stock">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_store_issue_from_store_material">
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Issue_From_Stock_Material" Type="Self.Issue_From_Stock_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stock">
+              <PropertyRef Name="material_id" />
+            </Principal>
+            <Dependent Role="Issue_From_Stock_Material">
+              <PropertyRef Name="material_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_labor_labor_advance">
+          <End Role="Labor" Type="Self.Labor" Multiplicity="1" />
+          <End Role="Labor_advance" Type="Self.Labor_advance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Labor">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Labor_advance">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_labor_labor_attendance">
+          <End Role="Labor" Type="Self.Labor" Multiplicity="1" />
+          <End Role="Labor_Attendance" Type="Self.Labor_Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Labor">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Labor_Attendance">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_labor_labor_ot">
+          <End Role="Labor" Type="Self.Labor" Multiplicity="1" />
+          <End Role="Labor_OT" Type="Self.Labor_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Labor">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Labor_OT">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_labor_lobor_mobile">
+          <End Role="Labor" Type="Self.Labor" Multiplicity="0..1" />
+          <End Role="Labor_Mobile" Type="Self.Labor_Mobile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Labor">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Labor_Mobile">
+              <PropertyRef Name="labor_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_lobor">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Labor" Type="Self.Labor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Labor">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stafflabor_advance">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Labor_advance" Type="Self.Labor_advance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Labor_advance">
+              <PropertyRef Name="issued_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_money_request_money_request_status">
+          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="1" />
+          <End Role="Money_Request_Status" Type="Self.Money_Request_Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Money_Request">
+              <PropertyRef Name="request_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Money_Request_Status">
+              <PropertyRef Name="request_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_money_request_petty_cash">
+          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="1" />
+          <End Role="Petty_Cash" Type="Self.Petty_Cash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Money_Request">
+              <PropertyRef Name="request_id" />
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Petty_Cash">
+              <PropertyRef Name="request_id" />
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_money_request">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Money_Request">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_money_request">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Money_Request">
+              <PropertyRef Name="approved_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orders_orders_material">
+          <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+          <End Role="Order_Material" Type="Self.Order_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="Order_Material">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_orders_order_status">
+          <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+          <End Role="Order_Status" Type="Self.Order_Status" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="order_id" />
+            </Principal>
+            <Dependent Role="Order_Status">
+              <PropertyRef Name="order_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_orders">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="approved_by" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_petty_cash">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Petty_Cash" Type="Self.Petty_Cash" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Petty_Cash">
+              <PropertyRef Name="deliverer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_purchase_into_stock_purchase_into_stock_material">
+          <End Role="Purchase_InTo_Stock" Type="Self.Purchase_InTo_Stock" Multiplicity="1" />
+          <End Role="Purchase_InTo_Stock_Material" Type="Self.Purchase_InTo_Stock_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Purchase_InTo_Stock">
+              <PropertyRef Name="purchase_id" />
+            </Principal>
+            <Dependent Role="Purchase_InTo_Stock_Material">
+              <PropertyRef Name="purchase_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_stock_purchase_into_stock_material">
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Purchase_InTo_Stock_Material" Type="Self.Purchase_InTo_Stock_Material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stock">
+              <PropertyRef Name="material_id" />
+            </Principal>
+            <Dependent Role="Purchase_InTo_Stock_Material">
+              <PropertyRef Name="material_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_site_material_report">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site_Material_Report" Type="Self.Site_Material_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Site_Material_Report">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_site_note">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site_Note" Type="Self.Site_Note" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Site_Note">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_site_other_expenses">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site_Other_Expenses" Type="Self.Site_Other_Expenses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Site_Other_Expenses">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_staff_allocated_site">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Staff_Allocated_Site" Type="Self.Staff_Allocated_Site" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Staff_Allocated_Site">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_tool_allocation">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Tool_Allocation" Type="Self.Tool_Allocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Tool_Allocation">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_site_weather_report">
+          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Weather_Report" Type="Self.Weather_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="site_id" />
+            </Principal>
+            <Dependent Role="Weather_Report">
+              <PropertyRef Name="site_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_material_site_material_report">
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Site_Material_Report" Type="Self.Site_Material_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stock">
+              <PropertyRef Name="material_id" />
+            </Principal>
+            <Dependent Role="Site_Material_Report">
+              <PropertyRef Name="material_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_staff_allocated_site">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff_Allocated_Site" Type="Self.Staff_Allocated_Site" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Staff_Allocated_Site">
+              <PropertyRef Name="staff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_staff_attendance">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff_Attendance" Type="Self.Staff_Attendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Staff_Attendance">
+              <PropertyRef Name="staff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_staff_mobile">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff_Mobile" Type="Self.Staff_Mobile" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Staff_Mobile">
+              <PropertyRef Name="staff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_staff_staff_ot">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff_OT" Type="Self.Staff_OT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staff_id" />
+            </Principal>
+            <Dependent Role="Staff_OT">
+              <PropertyRef Name="staff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tool_tool_allocation">
+          <End Role="Tool" Type="Self.Tool" Multiplicity="1" />
+          <End Role="Tool_Allocation" Type="Self.Tool_Allocation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tool">
+              <PropertyRef Name="tool_id" />
+            </Principal>
+            <Dependent Role="Tool_Allocation">
+              <PropertyRef Name="tool_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tool_tool_repairs">
+          <End Role="Tool" Type="Self.Tool" Multiplicity="1" />
+          <End Role="Tool_Repairs" Type="Self.Tool_Repairs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tool">
+              <PropertyRef Name="tool_id" />
+            </Principal>
+            <Dependent Role="Tool_Repairs">
+              <PropertyRef Name="tool_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_vehicle_vehicle_repairs">
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="1" />
+          <End Role="Vehicle_Repairs" Type="Self.Vehicle_Repairs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vehicle">
+              <PropertyRef Name="vehicle_id" />
+            </Principal>
+            <Dependent Role="Vehicle_Repairs">
+              <PropertyRef Name="vehicle_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NCOMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GOS" EntityType="Self.GO" />
+          <EntitySet Name="GOS_Material" EntityType="Self.GOS_Material" />
+          <EntitySet Name="GOS_Money_Status" EntityType="Self.GOS_Money_Status" />
+          <EntitySet Name="GRNs" EntityType="Self.GRN" />
+          <EntitySet Name="GRN_Material" EntityType="Self.GRN_Material" />
+          <EntitySet Name="Head_Office_Expenses" EntityType="Self.Head_Office_Expenses" />
+          <EntitySet Name="Issue_From_Stock" EntityType="Self.Issue_From_Stock" />
+          <EntitySet Name="Issue_From_Stock_Material" EntityType="Self.Issue_From_Stock_Material" />
+          <EntitySet Name="Labors" EntityType="Self.Labor" />
+          <EntitySet Name="Labor_advance" EntityType="Self.Labor_advance" />
+          <EntitySet Name="Labor_Attendance" EntityType="Self.Labor_Attendance" />
+          <EntitySet Name="Labor_Mobile" EntityType="Self.Labor_Mobile" />
+          <EntitySet Name="Labor_OT" EntityType="Self.Labor_OT" />
+          <EntitySet Name="Money_Request" EntityType="Self.Money_Request" />
+          <EntitySet Name="Money_Request_Status" EntityType="Self.Money_Request_Status" />
+          <EntitySet Name="Order_Material" EntityType="Self.Order_Material" />
+          <EntitySet Name="Order_Status" EntityType="Self.Order_Status" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Petty_Cash" EntityType="Self.Petty_Cash" />
+          <EntitySet Name="Purchase_InTo_Stock" EntityType="Self.Purchase_InTo_Stock" />
+          <EntitySet Name="Purchase_InTo_Stock_Material" EntityType="Self.Purchase_InTo_Stock_Material" />
+          <EntitySet Name="Sites" EntityType="Self.Site" />
+          <EntitySet Name="Site_Material_Report" EntityType="Self.Site_Material_Report" />
+          <EntitySet Name="Site_Note" EntityType="Self.Site_Note" />
+          <EntitySet Name="Site_Other_Expenses" EntityType="Self.Site_Other_Expenses" />
+          <EntitySet Name="Staffs" EntityType="Self.Staff" />
+          <EntitySet Name="Staff_Allocated_Site" EntityType="Self.Staff_Allocated_Site" />
+          <EntitySet Name="Staff_Attendance" EntityType="Self.Staff_Attendance" />
+          <EntitySet Name="Staff_Mobile" EntityType="Self.Staff_Mobile" />
+          <EntitySet Name="Staff_OT" EntityType="Self.Staff_OT" />
+          <EntitySet Name="Stocks" EntityType="Self.Stock" />
+          <EntitySet Name="Tools" EntityType="Self.Tool" />
+          <EntitySet Name="Tool_Allocation" EntityType="Self.Tool_Allocation" />
+          <EntitySet Name="Tool_Repairs" EntityType="Self.Tool_Repairs" />
+          <EntitySet Name="Vehicles" EntityType="Self.Vehicle" />
+          <EntitySet Name="Vehicle_Repairs" EntityType="Self.Vehicle_Repairs" />
+          <EntitySet Name="Weather_Report" EntityType="Self.Weather_Report" />
+          <AssociationSet Name="fk_gos_gos_material" Association="Self.fk_gos_gos_material">
+            <End Role="GOS" EntitySet="GOS" />
+            <End Role="GOS_Material" EntitySet="GOS_Material" />
+          </AssociationSet>
+          <AssociationSet Name="fk_gos_gos_money_status" Association="Self.fk_gos_gos_money_status">
+            <End Role="GOS" EntitySet="GOS" />
+            <End Role="GOS_Money_Status" EntitySet="GOS_Money_Status" />
+          </AssociationSet>
+          <AssociationSet Name="fk_labor_gos" Association="Self.fk_labor_gos">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="GOS" EntitySet="GOS" />
+          </AssociationSet>
+          <AssociationSet Name="fk_order_gos" Association="Self.fk_order_gos">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="GOS" EntitySet="GOS" />
+          </AssociationSet>
+          <AssociationSet Name="fk_vehicle_gos" Association="Self.fk_vehicle_gos">
+            <End Role="Vehicle" EntitySet="Vehicles" />
+            <End Role="GOS" EntitySet="GOS" />
+          </AssociationSet>
+          <AssociationSet Name="fk_grn_grn_material" Association="Self.fk_grn_grn_material">
+            <End Role="GRN" EntitySet="GRNs" />
+            <End Role="GRN_Material" EntitySet="GRN_Material" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_grn" Association="Self.fk_site_grn">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="GRN" EntitySet="GRNs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_grn" Association="Self.fk_staff_grn">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="GRN" EntitySet="GRNs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_head_office_expenses" Association="Self.fk_staff_head_office_expenses">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Head_Office_Expenses" EntitySet="Head_Office_Expenses" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orders_issue_from_store" Association="Self.fk_orders_issue_from_store">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Issue_From_Stock" EntitySet="Issue_From_Stock" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_issue_from_store" Association="Self.fk_site_issue_from_store">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="Issue_From_Stock" EntitySet="Issue_From_Stock" />
+          </AssociationSet>
+          <AssociationSet Name="fk_store_issue_from_store_material" Association="Self.fk_store_issue_from_store_material">
+            <End Role="Stock" EntitySet="Stocks" />
+            <End Role="Issue_From_Stock_Material" EntitySet="Issue_From_Stock_Material" />
+          </AssociationSet>
+          <AssociationSet Name="fk_labor_labor_advance" Association="Self.fk_labor_labor_advance">
+            <End Role="Labor" EntitySet="Labors" />
+            <End Role="Labor_advance" EntitySet="Labor_advance" />
+          </AssociationSet>
+          <AssociationSet Name="fk_labor_labor_attendance" Association="Self.fk_labor_labor_attendance">
+            <End Role="Labor" EntitySet="Labors" />
+            <End Role="Labor_Attendance" EntitySet="Labor_Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="fk_labor_labor_ot" Association="Self.fk_labor_labor_ot">
+            <End Role="Labor" EntitySet="Labors" />
+            <End Role="Labor_OT" EntitySet="Labor_OT" />
+          </AssociationSet>
+          <AssociationSet Name="fk_labor_lobor_mobile" Association="Self.fk_labor_lobor_mobile">
+            <End Role="Labor" EntitySet="Labors" />
+            <End Role="Labor_Mobile" EntitySet="Labor_Mobile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_lobor" Association="Self.fk_site_lobor">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="Labor" EntitySet="Labors" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stafflabor_advance" Association="Self.fk_stafflabor_advance">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Labor_advance" EntitySet="Labor_advance" />
+          </AssociationSet>
+          <AssociationSet Name="fk_money_request_money_request_status" Association="Self.fk_money_request_money_request_status">
+            <End Role="Money_Request" EntitySet="Money_Request" />
+            <End Role="Money_Request_Status" EntitySet="Money_Request_Status" />
+          </AssociationSet>
+          <AssociationSet Name="fk_money_request_petty_cash" Association="Self.fk_money_request_petty_cash">
+            <End Role="Money_Request" EntitySet="Money_Request" />
+            <End Role="Petty_Cash" EntitySet="Petty_Cash" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_money_request" Association="Self.fk_site_money_request">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="Money_Request" EntitySet="Money_Request" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_money_request" Association="Self.fk_staff_money_request">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Money_Request" EntitySet="Money_Request" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orders_orders_material" Association="Self.fk_orders_orders_material">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Order_Material" EntitySet="Order_Material" />
+          </AssociationSet>
+          <AssociationSet Name="fk_orders_order_status" Association="Self.fk_orders_order_status">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Order_Status" EntitySet="Order_Status" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_orders" Association="Self.fk_staff_orders">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_petty_cash" Association="Self.fk_staff_petty_cash">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Petty_Cash" EntitySet="Petty_Cash" />
+          </AssociationSet>
+          <AssociationSet Name="fk_purchase_into_stock_purchase_into_stock_material" Association="Self.fk_purchase_into_stock_purchase_into_stock_material">
+            <End Role="Purchase_InTo_Stock" EntitySet="Purchase_InTo_Stock" />
+            <End Role="Purchase_InTo_Stock_Material" EntitySet="Purchase_InTo_Stock_Material" />
+          </AssociationSet>
+          <AssociationSet Name="fk_stock_purchase_into_stock_material" Association="Self.fk_stock_purchase_into_stock_material">
+            <End Role="Stock" EntitySet="Stocks" />
+            <End Role="Purchase_InTo_Stock_Material" EntitySet="Purchase_InTo_Stock_Material" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_site_material_report" Association="Self.fk_site_site_material_report">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="Site_Material_Report" EntitySet="Site_Material_Report" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_site_note" Association="Self.fk_site_site_note">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="Site_Note" EntitySet="Site_Note" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_site_other_expenses" Association="Self.fk_site_site_other_expenses">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="Site_Other_Expenses" EntitySet="Site_Other_Expenses" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_staff_allocated_site" Association="Self.fk_site_staff_allocated_site">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="Staff_Allocated_Site" EntitySet="Staff_Allocated_Site" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_tool_allocation" Association="Self.fk_site_tool_allocation">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="Tool_Allocation" EntitySet="Tool_Allocation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_site_weather_report" Association="Self.fk_site_weather_report">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="Weather_Report" EntitySet="Weather_Report" />
+          </AssociationSet>
+          <AssociationSet Name="fk_material_site_material_report" Association="Self.fk_material_site_material_report">
+            <End Role="Stock" EntitySet="Stocks" />
+            <End Role="Site_Material_Report" EntitySet="Site_Material_Report" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_staff_allocated_site" Association="Self.fk_staff_staff_allocated_site">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Staff_Allocated_Site" EntitySet="Staff_Allocated_Site" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_staff_attendance" Association="Self.fk_staff_staff_attendance">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Staff_Attendance" EntitySet="Staff_Attendance" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_staff_mobile" Association="Self.fk_staff_staff_mobile">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Staff_Mobile" EntitySet="Staff_Mobile" />
+          </AssociationSet>
+          <AssociationSet Name="fk_staff_staff_ot" Association="Self.fk_staff_staff_ot">
+            <End Role="Staff" EntitySet="Staffs" />
+            <End Role="Staff_OT" EntitySet="Staff_OT" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tool_tool_allocation" Association="Self.fk_tool_tool_allocation">
+            <End Role="Tool" EntitySet="Tools" />
+            <End Role="Tool_Allocation" EntitySet="Tool_Allocation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tool_tool_repairs" Association="Self.fk_tool_tool_repairs">
+            <End Role="Tool" EntitySet="Tools" />
+            <End Role="Tool_Repairs" EntitySet="Tool_Repairs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_vehicle_vehicle_repairs" Association="Self.fk_vehicle_vehicle_repairs">
+            <End Role="Vehicle" EntitySet="Vehicles" />
+            <End Role="Vehicle_Repairs" EntitySet="Vehicle_Repairs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NCOMSModelStoreContainer" CdmEntityContainer="NCOMSEntities">
+          <EntitySetMapping Name="GOS">
+            <EntityTypeMapping TypeName="NCOMSModel.GO">
+              <MappingFragment StoreEntitySet="GOS">
+                <ScalarProperty Name="gos_id" ColumnName="gos_id" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="driver_id" ColumnName="driver_id" />
+                <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+                <ScalarProperty Name="shop" ColumnName="shop" />
+                <ScalarProperty Name="bill_no" ColumnName="bill_no" />
+                <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GOS_Material">
+            <EntityTypeMapping TypeName="NCOMSModel.GOS_Material">
+              <MappingFragment StoreEntitySet="GOS_Material">
+                <ScalarProperty Name="gos_id" ColumnName="gos_id" />
+                <ScalarProperty Name="material" ColumnName="material" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GOS_Money_Status">
+            <EntityTypeMapping TypeName="NCOMSModel.GOS_Money_Status">
+              <MappingFragment StoreEntitySet="GOS_Money_Status">
+                <ScalarProperty Name="gos_id" ColumnName="gos_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="time" ColumnName="time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GRNs">
+            <EntityTypeMapping TypeName="NCOMSModel.GRN">
+              <MappingFragment StoreEntitySet="GRN">
+                <ScalarProperty Name="grn_id" ColumnName="grn_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="accepted_by" ColumnName="accepted_by" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="vehicle_no" ColumnName="vehicle_no" />
+                <ScalarProperty Name="vahicle_type" ColumnName="vahicle_type" />
+                <ScalarProperty Name="driver_name" ColumnName="driver_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GRN_Material">
+            <EntityTypeMapping TypeName="NCOMSModel.GRN_Material">
+              <MappingFragment StoreEntitySet="GRN_Material">
+                <ScalarProperty Name="grn_id" ColumnName="grn_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="material" ColumnName="material" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Head_Office_Expenses">
+            <EntityTypeMapping TypeName="NCOMSModel.Head_Office_Expenses">
+              <MappingFragment StoreEntitySet="Head_Office_Expenses">
+                <ScalarProperty Name="expense_id" ColumnName="expense_id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="bill_no" ColumnName="bill_no" />
+                <ScalarProperty Name="entered_by" ColumnName="entered_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Issue_From_Stock">
+            <EntityTypeMapping TypeName="NCOMSModel.Issue_From_Stock">
+              <MappingFragment StoreEntitySet="Issue_From_Stock">
+                <ScalarProperty Name="issue_id" ColumnName="issue_id" />
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Issue_From_Stock_Material">
+            <EntityTypeMapping TypeName="NCOMSModel.Issue_From_Stock_Material">
+              <MappingFragment StoreEntitySet="Issue_From_Stock_Material">
+                <ScalarProperty Name="issue_id" ColumnName="issue_id" />
+                <ScalarProperty Name="material_id" ColumnName="material_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Labors">
+            <EntityTypeMapping TypeName="NCOMSModel.Labor">
+              <MappingFragment StoreEntitySet="Labor">
+                <ScalarProperty Name="labor_id" ColumnName="labor_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
+                <ScalarProperty Name="designation" ColumnName="designation" />
+                <ScalarProperty Name="nic" ColumnName="nic" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="join_on" ColumnName="join_on" />
+                <ScalarProperty Name="civil_status" ColumnName="civil_status" />
+                <ScalarProperty Name="hourly_rate" ColumnName="hourly_rate" />
+                <ScalarProperty Name="ot_rate" ColumnName="ot_rate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Labor_advance">
+            <EntityTypeMapping TypeName="NCOMSModel.Labor_advance">
+              <MappingFragment StoreEntitySet="Labor_advance">
+                <ScalarProperty Name="labor_id" ColumnName="labor_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="issued_by" ColumnName="issued_by" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="time" ColumnName="time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Labor_Attendance">
+            <EntityTypeMapping TypeName="NCOMSModel.Labor_Attendance">
+              <MappingFragment StoreEntitySet="Labor_Attendance">
+                <ScalarProperty Name="labor_id" ColumnName="labor_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="in_time" ColumnName="in_time" />
+                <ScalarProperty Name="out_time" ColumnName="out_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Labor_Mobile">
+            <EntityTypeMapping TypeName="NCOMSModel.Labor_Mobile">
+              <MappingFragment StoreEntitySet="Labor_Mobile">
+                <ScalarProperty Name="labor_id" ColumnName="labor_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Labor_OT">
+            <EntityTypeMapping TypeName="NCOMSModel.Labor_OT">
+              <MappingFragment StoreEntitySet="Labor_OT">
+                <ScalarProperty Name="labor_id" ColumnName="labor_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="ot_hours" ColumnName="ot_hours" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Money_Request">
+            <EntityTypeMapping TypeName="NCOMSModel.Money_Request">
+              <MappingFragment StoreEntitySet="Money_Request">
+                <ScalarProperty Name="request_id" ColumnName="request_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="requested_on" ColumnName="requested_on" />
+                <ScalarProperty Name="requested_at" ColumnName="requested_at" />
+                <ScalarProperty Name="approved_by" ColumnName="approved_by" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Money_Request_Status">
+            <EntityTypeMapping TypeName="NCOMSModel.Money_Request_Status">
+              <MappingFragment StoreEntitySet="Money_Request_Status">
+                <ScalarProperty Name="request_id" ColumnName="request_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Material">
+            <EntityTypeMapping TypeName="NCOMSModel.Order_Material">
+              <MappingFragment StoreEntitySet="Order_Material">
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="material" ColumnName="material" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+                <ScalarProperty Name="note" ColumnName="note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_Status">
+            <EntityTypeMapping TypeName="NCOMSModel.Order_Status">
+              <MappingFragment StoreEntitySet="Order_Status">
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="time" ColumnName="time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="NCOMSModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="order_id" ColumnName="order_id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="approved_by" ColumnName="approved_by" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Petty_Cash">
+            <EntityTypeMapping TypeName="NCOMSModel.Petty_Cash">
+              <MappingFragment StoreEntitySet="Petty_Cash">
+                <ScalarProperty Name="petty_cash_id" ColumnName="petty_cash_id" />
+                <ScalarProperty Name="request_id" ColumnName="request_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="deliverer" ColumnName="deliverer" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Purchase_InTo_Stock">
+            <EntityTypeMapping TypeName="NCOMSModel.Purchase_InTo_Stock">
+              <MappingFragment StoreEntitySet="Purchase_InTo_Stock">
+                <ScalarProperty Name="purchase_id" ColumnName="purchase_id" />
+                <ScalarProperty Name="dealer" ColumnName="dealer" />
+                <ScalarProperty Name="total_amount" ColumnName="total_amount" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="bill_no" ColumnName="bill_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Purchase_InTo_Stock_Material">
+            <EntityTypeMapping TypeName="NCOMSModel.Purchase_InTo_Stock_Material">
+              <MappingFragment StoreEntitySet="Purchase_InTo_Stock_Material">
+                <ScalarProperty Name="material_id" ColumnName="material_id" />
+                <ScalarProperty Name="purchase_id" ColumnName="purchase_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sites">
+            <EntityTypeMapping TypeName="NCOMSModel.Site">
+              <MappingFragment StoreEntitySet="Site">
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="start_date" ColumnName="start_date" />
+                <ScalarProperty Name="deadline" ColumnName="deadline" />
+                <ScalarProperty Name="estimated_cost" ColumnName="estimated_cost" />
+                <ScalarProperty Name="state" ColumnName="state" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Site_Material_Report">
+            <EntityTypeMapping TypeName="NCOMSModel.Site_Material_Report">
+              <MappingFragment StoreEntitySet="Site_Material_Report">
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="material_id" ColumnName="material_id" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Site_Note">
+            <EntityTypeMapping TypeName="NCOMSModel.Site_Note">
+              <MappingFragment StoreEntitySet="Site_Note">
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="note_id" ColumnName="note_id" />
+                <ScalarProperty Name="note" ColumnName="note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Site_Other_Expenses">
+            <EntityTypeMapping TypeName="NCOMSModel.Site_Other_Expenses">
+              <MappingFragment StoreEntitySet="Site_Other_Expenses">
+                <ScalarProperty Name="site_expense_id" ColumnName="site_expense_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="bill_no" ColumnName="bill_no" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="time" ColumnName="time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="NCOMSModel.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
+                <ScalarProperty Name="designation" ColumnName="designation" />
+                <ScalarProperty Name="nic" ColumnName="nic" />
+                <ScalarProperty Name="user_level" ColumnName="user_level" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="join_on" ColumnName="join_on" />
+                <ScalarProperty Name="basic_salary" ColumnName="basic_salary" />
+                <ScalarProperty Name="hourly_rate" ColumnName="hourly_rate" />
+                <ScalarProperty Name="ot_rate" ColumnName="ot_rate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staff_Allocated_Site">
+            <EntityTypeMapping TypeName="NCOMSModel.Staff_Allocated_Site">
+              <MappingFragment StoreEntitySet="Staff_Allocated_Site">
+                <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="started_date" ColumnName="started_date" />
+                <ScalarProperty Name="end_date" ColumnName="end_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staff_Attendance">
+            <EntityTypeMapping TypeName="NCOMSModel.Staff_Attendance">
+              <MappingFragment StoreEntitySet="Staff_Attendance">
+                <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="attendance" ColumnName="attendance" />
+                <ScalarProperty Name="time_in" ColumnName="time_in" />
+                <ScalarProperty Name="time_out" ColumnName="time_out" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staff_Mobile">
+            <EntityTypeMapping TypeName="NCOMSModel.Staff_Mobile">
+              <MappingFragment StoreEntitySet="Staff_Mobile">
+                <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staff_OT">
+            <EntityTypeMapping TypeName="NCOMSModel.Staff_OT">
+              <MappingFragment StoreEntitySet="Staff_OT">
+                <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="hours" ColumnName="hours" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stocks">
+            <EntityTypeMapping TypeName="NCOMSModel.Stock">
+              <MappingFragment StoreEntitySet="Stock">
+                <ScalarProperty Name="material_id" ColumnName="material_id" />
+                <ScalarProperty Name="material_name" ColumnName="material_name" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="unit" ColumnName="unit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tools">
+            <EntityTypeMapping TypeName="NCOMSModel.Tool">
+              <MappingFragment StoreEntitySet="Tool">
+                <ScalarProperty Name="tool_id" ColumnName="tool_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="date_of_purchase" ColumnName="date_of_purchase" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="condition" ColumnName="condition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tool_Allocation">
+            <EntityTypeMapping TypeName="NCOMSModel.Tool_Allocation">
+              <MappingFragment StoreEntitySet="Tool_Allocation">
+                <ScalarProperty Name="tool_id" ColumnName="tool_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="allocated_date" ColumnName="allocated_date" />
+                <ScalarProperty Name="release_date" ColumnName="release_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tool_Repairs">
+            <EntityTypeMapping TypeName="NCOMSModel.Tool_Repairs">
+              <MappingFragment StoreEntitySet="Tool_Repairs">
+                <ScalarProperty Name="tool_id" ColumnName="tool_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="service_station" ColumnName="service_station" />
+                <ScalarProperty Name="bill_no" ColumnName="bill_no" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicles">
+            <EntityTypeMapping TypeName="NCOMSModel.Vehicle">
+              <MappingFragment StoreEntitySet="Vehicle">
+                <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+                <ScalarProperty Name="reg_no" ColumnName="reg_no" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="date_of_purchase" ColumnName="date_of_purchase" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vehicle_Repairs">
+            <EntityTypeMapping TypeName="NCOMSModel.Vehicle_Repairs">
+              <MappingFragment StoreEntitySet="Vehicle_Repairs">
+                <ScalarProperty Name="vehicle_id" ColumnName="vehicle_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="service_station" ColumnName="service_station" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Weather_Report">
+            <EntityTypeMapping TypeName="NCOMSModel.Weather_Report">
+              <MappingFragment StoreEntitySet="Weather_Report">
+                <ScalarProperty Name="weather_report_id" ColumnName="weather_report_id" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="condition" ColumnName="condition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
