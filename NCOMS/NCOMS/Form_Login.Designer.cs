@@ -38,8 +38,6 @@
             this.panel_clock = new System.Windows.Forms.Panel();
             this.lbl_clock = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_signin = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
@@ -137,8 +135,6 @@
             this.panel_clock.Controls.Add(this.lbl_clock);
             this.panel_clock.Controls.Add(this.label5);
             this.panel_clock.Controls.Add(this.label2);
-            this.panel_clock.Controls.Add(this.bunifuSeparator1);
-            this.panel_clock.Controls.Add(this.bunifuSeparator2);
             this.panel_clock.Controls.Add(this.pictureBox2);
             this.panel_clock.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_clock.Location = new System.Drawing.Point(0, 0);
@@ -168,30 +164,6 @@
             this.label5.Size = new System.Drawing.Size(256, 42);
             this.label5.TabIndex = 3;
             this.label5.Text = "Welcome Back!";
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(59, 299);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Size = new System.Drawing.Size(295, 35);
-            this.bunifuSeparator1.TabIndex = 5;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = false;
-            // 
-            // bunifuSeparator2
-            // 
-            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.bunifuSeparator2.LineThickness = 1;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(59, 249);
-            this.bunifuSeparator2.Name = "bunifuSeparator2";
-            this.bunifuSeparator2.Size = new System.Drawing.Size(295, 35);
-            this.bunifuSeparator2.TabIndex = 6;
-            this.bunifuSeparator2.Transparency = 255;
-            this.bunifuSeparator2.Vertical = false;
             // 
             // pictureBox2
             // 
@@ -280,8 +252,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel_clock;
         private System.Windows.Forms.Label label5;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
-        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
         private System.Windows.Forms.Label lbl_clock;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btn_signin;
