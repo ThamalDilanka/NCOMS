@@ -25,23 +25,6 @@ namespace NCOMS
             */
         }
 
-        private void Btn_close_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void Btn_minimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void Btn_signout_Click(object sender, EventArgs e)
-        {
-            Form_Login form_Login = new Form_Login();
-            form_Login.Show();
-            this.Hide();
-        }
-
         private void Btn_menu_dashboard_Click(object sender, EventArgs e)
         {
             btn_menu_dashboard.BackColor = System.Drawing.Color.AliceBlue;
@@ -158,5 +141,21 @@ namespace NCOMS
             panel_container.Controls.Clear();
         }
 
+        private void Btn_signout_Click(object sender, EventArgs e)
+        {
+            Form_Login form_Login = new Form_Login();
+            form_Login.Show();
+            this.Hide();
+        }
+
+        private void Btn_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Btn_minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

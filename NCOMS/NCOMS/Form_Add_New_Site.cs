@@ -19,11 +19,6 @@ namespace NCOMS
             InitializeComponent();
         }
 
-        private void Btn_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void Btn_save_Click(object sender, EventArgs e)
         {
             site.title = tb_title.Text.Trim();
@@ -40,6 +35,11 @@ namespace NCOMS
             }
 
             MessageBox.Show("Record added Successfully");
+            this.Close();
+        }
+
+        private void Btn_close_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

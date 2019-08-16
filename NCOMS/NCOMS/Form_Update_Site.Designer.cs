@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Update_Site));
             this.panel_header = new System.Windows.Forms.Panel();
             this.label_header_title = new System.Windows.Forms.Label();
-            this.btn_close = new Bunifu.Framework.UI.BunifuImageButton();
-            this.form_curve = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.btn_update = new System.Windows.Forms.Button();
             this.tb_title = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,15 +44,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_clear = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
             this.panel_header.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_close)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_header
             // 
             this.panel_header.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel_header.Controls.Add(this.label_header_title);
             this.panel_header.Controls.Add(this.btn_close);
+            this.panel_header.Controls.Add(this.label_header_title);
             this.panel_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_header.Location = new System.Drawing.Point(0, 0);
             this.panel_header.Name = "panel_header";
@@ -74,25 +70,6 @@
             this.label_header_title.TabIndex = 21;
             this.label_header_title.Text = "Update Site";
             this.label_header_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btn_close
-            // 
-            this.btn_close.BackColor = System.Drawing.Color.Transparent;
-            this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
-            this.btn_close.ImageActive = null;
-            this.btn_close.Location = new System.Drawing.Point(482, 3);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(24, 24);
-            this.btn_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_close.TabIndex = 11;
-            this.btn_close.TabStop = false;
-            this.btn_close.Zoom = 10;
-            this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
-            // 
-            // form_curve
-            // 
-            this.form_curve.ElipseRadius = 5;
-            this.form_curve.TargetControl = this;
             // 
             // btn_update
             // 
@@ -237,6 +214,18 @@
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
             // 
+            // btn_close
+            // 
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Image = global::NCOMS.Properties.Resources.icons8_close_window_2;
+            this.btn_close.Location = new System.Drawing.Point(479, 1);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(28, 28);
+            this.btn_close.TabIndex = 24;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
+            // 
             // Form_Update_Site
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,7 +254,6 @@
             this.Load += new System.EventHandler(this.Form_Update_Site_Load);
             this.panel_header.ResumeLayout(false);
             this.panel_header.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_close)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,8 +263,6 @@
 
         private System.Windows.Forms.Panel panel_header;
         private System.Windows.Forms.Label label_header_title;
-        private Bunifu.Framework.UI.BunifuImageButton btn_close;
-        private Bunifu.Framework.UI.BunifuElipse form_curve;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtp_end_date;
@@ -291,5 +277,6 @@
         private System.Windows.Forms.TextBox tb_title;
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Button btn_clear;
+        private System.Windows.Forms.Button btn_close;
     }
 }

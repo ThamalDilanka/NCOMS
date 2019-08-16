@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_SupervisorMainWindow));
             this.panel_header = new System.Windows.Forms.Panel();
-            this.btn_signout = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_minimize = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_close = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_minimize = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
+            this.btn_signout = new System.Windows.Forms.Button();
+            this.label_header_title = new System.Windows.Forms.Label();
+            this.label_header_name = new System.Windows.Forms.Label();
             this.panel_container = new System.Windows.Forms.Panel();
             this.panel_navigation_container = new System.Windows.Forms.Panel();
             this.btn_menu_money_request = new System.Windows.Forms.Button();
@@ -43,75 +44,82 @@
             this.btn_menu_lab_timesheet = new System.Windows.Forms.Button();
             this.btn_menu_mat_usage = new System.Windows.Forms.Button();
             this.btn_menu_dashboard = new System.Windows.Forms.Button();
-            this.form_curve = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.form_drag_controller = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.label_header_title = new System.Windows.Forms.Label();
-            this.btn_header_user = new Bunifu.Framework.UI.BunifuImageButton();
-            this.label_header_name = new System.Windows.Forms.Label();
             this.panel_header.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_signout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_minimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_close)).BeginInit();
             this.panel_navigation_container.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_header_user)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_header
             // 
             this.panel_header.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel_header.Controls.Add(this.label_header_title);
-            this.panel_header.Controls.Add(this.btn_header_user);
-            this.panel_header.Controls.Add(this.label_header_name);
-            this.panel_header.Controls.Add(this.btn_signout);
             this.panel_header.Controls.Add(this.btn_minimize);
             this.panel_header.Controls.Add(this.btn_close);
+            this.panel_header.Controls.Add(this.btn_signout);
+            this.panel_header.Controls.Add(this.label_header_title);
+            this.panel_header.Controls.Add(this.label_header_name);
             this.panel_header.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_header.Location = new System.Drawing.Point(0, 0);
             this.panel_header.Name = "panel_header";
             this.panel_header.Size = new System.Drawing.Size(1350, 30);
             this.panel_header.TabIndex = 12;
             // 
-            // btn_signout
-            // 
-            this.btn_signout.BackColor = System.Drawing.Color.Transparent;
-            this.btn_signout.Image = ((System.Drawing.Image)(resources.GetObject("btn_signout.Image")));
-            this.btn_signout.ImageActive = null;
-            this.btn_signout.Location = new System.Drawing.Point(1240, 3);
-            this.btn_signout.Name = "btn_signout";
-            this.btn_signout.Size = new System.Drawing.Size(24, 24);
-            this.btn_signout.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_signout.TabIndex = 15;
-            this.btn_signout.TabStop = false;
-            this.btn_signout.Zoom = 10;
-            this.btn_signout.Click += new System.EventHandler(this.Btn_signout_Click);
-            // 
             // btn_minimize
             // 
-            this.btn_minimize.BackColor = System.Drawing.Color.Transparent;
+            this.btn_minimize.FlatAppearance.BorderSize = 0;
+            this.btn_minimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_minimize.Image = ((System.Drawing.Image)(resources.GetObject("btn_minimize.Image")));
-            this.btn_minimize.ImageActive = null;
-            this.btn_minimize.Location = new System.Drawing.Point(1277, 3);
+            this.btn_minimize.Location = new System.Drawing.Point(1284, 1);
             this.btn_minimize.Name = "btn_minimize";
-            this.btn_minimize.Size = new System.Drawing.Size(24, 24);
-            this.btn_minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_minimize.TabIndex = 12;
-            this.btn_minimize.TabStop = false;
-            this.btn_minimize.Zoom = 10;
+            this.btn_minimize.Size = new System.Drawing.Size(28, 28);
+            this.btn_minimize.TabIndex = 27;
+            this.btn_minimize.UseVisualStyleBackColor = true;
             this.btn_minimize.Click += new System.EventHandler(this.Btn_minimize_Click);
             // 
             // btn_close
             // 
-            this.btn_close.BackColor = System.Drawing.Color.Transparent;
-            this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
-            this.btn_close.ImageActive = null;
-            this.btn_close.Location = new System.Drawing.Point(1313, 3);
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Image = global::NCOMS.Properties.Resources.icons8_close_window_2;
+            this.btn_close.Location = new System.Drawing.Point(1319, 1);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(24, 24);
-            this.btn_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_close.TabIndex = 11;
-            this.btn_close.TabStop = false;
-            this.btn_close.Zoom = 10;
+            this.btn_close.Size = new System.Drawing.Size(28, 28);
+            this.btn_close.TabIndex = 26;
+            this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
+            // 
+            // btn_signout
+            // 
+            this.btn_signout.FlatAppearance.BorderSize = 0;
+            this.btn_signout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_signout.Image = ((System.Drawing.Image)(resources.GetObject("btn_signout.Image")));
+            this.btn_signout.Location = new System.Drawing.Point(3, 1);
+            this.btn_signout.Name = "btn_signout";
+            this.btn_signout.Size = new System.Drawing.Size(28, 28);
+            this.btn_signout.TabIndex = 25;
+            this.btn_signout.UseVisualStyleBackColor = true;
+            this.btn_signout.Click += new System.EventHandler(this.Btn_signout_Click);
+            // 
+            // label_header_title
+            // 
+            this.label_header_title.AutoSize = true;
+            this.label_header_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_header_title.ForeColor = System.Drawing.Color.White;
+            this.label_header_title.Location = new System.Drawing.Point(640, 6);
+            this.label_header_title.Name = "label_header_title";
+            this.label_header_title.Size = new System.Drawing.Size(71, 18);
+            this.label_header_title.TabIndex = 24;
+            this.label_header_title.Text = "Title Here";
+            this.label_header_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_header_name
+            // 
+            this.label_header_name.AutoSize = true;
+            this.label_header_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_header_name.ForeColor = System.Drawing.Color.White;
+            this.label_header_name.Location = new System.Drawing.Point(36, 6);
+            this.label_header_name.Name = "label_header_name";
+            this.label_header_name.Size = new System.Drawing.Size(94, 18);
+            this.label_header_name.TabIndex = 22;
+            this.label_header_name.Text = "Nimal Perera";
             // 
             // panel_container
             // 
@@ -287,54 +295,6 @@
             this.btn_menu_dashboard.UseVisualStyleBackColor = true;
             this.btn_menu_dashboard.Click += new System.EventHandler(this.Btn_menu_dashboard_Click);
             // 
-            // form_curve
-            // 
-            this.form_curve.ElipseRadius = 5;
-            this.form_curve.TargetControl = this;
-            // 
-            // form_drag_controller
-            // 
-            this.form_drag_controller.Fixed = true;
-            this.form_drag_controller.Horizontal = true;
-            this.form_drag_controller.TargetControl = this.panel_header;
-            this.form_drag_controller.Vertical = true;
-            // 
-            // label_header_title
-            // 
-            this.label_header_title.AutoSize = true;
-            this.label_header_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_header_title.ForeColor = System.Drawing.Color.White;
-            this.label_header_title.Location = new System.Drawing.Point(640, 6);
-            this.label_header_title.Name = "label_header_title";
-            this.label_header_title.Size = new System.Drawing.Size(71, 18);
-            this.label_header_title.TabIndex = 24;
-            this.label_header_title.Text = "Title Here";
-            this.label_header_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btn_header_user
-            // 
-            this.btn_header_user.BackColor = System.Drawing.Color.Transparent;
-            this.btn_header_user.Image = ((System.Drawing.Image)(resources.GetObject("btn_header_user.Image")));
-            this.btn_header_user.ImageActive = null;
-            this.btn_header_user.Location = new System.Drawing.Point(6, 3);
-            this.btn_header_user.Name = "btn_header_user";
-            this.btn_header_user.Size = new System.Drawing.Size(24, 24);
-            this.btn_header_user.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_header_user.TabIndex = 23;
-            this.btn_header_user.TabStop = false;
-            this.btn_header_user.Zoom = 10;
-            // 
-            // label_header_name
-            // 
-            this.label_header_name.AutoSize = true;
-            this.label_header_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_header_name.ForeColor = System.Drawing.Color.White;
-            this.label_header_name.Location = new System.Drawing.Point(36, 6);
-            this.label_header_name.Name = "label_header_name";
-            this.label_header_name.Size = new System.Drawing.Size(94, 18);
-            this.label_header_name.TabIndex = 22;
-            this.label_header_name.Text = "Nimal Perera";
-            // 
             // Form_SupervisorMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,11 +311,7 @@
             this.Text = "Form_SupervisorMainWindow";
             this.panel_header.ResumeLayout(false);
             this.panel_header.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_signout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_minimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_close)).EndInit();
             this.panel_navigation_container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btn_header_user)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -363,12 +319,8 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_header;
-        private Bunifu.Framework.UI.BunifuImageButton btn_minimize;
-        private Bunifu.Framework.UI.BunifuImageButton btn_close;
         private System.Windows.Forms.Panel panel_container;
         private System.Windows.Forms.Panel panel_navigation_container;
-        private Bunifu.Framework.UI.BunifuElipse form_curve;
-        private Bunifu.Framework.UI.BunifuImageButton btn_signout;
         private System.Windows.Forms.Button btn_menu_dashboard;
         private System.Windows.Forms.Button btn_menu_weather_report;
         private System.Windows.Forms.Button btn_menu_mat_request;
@@ -376,9 +328,10 @@
         private System.Windows.Forms.Button btn_menu_lab_timesheet;
         private System.Windows.Forms.Button btn_menu_mat_usage;
         private System.Windows.Forms.Button btn_menu_money_request;
-        private Bunifu.Framework.UI.BunifuDragControl form_drag_controller;
         private System.Windows.Forms.Label label_header_title;
-        private Bunifu.Framework.UI.BunifuImageButton btn_header_user;
         private System.Windows.Forms.Label label_header_name;
+        private System.Windows.Forms.Button btn_minimize;
+        private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.Button btn_signout;
     }
 }

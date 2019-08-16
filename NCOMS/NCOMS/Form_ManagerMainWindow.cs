@@ -22,16 +22,16 @@ namespace NCOMS
             Application.Exit();
         }
 
-        private void Btn_minimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void Btn_signout_Click(object sender, EventArgs e)
         {
             Form_Login form_Login = new Form_Login();
             form_Login.Show();
             this.Hide();
+        }
+
+        private void Btn_minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

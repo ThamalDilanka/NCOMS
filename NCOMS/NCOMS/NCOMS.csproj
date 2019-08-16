@@ -200,6 +200,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Purchase_InTo_Stock.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -292,13 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="UserControl_Site_Item.resx">
       <DependentUpon>UserControl_Site_Item.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,6 +338,19 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\application_12410.ico" />
+    <Content Include="Resources\icons8_billing.ico" />
+    <Content Include="Resources\icons8_clock.ico" />
+    <None Include="Resources\icons8_shutdown_3.ico" />
+    <None Include="Resources\icons8_shutdown_1.ico" />
+    <None Include="Resources\icons8_close_window_2.ico" />
+    <Content Include="Resources\icons8_combo_chart_3.ico" />
+    <Content Include="Resources\icons8_edit_property.ico" />
+    <Content Include="Resources\icons8_invite.ico" />
+    <Content Include="Resources\icons8_keep_dry.ico" />
+    <Content Include="Resources\icons8_partly_cloudy_day.ico" />
+    <Content Include="Resources\icons8_refund.ico" />
+    <None Include="Resources\user_avatar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

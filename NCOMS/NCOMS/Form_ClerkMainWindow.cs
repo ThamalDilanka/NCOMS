@@ -26,23 +26,6 @@ namespace NCOMS
             form_CMW_Dashboard.Show();
         }
 
-        private void Btn_minimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void Btn_close_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void Btn_signout_Click(object sender, EventArgs e)
-        {
-            Form_Login form_Login = new Form_Login();
-            form_Login.Show();
-            this.Hide();
-        }
-
         private void Form_ClerkMainWindow_Load(object sender, EventArgs e)
         {
             
@@ -57,6 +40,23 @@ namespace NCOMS
             form_CMW_Dashboard.TopLevel = false;
             panel_container.Controls.Add(form_CMW_Dashboard);
             form_CMW_Dashboard.Show();
+        }
+
+        private void Btn_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Btn_minimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Btn_signout_Click(object sender, EventArgs e)
+        {
+            Form_Login form_Login = new Form_Login();
+            form_Login.Show();
+            this.Hide();
         }
     }
 }

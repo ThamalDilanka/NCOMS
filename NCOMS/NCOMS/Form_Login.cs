@@ -91,11 +91,6 @@ namespace NCOMS
 
         }
 
-        private void Btn_close_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void Btn_signin_Click(object sender, EventArgs e)
         {
 
@@ -126,6 +121,11 @@ namespace NCOMS
                 form_StoreKeeperMainWindow.Show();
                 this.Hide();
             }
+        }
+
+        private void Btn_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

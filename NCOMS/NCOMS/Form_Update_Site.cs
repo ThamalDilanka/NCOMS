@@ -19,11 +19,6 @@ namespace NCOMS
             InitializeComponent();
         }
 
-        private void Btn_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void Form_Update_Site_Load(object sender, EventArgs e)
         {
             tb_title.Text = DataExchanger.site.title;
@@ -53,6 +48,11 @@ namespace NCOMS
             MessageBox.Show("Record Updated");
             this.Close();
 
+        }
+
+        private void Btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
