@@ -28,36 +28,6 @@ namespace NCOMS
             timer.Start();
         }
 
-        private void Lf_UserName_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
-            {
-                tb_Password.Focus();
-            }
-
-            if(e.KeyCode == Keys.Delete)
-            {
-                tb_UserName.Text = "";
-            }
-        }
-
-        private void Lf_Password_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode == Keys.Up)
-            {
-                tb_UserName.Focus();
-            }
-
-            if(e.KeyCode == Keys.Delete)
-            {
-                tb_Password.Text = "";
-            }
-
-            if(e.KeyCode == Keys.Enter)
-            {
-                Btn_signin_Click(sender, e);
-            }
-        }
 
         private void timer_Tick(object sender, EventArgs e)
         {
@@ -94,28 +64,28 @@ namespace NCOMS
         private void Btn_signin_Click(object sender, EventArgs e)
         {
 
-            if (tb_UserName.Text.Equals("Manager"))
+            if (tb_username.Text.Equals("Manager"))
             {
                 Form_ManagerMainWindow form_ManagerMainWindow = new Form_ManagerMainWindow();
                 form_ManagerMainWindow.Show();
                 this.Hide();
             }
 
-            else if (tb_UserName.Text.Equals("Clerk"))
+            else if (tb_username.Text.Equals("Clerk"))
             {
                 Form_ClerkMainWindow form_ClerkMainWindow = new Form_ClerkMainWindow();
                 form_ClerkMainWindow.Show();
                 this.Hide();
             }
 
-            else if (tb_UserName.Text.Equals("Supervisor"))
+            else if (tb_username.Text.Equals("Supervisor"))
             {
                 Form_SupervisorMainWindow form_SupervisorMainWindow = new Form_SupervisorMainWindow();
                 form_SupervisorMainWindow.Show();
                 this.Hide();
             }
 
-            else if (tb_UserName.Text.Equals("Storekeeper"))
+            else if (tb_username.Text.Equals("Storekeeper"))
             {
                 Form_StoreKeeperMainWindow form_StoreKeeperMainWindow = new Form_StoreKeeperMainWindow();
                 form_StoreKeeperMainWindow.Show();

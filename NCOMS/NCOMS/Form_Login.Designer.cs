@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tb_UserName = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.tb_Password = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel_clock = new System.Windows.Forms.Panel();
@@ -42,6 +40,8 @@
             this.btn_signin = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tb_username = new System.Windows.Forms.TextBox();
+            this.tb_password = new System.Windows.Forms.TextBox();
             this.panel_clock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,44 +68,6 @@
             this.label2.Size = new System.Drawing.Size(238, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nipunajith Constructions (Pvt) LTD";
-            // 
-            // tb_UserName
-            // 
-            this.tb_UserName.BorderColorFocused = System.Drawing.Color.RoyalBlue;
-            this.tb_UserName.BorderColorIdle = System.Drawing.Color.Gray;
-            this.tb_UserName.BorderColorMouseHover = System.Drawing.Color.RoyalBlue;
-            this.tb_UserName.BorderThickness = 1;
-            this.tb_UserName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_UserName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_UserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tb_UserName.isPassword = false;
-            this.tb_UserName.Location = new System.Drawing.Point(496, 288);
-            this.tb_UserName.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_UserName.Name = "tb_UserName";
-            this.tb_UserName.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.tb_UserName.Size = new System.Drawing.Size(297, 33);
-            this.tb_UserName.TabIndex = 3;
-            this.tb_UserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tb_UserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Lf_UserName_KeyDown);
-            // 
-            // tb_Password
-            // 
-            this.tb_Password.BorderColorFocused = System.Drawing.Color.RoyalBlue;
-            this.tb_Password.BorderColorIdle = System.Drawing.Color.Gray;
-            this.tb_Password.BorderColorMouseHover = System.Drawing.Color.RoyalBlue;
-            this.tb_Password.BorderThickness = 1;
-            this.tb_Password.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tb_Password.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.tb_Password.isPassword = true;
-            this.tb_Password.Location = new System.Drawing.Point(496, 357);
-            this.tb_Password.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_Password.Name = "tb_Password";
-            this.tb_Password.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.tb_Password.Size = new System.Drawing.Size(297, 33);
-            this.tb_Password.TabIndex = 4;
-            this.tb_Password.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tb_Password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Lf_Password_KeyDown);
             // 
             // label3
             // 
@@ -212,19 +174,35 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // tb_username
+            // 
+            this.tb_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_username.Location = new System.Drawing.Point(496, 292);
+            this.tb_username.Name = "tb_username";
+            this.tb_username.Size = new System.Drawing.Size(297, 26);
+            this.tb_username.TabIndex = 13;
+            // 
+            // tb_password
+            // 
+            this.tb_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_password.Location = new System.Drawing.Point(496, 365);
+            this.tb_password.Name = "tb_password";
+            this.tb_password.Size = new System.Drawing.Size(297, 26);
+            this.tb_password.TabIndex = 14;
+            // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(860, 500);
+            this.Controls.Add(this.tb_password);
+            this.Controls.Add(this.tb_username);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_signin);
             this.Controls.Add(this.panel_clock);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.tb_Password);
-            this.Controls.Add(this.tb_UserName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -247,8 +225,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private Bunifu.Framework.UI.BunifuMetroTextbox tb_Password;
-        private Bunifu.Framework.UI.BunifuMetroTextbox tb_UserName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel_clock;
         private System.Windows.Forms.Label label5;
@@ -256,6 +232,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btn_signin;
         private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.TextBox tb_username;
+        private System.Windows.Forms.TextBox tb_password;
     }
 }
 
