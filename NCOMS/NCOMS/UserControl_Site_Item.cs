@@ -135,8 +135,6 @@ namespace NCOMS
                     db.Sites.Remove(site);
                     db.SaveChanges();
 
-                    MessageBox.Show("Record Deleted");
-
                     if(Application.OpenForms["Form_ClerkMainWindow"] != null)
                     {
                         (Application.OpenForms["Form_ClerkMainWindow"] as Form_ClerkMainWindow).Btn_menu_dashboard_Click(null, null);

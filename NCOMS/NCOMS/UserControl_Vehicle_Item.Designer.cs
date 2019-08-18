@@ -106,6 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.btn_edit);
             this.Controls.Add(this.label_description);
@@ -113,7 +114,7 @@
             this.Controls.Add(this.label_date_of_purchase);
             this.Controls.Add(this.label_vehicle_id);
             this.Name = "UserControl_Vehicle_Item";
-            this.Size = new System.Drawing.Size(1100, 62);
+            this.Size = new System.Drawing.Size(1120, 62);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -36,6 +36,11 @@ namespace NCOMS
 
             MessageBox.Show("Record added Successfully");
             this.Close();
+
+            if (Application.OpenForms["Form_ClerkMainWindow"] != null)
+            {
+                (Application.OpenForms["Form_ClerkMainWindow"] as Form_ClerkMainWindow).Btn_menu_dashboard_Click(null, null);
+            }
         }
 
         private void Btn_close_Click(object sender, EventArgs e)
