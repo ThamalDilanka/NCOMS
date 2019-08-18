@@ -81,6 +81,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Form_Update_Vehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Update_Vehicle.Designer.cs">
+      <DependentUpon>Form_Update_Vehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Add_New_Vehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Add_New_Vehicle.Designer.cs">
+      <DependentUpon>Form_Add_New_Vehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_CMW_Vehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CMW_Vehicle.Designer.cs">
+      <DependentUpon>Form_CMW_Vehicle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Update_Site.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +274,12 @@
     <Compile Include="UserControl_Site_Item.Designer.cs">
       <DependentUpon>UserControl_Site_Item.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_Vehicle_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_Vehicle_Item.Designer.cs">
+      <DependentUpon>UserControl_Vehicle_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vehicle.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -265,6 +289,15 @@
     <Compile Include="Weather_Report.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form_Update_Vehicle.resx">
+      <DependentUpon>Form_Update_Vehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Add_New_Vehicle.resx">
+      <DependentUpon>Form_Add_New_Vehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_CMW_Vehicle.resx">
+      <DependentUpon>Form_CMW_Vehicle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Update_Site.resx">
       <DependentUpon>Form_Update_Site.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +335,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Site_Item.resx">
       <DependentUpon>UserControl_Site_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Vehicle_Item.resx">
+      <DependentUpon>UserControl_Vehicle_Item.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

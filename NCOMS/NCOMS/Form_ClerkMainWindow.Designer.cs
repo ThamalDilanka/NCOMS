@@ -37,6 +37,7 @@
             this.label_header_name = new System.Windows.Forms.Label();
             this.panel_container = new System.Windows.Forms.Panel();
             this.panel_navigation_container = new System.Windows.Forms.Panel();
+            this.btn_menu_vehicle = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_menu_dashboard = new System.Windows.Forms.Button();
             this.panel_header.SuspendLayout();
@@ -129,6 +130,7 @@
             // 
             this.panel_navigation_container.AutoScroll = true;
             this.panel_navigation_container.BackColor = System.Drawing.Color.White;
+            this.panel_navigation_container.Controls.Add(this.btn_menu_vehicle);
             this.panel_navigation_container.Controls.Add(this.button1);
             this.panel_navigation_container.Controls.Add(this.btn_menu_dashboard);
             this.panel_navigation_container.Dock = System.Windows.Forms.DockStyle.Left;
@@ -136,6 +138,27 @@
             this.panel_navigation_container.Name = "panel_navigation_container";
             this.panel_navigation_container.Size = new System.Drawing.Size(220, 690);
             this.panel_navigation_container.TabIndex = 16;
+            // 
+            // btn_menu_vehicle
+            // 
+            this.btn_menu_vehicle.BackColor = System.Drawing.Color.White;
+            this.btn_menu_vehicle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_menu_vehicle.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_menu_vehicle.FlatAppearance.BorderSize = 0;
+            this.btn_menu_vehicle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_menu_vehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_menu_vehicle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btn_menu_vehicle.Image = ((System.Drawing.Image)(resources.GetObject("btn_menu_vehicle.Image")));
+            this.btn_menu_vehicle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_menu_vehicle.Location = new System.Drawing.Point(0, 206);
+            this.btn_menu_vehicle.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_menu_vehicle.Name = "btn_menu_vehicle";
+            this.btn_menu_vehicle.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btn_menu_vehicle.Size = new System.Drawing.Size(220, 50);
+            this.btn_menu_vehicle.TabIndex = 2;
+            this.btn_menu_vehicle.Text = "Vehicle      ";
+            this.btn_menu_vehicle.UseVisualStyleBackColor = true;
+            this.btn_menu_vehicle.Click += new System.EventHandler(this.Btn_menu_vehicle_Click);
             // 
             // button1
             // 
@@ -211,5 +234,6 @@
         private System.Windows.Forms.Button btn_minimize;
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.Button btn_signout;
+        private System.Windows.Forms.Button btn_menu_vehicle;
     }
 }

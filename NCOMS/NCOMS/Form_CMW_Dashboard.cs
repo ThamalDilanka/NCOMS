@@ -18,7 +18,7 @@ namespace NCOMS
             InitializeComponent();
         }
 
-        private void Form_CMW_Dashboard_Load(object sender, EventArgs e)
+        public void Form_CMW_Dashboard_Load(object sender, EventArgs e)
         {
             List<Site> siteList = GetSites();
             foreach(Site site in siteList)

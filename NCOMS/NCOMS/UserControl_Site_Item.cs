@@ -12,6 +12,7 @@ namespace NCOMS
 {
     public partial class UserControl_Site_Item : UserControl
     {
+
         public UserControl_Site_Item()
         {
             InitializeComponent();
@@ -107,6 +108,41 @@ namespace NCOMS
         private void Btn_more_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Btn_delete_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are You Sure To Delete This Record?", "Coution", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                using(NCOMSEntities db = new NCOMSEntities())
+                {
+                    Site site = new Site();
+
+                    site.site_id = _site_id;
+                    site.title = _title;
+                    site.address = _address;
+                    site.description = _description;
+                    site.estimated_cost = float.Parse(_estimated_cost.ToString());
+                    site.start_date = Convert.ToDateTime(_start_date);
+                    site.deadline = Convert.ToDateTime(_end_date);
+
+                    var entry = db.Entry(site);
+                    if(entry.State == System.Data.Entity.EntityState.Detached)
+                    {
+                        db.Sites.Attach(site);
+                    }
+
+                    db.Sites.Remove(site);
+                    db.SaveChanges();
+
+                    MessageBox.Show("Record Deleted");
+
+                    if(Application.OpenForms["Form_ClerkMainWindow"] != null)
+                    {
+                        (Application.OpenForms["Form_ClerkMainWindow"] as Form_ClerkMainWindow).Btn_menu_dashboard_Click(null, null);
+                    }
+                }
+            }
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl_Site_Item));
             this.label_title = new System.Windows.Forms.Label();
             this.pb_time_line = new System.Windows.Forms.ProgressBar();
             this.label_start_date = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@
             this.label_site_id = new System.Windows.Forms.Label();
             this.btn_update = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_delete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_title
@@ -161,11 +163,27 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Rs.";
             // 
+            // btn_delete
+            // 
+            this.btn_delete.BackColor = System.Drawing.Color.Transparent;
+            this.btn_delete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delete.ForeColor = System.Drawing.Color.White;
+            this.btn_delete.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete.Image")));
+            this.btn_delete.Location = new System.Drawing.Point(25, 199);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(36, 37);
+            this.btn_delete.TabIndex = 11;
+            this.btn_delete.UseVisualStyleBackColor = false;
+            this.btn_delete.Click += new System.EventHandler(this.Btn_delete_Click);
+            // 
             // UserControl_Site_Item
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.label_site_id);
@@ -197,5 +215,6 @@
         private System.Windows.Forms.Label label_site_id;
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_delete;
     }
 }

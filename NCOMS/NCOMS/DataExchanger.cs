@@ -9,5 +9,6 @@ namespace NCOMS
     public static class DataExchanger
     {
         public static Site site;
+        public static Vehicle vehicle;
     }
 }
