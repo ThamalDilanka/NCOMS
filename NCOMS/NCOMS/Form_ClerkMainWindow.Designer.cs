@@ -101,9 +101,9 @@
             this.label_header_title.ForeColor = System.Drawing.Color.White;
             this.label_header_title.Location = new System.Drawing.Point(640, 6);
             this.label_header_title.Name = "label_header_title";
-            this.label_header_title.Size = new System.Drawing.Size(177, 18);
+            this.label_header_title.Size = new System.Drawing.Size(133, 18);
             this.label_header_title.TabIndex = 23;
-            this.label_header_title.Text = "This is clerk main window";
+            this.label_header_title.Text = "Clerk main window";
             this.label_header_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_header_name
