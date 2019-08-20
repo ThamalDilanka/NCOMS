@@ -85,6 +85,7 @@ namespace NCOMS
             if(tb_username.Text.Length == 0)
             {
                 label_un_msg.Text = "Please Enter The User Name";
+                this.ActiveControl = tb_username;
                 label_un_msg.Visible = true;
                 return;
             }
@@ -92,6 +93,7 @@ namespace NCOMS
             else if (tb_password.Text.Length == 0)
             {
                 label_pswd_msg.Text = "Please Enter The Password";
+                this.ActiveControl = tb_password;
                 label_pswd_msg.Visible = true;
                 return;
             }

@@ -25,6 +25,14 @@ namespace NCOMS
         public Form_ClerkMainWindow()
         {
             InitializeComponent();
+            try
+            {
+                label_header_name.Text = String.Concat(Session.sessionMember.first_name, " ", Session.sessionMember.last_name);
+            }
+            catch (NullReferenceException exe)
+            {
+                label_header_name.Text = "Session Doesn\'t created";
+            }
 
             btn_menu_dashboard.BackColor = System.Drawing.Color.AliceBlue;
 
