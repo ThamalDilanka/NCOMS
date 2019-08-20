@@ -104,6 +104,7 @@
             this.tb_title.Name = "tb_title";
             this.tb_title.Size = new System.Drawing.Size(449, 24);
             this.tb_title.TabIndex = 15;
+            this.tb_title.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_title_KeyDown);
             // 
             // label1
             // 
@@ -136,6 +137,7 @@
             this.tb_description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_description.Size = new System.Drawing.Size(449, 122);
             this.tb_description.TabIndex = 17;
+            this.tb_description.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_description_KeyDown);
             // 
             // label3
             // 
@@ -157,6 +159,7 @@
             this.tb_address.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_address.Size = new System.Drawing.Size(449, 80);
             this.tb_address.TabIndex = 19;
+            this.tb_address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_address_KeyDown);
             // 
             // label4
             // 
@@ -176,6 +179,7 @@
             this.tb_estimated_cost.Name = "tb_estimated_cost";
             this.tb_estimated_cost.Size = new System.Drawing.Size(449, 24);
             this.tb_estimated_cost.TabIndex = 21;
+            this.tb_estimated_cost.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_estimated_cost_KeyDown);
             // 
             // dtp_start_date
             // 
@@ -183,6 +187,7 @@
             this.dtp_start_date.Name = "dtp_start_date";
             this.dtp_start_date.Size = new System.Drawing.Size(200, 20);
             this.dtp_start_date.TabIndex = 23;
+            this.dtp_start_date.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dtp_start_date_KeyDown);
             // 
             // dtp_end_date
             // 
@@ -190,6 +195,7 @@
             this.dtp_end_date.Name = "dtp_end_date";
             this.dtp_end_date.Size = new System.Drawing.Size(200, 20);
             this.dtp_end_date.TabIndex = 24;
+            this.dtp_end_date.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dtp_end_date_KeyDown);
             // 
             // label5
             // 
@@ -225,6 +231,7 @@
             this.btn_clear.TabIndex = 27;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.Btn_clear_Click);
             // 
             // Form_Update_Site
             // 

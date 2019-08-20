@@ -20,6 +20,7 @@ namespace NCOMS
             this.ActiveControl = tb_title;
         }
 
+        // Create a entry in database
         private void Btn_save_Click(object sender, EventArgs e)
         {
             site.title = tb_title.Text.Trim();
@@ -44,10 +45,13 @@ namespace NCOMS
             }
         }
 
+        // Close the form
         private void Btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        #region Navigate between User Controls using arrow keys
 
         private void Tb_title_KeyDown(object sender, KeyEventArgs e)
         {
@@ -55,9 +59,9 @@ namespace NCOMS
             {
                 case Keys.Down:
                     this.ActiveControl = tb_description;
-                break;
+                    break;
             }
-                
+
         }
 
         private void Tb_description_KeyDown(object sender, KeyEventArgs e)
@@ -75,7 +79,7 @@ namespace NCOMS
 
         private void Tb_address_KeyDown(object sender, KeyEventArgs e)
         {
-            if(Control.ModifierKeys == Keys.Control && e.KeyCode == Keys.Down)
+            if (Control.ModifierKeys == Keys.Control && e.KeyCode == Keys.Down)
             {
                 this.ActiveControl = tb_estimated_cost;
             }
@@ -118,14 +122,18 @@ namespace NCOMS
             switch (e.KeyCode)
             {
                 case Keys.Enter:
-                case Keys.Down:
                     Btn_save_Click(sender, e);
+                    break;
+                case Keys.Down:
+                    this.ActiveControl = btn_save;
                     break;
                 case Keys.Up:
                     this.ActiveControl = dtp_start_date;
                     break;
             }
         }
+
+        #endregion
 
         // Adding a drop shadow to the form
         protected override CreateParams CreateParams
@@ -136,6 +144,17 @@ namespace NCOMS
                 createParams.ClassStyle = 0x00020000;
                 return createParams;
             }
+        }
+
+        // Clear all user controls
+        private void Btn_clear_Click(object sender, EventArgs e)
+        {
+            tb_title.Text = "";
+            tb_description.Text = "";
+            tb_address.Text = "";
+            tb_estimated_cost.Text = "";
+            dtp_start_date.Value = DateTime.Today;
+            dtp_end_date.Value = DateTime.Today;
         }
     }
 }

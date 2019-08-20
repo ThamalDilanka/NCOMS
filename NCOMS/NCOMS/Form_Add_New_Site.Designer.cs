@@ -231,6 +231,7 @@
             this.btn_clear.TabIndex = 27;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Click += new System.EventHandler(this.Btn_clear_Click);
             // 
             // Form_Add_New_Site
             // 
