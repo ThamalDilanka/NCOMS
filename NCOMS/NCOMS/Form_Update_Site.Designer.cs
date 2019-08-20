@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_header = new System.Windows.Forms.Panel();
+            this.btn_close = new System.Windows.Forms.Button();
             this.label_header_title = new System.Windows.Forms.Label();
             this.btn_update = new System.Windows.Forms.Button();
             this.tb_title = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_clear = new System.Windows.Forms.Button();
-            this.btn_close = new System.Windows.Forms.Button();
             this.panel_header.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,18 @@
             this.panel_header.Name = "panel_header";
             this.panel_header.Size = new System.Drawing.Size(510, 30);
             this.panel_header.TabIndex = 13;
+            // 
+            // btn_close
+            // 
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Image = global::NCOMS.Properties.Resources.icons8_close_window_2;
+            this.btn_close.Location = new System.Drawing.Point(479, 1);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(28, 28);
+            this.btn_close.TabIndex = 24;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
             // 
             // label_header_title
             // 
@@ -213,18 +225,6 @@
             this.btn_clear.TabIndex = 27;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
-            // 
-            // btn_close
-            // 
-            this.btn_close.FlatAppearance.BorderSize = 0;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Image = global::NCOMS.Properties.Resources.icons8_close_window_2;
-            this.btn_close.Location = new System.Drawing.Point(479, 1);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(28, 28);
-            this.btn_close.TabIndex = 24;
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
             // 
             // Form_Update_Site
             // 

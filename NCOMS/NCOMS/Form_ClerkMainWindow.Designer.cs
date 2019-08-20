@@ -57,6 +57,7 @@
             this.panel_header.Name = "panel_header";
             this.panel_header.Size = new System.Drawing.Size(1350, 30);
             this.panel_header.TabIndex = 12;
+            this.panel_header.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel_header_MouseDown);
             // 
             // btn_minimize
             // 

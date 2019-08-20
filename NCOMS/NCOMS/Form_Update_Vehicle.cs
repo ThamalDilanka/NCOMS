@@ -52,5 +52,16 @@ namespace NCOMS
                 (Application.OpenForms["Form_ClerkMainWindow"] as Form_ClerkMainWindow).Btn_menu_vehicle_Click(null, null);
             }
         }
+
+        // Adding a drop shadow to the form
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+                createParams.ClassStyle = 0x00020000;
+                return createParams;
+            }
+        }
     }
 }

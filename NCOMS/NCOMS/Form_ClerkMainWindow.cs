@@ -8,11 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace NCOMS
 {
     public partial class Form_ClerkMainWindow : Form
     {
+        // Members to make the form moveable
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         public Form_ClerkMainWindow()
         {
             InitializeComponent();
@@ -70,6 +79,12 @@ namespace NCOMS
             form_CMW_Vehicle.TopLevel = false;
             panel_container.Controls.Add(form_CMW_Vehicle);
             form_CMW_Vehicle.Show();
+        }
+
+        private void Panel_header_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
     }
 }

@@ -112,7 +112,7 @@ namespace NCOMS
 
         private void Btn_delete_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Are You Sure To Delete This Record?", "Coution", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(MessageBox.Show("Are You Sure To Delete This Record?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
                 using(NCOMSEntities db = new NCOMSEntities())
                 {

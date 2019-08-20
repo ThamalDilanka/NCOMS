@@ -12,13 +12,14 @@ namespace NCOMS
 {
     public partial class Form_Update_Site : Form
     {
-        Site site = new Site();
+        private Site site = new Site();
 
         public Form_Update_Site()
         {
             InitializeComponent();
         }
 
+        // Setting values to the user controllers when form loading
         private void Form_Update_Site_Load(object sender, EventArgs e)
         {
             tb_title.Text = DataExchanger.site.title;
@@ -29,6 +30,7 @@ namespace NCOMS
             dtp_end_date.Value = Convert.ToDateTime(DataExchanger.site.deadline);
         }
 
+        // Update the selected entry
         private void Btn_update_Click(object sender, EventArgs e)
         {
             site.site_id = DataExchanger.site.site_id;
@@ -45,7 +47,7 @@ namespace NCOMS
                 db.SaveChanges();
             }
 
-            MessageBox.Show("Record Updated");
+            MessageBox.Show(String.Concat(site.title, " Record Updated"), "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
 
             if (Application.OpenForms["Form_ClerkMainWindow"] != null)
@@ -55,9 +57,21 @@ namespace NCOMS
 
         }
 
+        // Close the form
         private void Btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        // Adding a drop shadow to the form
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+                createParams.ClassStyle = 0x00020000;
+                return createParams;
+            }
         }
     }
 }

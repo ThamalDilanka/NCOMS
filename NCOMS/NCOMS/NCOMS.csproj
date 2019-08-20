@@ -268,6 +268,12 @@
     <Compile Include="Tool_Repairs.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_Container_Message.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_Container_Message.Designer.cs">
+      <DependentUpon>UserControl_Container_Message.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_Site_Item.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -333,6 +339,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Container_Message.resx">
+      <DependentUpon>UserControl_Container_Message.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Site_Item.resx">
       <DependentUpon>UserControl_Site_Item.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +384,7 @@
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
     <Content Include="Resources\application_12410.ico" />
+    <Content Include="Resources\icons8_attention_filled_50px.png" />
     <Content Include="Resources\icons8_billing.ico" />
     <Content Include="Resources\icons8_clock.ico" />
     <None Include="Resources\icons8_shutdown_3.ico" />
@@ -382,6 +392,7 @@
     <None Include="Resources\icons8_close_window_2.ico" />
     <Content Include="Resources\icons8_combo_chart_3.ico" />
     <Content Include="Resources\icons8_edit_property.ico" />
+    <Content Include="Resources\icons8_error.ico" />
     <Content Include="Resources\icons8_invite.ico" />
     <Content Include="Resources\icons8_keep_dry.ico" />
     <Content Include="Resources\icons8_partly_cloudy_day.ico" />

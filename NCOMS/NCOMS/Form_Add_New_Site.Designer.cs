@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_header = new System.Windows.Forms.Panel();
+            this.btn_close = new System.Windows.Forms.Button();
             this.label_header_title = new System.Windows.Forms.Label();
             this.btn_save = new System.Windows.Forms.Button();
             this.tb_title = new System.Windows.Forms.TextBox();
@@ -44,7 +45,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_clear = new System.Windows.Forms.Button();
-            this.btn_close = new System.Windows.Forms.Button();
             this.panel_header.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,18 @@
             this.panel_header.Name = "panel_header";
             this.panel_header.Size = new System.Drawing.Size(510, 30);
             this.panel_header.TabIndex = 13;
+            // 
+            // btn_close
+            // 
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Image = global::NCOMS.Properties.Resources.icons8_close_window_2;
+            this.btn_close.Location = new System.Drawing.Point(479, 3);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(28, 28);
+            this.btn_close.TabIndex = 24;
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
             // 
             // label_header_title
             // 
@@ -92,6 +104,7 @@
             this.tb_title.Name = "tb_title";
             this.tb_title.Size = new System.Drawing.Size(449, 24);
             this.tb_title.TabIndex = 15;
+            this.tb_title.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_title_KeyDown);
             // 
             // label1
             // 
@@ -124,6 +137,7 @@
             this.tb_description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_description.Size = new System.Drawing.Size(449, 122);
             this.tb_description.TabIndex = 17;
+            this.tb_description.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_description_KeyDown);
             // 
             // label3
             // 
@@ -145,6 +159,7 @@
             this.tb_address.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_address.Size = new System.Drawing.Size(449, 80);
             this.tb_address.TabIndex = 19;
+            this.tb_address.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_address_KeyDown);
             // 
             // label4
             // 
@@ -164,6 +179,7 @@
             this.tb_estimated_cost.Name = "tb_estimated_cost";
             this.tb_estimated_cost.Size = new System.Drawing.Size(449, 24);
             this.tb_estimated_cost.TabIndex = 21;
+            this.tb_estimated_cost.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_estimated_cost_KeyDown);
             // 
             // dtp_start_date
             // 
@@ -171,6 +187,7 @@
             this.dtp_start_date.Name = "dtp_start_date";
             this.dtp_start_date.Size = new System.Drawing.Size(200, 20);
             this.dtp_start_date.TabIndex = 23;
+            this.dtp_start_date.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dtp_start_date_KeyDown);
             // 
             // dtp_end_date
             // 
@@ -178,6 +195,7 @@
             this.dtp_end_date.Name = "dtp_end_date";
             this.dtp_end_date.Size = new System.Drawing.Size(200, 20);
             this.dtp_end_date.TabIndex = 24;
+            this.dtp_end_date.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dtp_end_date_KeyDown);
             // 
             // label5
             // 
@@ -214,24 +232,12 @@
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
             // 
-            // btn_close
-            // 
-            this.btn_close.FlatAppearance.BorderSize = 0;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Image = global::NCOMS.Properties.Resources.icons8_close_window_2;
-            this.btn_close.Location = new System.Drawing.Point(479, 3);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(28, 28);
-            this.btn_close.TabIndex = 24;
-            this.btn_close.UseVisualStyleBackColor = true;
-            this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
-            // 
             // Form_Add_New_Site
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(510, 628);
+            this.ClientSize = new System.Drawing.Size(510, 629);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);

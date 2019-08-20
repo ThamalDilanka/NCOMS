@@ -17,6 +17,7 @@ namespace NCOMS
         public Form_Add_New_Site()
         {
             InitializeComponent();
+            this.ActiveControl = tb_title;
         }
 
         private void Btn_save_Click(object sender, EventArgs e)
@@ -46,6 +47,95 @@ namespace NCOMS
         private void Btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Tb_title_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Down:
+                    this.ActiveControl = tb_description;
+                break;
+            }
+                
+        }
+
+        private void Tb_description_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (Control.ModifierKeys == Keys.Control && e.KeyCode == Keys.Down)
+            {
+                this.ActiveControl = tb_address;
+            }
+
+            if (Control.ModifierKeys == Keys.Control && e.KeyCode == Keys.Up)
+            {
+                this.ActiveControl = tb_title;
+            }
+        }
+
+        private void Tb_address_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(Control.ModifierKeys == Keys.Control && e.KeyCode == Keys.Down)
+            {
+                this.ActiveControl = tb_estimated_cost;
+            }
+
+            if (Control.ModifierKeys == Keys.Control && e.KeyCode == Keys.Up)
+            {
+                this.ActiveControl = tb_description;
+            }
+        }
+
+        private void Tb_estimated_cost_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Down:
+                    this.ActiveControl = dtp_start_date;
+                    break;
+                case Keys.Up:
+                    this.ActiveControl = tb_address;
+                    break;
+            }
+        }
+
+        private void Dtp_start_date_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                case Keys.Down:
+                    this.ActiveControl = dtp_end_date;
+                    break;
+                case Keys.Up:
+                    this.ActiveControl = tb_estimated_cost;
+                    break;
+            }
+        }
+
+        private void Dtp_end_date_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                case Keys.Down:
+                    Btn_save_Click(sender, e);
+                    break;
+                case Keys.Up:
+                    this.ActiveControl = dtp_start_date;
+                    break;
+            }
+        }
+
+        // Adding a drop shadow to the form
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams createParams = base.CreateParams;
+                createParams.ClassStyle = 0x00020000;
+                return createParams;
+            }
         }
     }
 }

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.flp_site_item_container = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.tb_search = new System.Windows.Forms.TextBox();
+            this.btn_search = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_add_new = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -43,25 +43,30 @@
             this.flp_site_item_container.Size = new System.Drawing.Size(1096, 614);
             this.flp_site_item_container.TabIndex = 0;
             // 
-            // textBox1
+            // tb_search
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(761, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(257, 26);
-            this.textBox1.TabIndex = 1;
+            this.tb_search.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tb_search.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.tb_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_search.Location = new System.Drawing.Point(761, 17);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.Size = new System.Drawing.Size(257, 26);
+            this.tb_search.TabIndex = 1;
+            this.tb_search.TextChanged += new System.EventHandler(this.Tb_search_TextChanged);
+            this.tb_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_search_KeyDown);
             // 
-            // button1
+            // btn_search
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(1024, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 28);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_search.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.ForeColor = System.Drawing.Color.White;
+            this.btn_search.Location = new System.Drawing.Point(1024, 17);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(75, 28);
+            this.btn_search.TabIndex = 2;
+            this.btn_search.Text = "Search";
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.Btn_search_Click);
             // 
             // label1
             // 
@@ -95,8 +100,8 @@
             this.ClientSize = new System.Drawing.Size(1130, 690);
             this.Controls.Add(this.btn_add_new);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_search);
+            this.Controls.Add(this.tb_search);
             this.Controls.Add(this.flp_site_item_container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_CMW_Dashboard";
@@ -110,8 +115,8 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel flp_site_item_container;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox tb_search;
+        private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_add_new;
     }
