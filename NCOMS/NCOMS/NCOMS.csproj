@@ -229,6 +229,7 @@
     <Compile Include="Purchase_InTo_Stock_Material.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Session.cs" />
     <Compile Include="Site.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>

@@ -39,12 +39,18 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_signin = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pb_lock = new System.Windows.Forms.PictureBox();
             this.tb_username = new System.Windows.Forms.TextBox();
             this.tb_password = new System.Windows.Forms.TextBox();
+            this.label_pswd_msg = new System.Windows.Forms.Label();
+            this.label_un_msg = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pb_success = new System.Windows.Forms.PictureBox();
             this.panel_clock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_lock)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_success)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -74,7 +80,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label3.Location = new System.Drawing.Point(492, 264);
+            this.label3.Location = new System.Drawing.Point(492, 270);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 20);
             this.label3.TabIndex = 5;
@@ -85,7 +91,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label4.Location = new System.Drawing.Point(492, 333);
+            this.label4.Location = new System.Drawing.Point(492, 342);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 6;
@@ -94,8 +100,10 @@
             // panel_clock
             // 
             this.panel_clock.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel_clock.Controls.Add(this.lbl_clock);
             this.panel_clock.Controls.Add(this.label5);
+            this.panel_clock.Controls.Add(this.label7);
+            this.panel_clock.Controls.Add(this.label6);
+            this.panel_clock.Controls.Add(this.lbl_clock);
             this.panel_clock.Controls.Add(this.label2);
             this.panel_clock.Controls.Add(this.pictureBox2);
             this.panel_clock.Dock = System.Windows.Forms.DockStyle.Left;
@@ -164,15 +172,15 @@
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.Btn_close_Click);
             // 
-            // pictureBox1
+            // pb_lock
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(546, 91);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 162);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pb_lock.Image = ((System.Drawing.Image)(resources.GetObject("pb_lock.Image")));
+            this.pb_lock.Location = new System.Drawing.Point(546, 91);
+            this.pb_lock.Name = "pb_lock";
+            this.pb_lock.Size = new System.Drawing.Size(196, 162);
+            this.pb_lock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_lock.TabIndex = 0;
+            this.pb_lock.TabStop = false;
             // 
             // tb_username
             // 
@@ -181,6 +189,8 @@
             this.tb_username.Name = "tb_username";
             this.tb_username.Size = new System.Drawing.Size(297, 26);
             this.tb_username.TabIndex = 13;
+            this.tb_username.TextChanged += new System.EventHandler(this.Tb_username_TextChanged);
+            this.tb_username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_username_KeyDown);
             // 
             // tb_password
             // 
@@ -189,6 +199,64 @@
             this.tb_password.Name = "tb_password";
             this.tb_password.Size = new System.Drawing.Size(297, 26);
             this.tb_password.TabIndex = 14;
+            this.tb_password.UseSystemPasswordChar = true;
+            this.tb_password.TextChanged += new System.EventHandler(this.Tb_password_TextChanged);
+            this.tb_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_password_KeyDown);
+            // 
+            // label_pswd_msg
+            // 
+            this.label_pswd_msg.AutoSize = true;
+            this.label_pswd_msg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_pswd_msg.ForeColor = System.Drawing.Color.Red;
+            this.label_pswd_msg.Location = new System.Drawing.Point(493, 394);
+            this.label_pswd_msg.Name = "label_pswd_msg";
+            this.label_pswd_msg.Size = new System.Drawing.Size(0, 13);
+            this.label_pswd_msg.TabIndex = 15;
+            this.label_pswd_msg.Visible = false;
+            // 
+            // label_un_msg
+            // 
+            this.label_un_msg.AutoSize = true;
+            this.label_un_msg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_un_msg.ForeColor = System.Drawing.Color.Red;
+            this.label_un_msg.Location = new System.Drawing.Point(493, 320);
+            this.label_un_msg.Name = "label_un_msg";
+            this.label_un_msg.Size = new System.Drawing.Size(0, 13);
+            this.label_un_msg.TabIndex = 16;
+            this.label_un_msg.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(55, 252);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(302, 18);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "__________________________________________";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(55, 300);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(302, 18);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "__________________________________________";
+            // 
+            // pb_success
+            // 
+            this.pb_success.Enabled = false;
+            this.pb_success.Image = ((System.Drawing.Image)(resources.GetObject("pb_success.Image")));
+            this.pb_success.Location = new System.Drawing.Point(546, 91);
+            this.pb_success.Name = "pb_success";
+            this.pb_success.Size = new System.Drawing.Size(196, 162);
+            this.pb_success.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pb_success.TabIndex = 17;
+            this.pb_success.TabStop = false;
             // 
             // Form_Login
             // 
@@ -196,6 +264,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(860, 500);
+            this.Controls.Add(this.label_un_msg);
+            this.Controls.Add(this.label_pswd_msg);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.tb_username);
             this.Controls.Add(this.btn_close);
@@ -204,7 +274,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pb_lock);
+            this.Controls.Add(this.pb_success);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Login";
@@ -214,7 +285,8 @@
             this.panel_clock.ResumeLayout(false);
             this.panel_clock.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_lock)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_success)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,7 +294,7 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pb_lock;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -234,6 +306,11 @@
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.TextBox tb_username;
         private System.Windows.Forms.TextBox tb_password;
+        private System.Windows.Forms.Label label_pswd_msg;
+        private System.Windows.Forms.Label label_un_msg;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pb_success;
     }
 }
 
