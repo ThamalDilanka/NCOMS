@@ -206,11 +206,25 @@ namespace NCOMS
         private void Tb_password_TextChanged(object sender, EventArgs e)
         {
             label_pswd_msg.Visible = false;
+            if (tb_password.Text.Length != 0)
+                btn_visible.Visible = true;
+            else
+                btn_visible.Visible = false;
         }
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void Btn_visible_MouseDown(object sender, MouseEventArgs e)
+        {
+            tb_password.UseSystemPasswordChar = false;
+        }
+
+        private void Btn_visible_MouseUp(object sender, MouseEventArgs e)
+        {
+            tb_password.UseSystemPasswordChar = true;
         }
     }
 }

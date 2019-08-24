@@ -41,6 +41,17 @@ namespace NCOMS
                 siteItem.StartDate = Convert.ToDateTime(site.start_date).ToString("yyyy-MM-dd");
                 siteItem.EndDate = Convert.ToDateTime(site.deadline).ToString("yyyy-MM-dd");
                 siteItem.EstimatedCost = site.estimated_cost.ToString();
+                siteItem.Supervisor = "0";
+
+                using(NCOMSEntities db = new NCOMSEntities())
+                {
+                    Staff_Allocated_Site staff_Allocated_Site = db.Staff_Allocated_Site.Where(s => s.site_id == site.site_id).FirstOrDefault();
+                    Staff supervisor = db.Staffs.Where(s => s.staff_id == staff_Allocated_Site.staff_id).FirstOrDefault();
+
+                    siteItem.Supervisor = supervisor.first_name + " " + supervisor.last_name;
+                    siteItem.StaffAllocatedSiteId = staff_Allocated_Site.staff_allocated_site_id;
+                    siteItem.SupervisorId = supervisor.staff_id;
+                }
 
                 siteTitles.Add(site.title);
 

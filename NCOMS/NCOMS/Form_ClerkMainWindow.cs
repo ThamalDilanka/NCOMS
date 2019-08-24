@@ -29,7 +29,7 @@ namespace NCOMS
             {
                 label_header_name.Text = String.Concat(Session.sessionMember.first_name, " ", Session.sessionMember.last_name);
             }
-            catch (NullReferenceException exe)
+            catch (NullReferenceException)
             {
                 label_header_name.Text = "Session Doesn\'t created";
             }

@@ -41,6 +41,8 @@
             this.btn_update = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_delete = new System.Windows.Forms.Button();
+            this.label_supervisor_name = new System.Windows.Forms.Label();
+            this.label_staff_allocated_site_id = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label_title
@@ -129,7 +131,7 @@
             this.label_site_id.AutoSize = true;
             this.label_site_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_site_id.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_site_id.Location = new System.Drawing.Point(456, 17);
+            this.label_site_id.Location = new System.Drawing.Point(252, 218);
             this.label_site_id.Name = "label_site_id";
             this.label_site_id.Size = new System.Drawing.Size(40, 18);
             this.label_site_id.TabIndex = 8;
@@ -178,11 +180,37 @@
             this.btn_delete.UseVisualStyleBackColor = false;
             this.btn_delete.Click += new System.EventHandler(this.Btn_delete_Click);
             // 
+            // label_supervisor_name
+            // 
+            this.label_supervisor_name.BackColor = System.Drawing.Color.Transparent;
+            this.label_supervisor_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_supervisor_name.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_supervisor_name.Location = new System.Drawing.Point(362, 17);
+            this.label_supervisor_name.Name = "label_supervisor_name";
+            this.label_supervisor_name.Size = new System.Drawing.Size(134, 18);
+            this.label_supervisor_name.TabIndex = 12;
+            this.label_supervisor_name.Text = "Nimal Perera";
+            this.label_supervisor_name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label_staff_allocated_site_id
+            // 
+            this.label_staff_allocated_site_id.AutoSize = true;
+            this.label_staff_allocated_site_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_staff_allocated_site_id.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_staff_allocated_site_id.Location = new System.Drawing.Point(206, 218);
+            this.label_staff_allocated_site_id.Name = "label_staff_allocated_site_id";
+            this.label_staff_allocated_site_id.Size = new System.Drawing.Size(40, 18);
+            this.label_staff_allocated_site_id.TabIndex = 13;
+            this.label_staff_allocated_site_id.Text = "1000";
+            this.label_staff_allocated_site_id.Visible = false;
+            // 
             // UserControl_Site_Item
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label_staff_allocated_site_id);
+            this.Controls.Add(this.label_supervisor_name);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_update);
@@ -216,5 +244,7 @@
         private System.Windows.Forms.Button btn_update;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Label label_supervisor_name;
+        private System.Windows.Forms.Label label_staff_allocated_site_id;
     }
 }

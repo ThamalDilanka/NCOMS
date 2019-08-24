@@ -77,6 +77,7 @@
             this.label_description.Text = "Text messaging, or texting, is the act of composing and sending electronic messag" +
     "es, typically consisting of alphabetic and numeric characters, between two or mo" +
     "re users of mobile devices";
+            this.label_description.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_delete
             // 

@@ -27,13 +27,31 @@ namespace NCOMS
         private string _start_date;
         private string _end_date;
         private string _estimated_cost;
+        private string _supervisor_name;
         private int _time_passed;
+        private int _staff_allocated_site_id;
+        private int _supervisor_id;
 
         [Category("Site Item")]
         public int SiteId
         {
             get { return _site_id; }
             set { _site_id = value; label_site_id.Text = value.ToString(); }
+        }
+
+        [Category("Site Item")]
+        public int SupervisorId
+        {
+            get { return _supervisor_id; }
+            set { _supervisor_id = value; }
+        }
+
+
+        [Category("Site Item")]
+        public int StaffAllocatedSiteId
+        {
+            get { return _staff_allocated_site_id; }
+            set { _staff_allocated_site_id = value; label_staff_allocated_site_id.Text = value.ToString(); }
         }
 
         [Category("Site Item")]
@@ -85,11 +103,19 @@ namespace NCOMS
             set { _time_passed = value; pb_time_line.Value = Convert.ToInt32( value ); }
         }
 
+        [Category("Site Item")]
+        public string Supervisor
+        {
+            get { return _supervisor_name; }
+            set { _supervisor_name = value; label_supervisor_name.Text = value; }
+        }
+
         #endregion
 
         private void Btn_update_Click(object sender, EventArgs e)
         {
             Site site = new Site();
+            Staff_Allocated_Site staff_Allocated_Site = new Staff_Allocated_Site();
 
             site.site_id = _site_id;
             site.title = _title;
@@ -99,7 +125,13 @@ namespace NCOMS
             site.start_date = Convert.ToDateTime(_start_date);
             site.deadline = Convert.ToDateTime(_end_date);
 
+            staff_Allocated_Site.staff_allocated_site_id = _staff_allocated_site_id;
+            staff_Allocated_Site.site_id = _site_id;
+            staff_Allocated_Site.staff_id = _supervisor_id;
+            staff_Allocated_Site.end_date = Convert.ToDateTime(_end_date);
+
             DataExchanger.site = site;
+            DataExchanger.staff_Allocated_Site = staff_Allocated_Site;
 
             Form_Update_Site form_Update_Site = new Form_Update_Site();
             form_Update_Site.Show();
@@ -117,7 +149,7 @@ namespace NCOMS
                 using(NCOMSEntities db = new NCOMSEntities())
                 {
                     Site site = new Site();
-
+                    
                     site.site_id = _site_id;
                     site.title = _title;
                     site.address = _address;
@@ -134,6 +166,7 @@ namespace NCOMS
 
                     db.Sites.Remove(site);
                     db.SaveChanges();
+
 
                     if(Application.OpenForms["Form_ClerkMainWindow"] != null)
                     {

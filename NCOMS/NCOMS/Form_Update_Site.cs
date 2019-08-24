@@ -13,11 +13,28 @@ namespace NCOMS
     public partial class Form_Update_Site : Form
     {
         private Site site = new Site();
+        private Staff supervisor = new Staff();
+        private Staff_Allocated_Site staff_Allocated_Site = new Staff_Allocated_Site();
+        List<Staff> supervisorList = new List<Staff>();
 
         public Form_Update_Site()
         {
             InitializeComponent();
             this.ActiveControl = tb_title;
+
+            // Get supervisor list from the database
+            using (NCOMSEntities db = new NCOMSEntities())
+            {
+                supervisorList = db.Staffs.Where(s => s.user_level == "Supervisor").ToList<Staff>();
+            }
+
+            // Add Supervisor's names to combo box
+            foreach (Staff staff in supervisorList)
+            {
+                cb_supervisor.Items.Add(staff.first_name + " " + staff.last_name);
+            }
+
+            cb_supervisor.SelectedIndex = 0;
         }
 
         // Setting values to the user controllers when form loading
@@ -29,6 +46,12 @@ namespace NCOMS
             tb_estimated_cost.Text = DataExchanger.site.estimated_cost.ToString();
             dtp_start_date.Value = Convert.ToDateTime(DataExchanger.site.start_date);
             dtp_end_date.Value = Convert.ToDateTime(DataExchanger.site.deadline);
+
+            using(NCOMSEntities db = new NCOMSEntities())
+            {
+                supervisor = db.Staffs.Where(s => s.staff_id == DataExchanger.staff_Allocated_Site.staff_id).FirstOrDefault();
+                cb_supervisor.SelectedItem = supervisor.first_name + " " + supervisor.last_name;
+            }
         }
 
         // Update the selected entry
@@ -42,8 +65,17 @@ namespace NCOMS
             site.start_date = dtp_start_date.Value;
             site.deadline = dtp_end_date.Value;
 
-            using(NCOMSEntities db = new NCOMSEntities())
+            using (NCOMSEntities db = new NCOMSEntities())
             {
+                string firstName = cb_supervisor.Text.ToString().Substring(0, cb_supervisor.Text.ToString().IndexOf(" "));
+                Staff selectedSupervisor = db.Staffs.Where(s => s.first_name == firstName).FirstOrDefault();
+                staff_Allocated_Site.staff_id = selectedSupervisor.staff_id;
+                staff_Allocated_Site.site_id = DataExchanger.site.site_id;
+                staff_Allocated_Site.staff_allocated_site_id = DataExchanger.staff_Allocated_Site.staff_allocated_site_id;
+                staff_Allocated_Site.started_date = DateTime.Now;
+                staff_Allocated_Site.end_date = DataExchanger.staff_Allocated_Site.end_date;
+
+                db.Entry(staff_Allocated_Site).State = System.Data.Entity.EntityState.Modified;
                 db.Entry(site).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }
@@ -169,5 +201,6 @@ namespace NCOMS
             dtp_start_date.Value = DateTime.Today;
             dtp_end_date.Value = DateTime.Today;
         }
+
     }
 }

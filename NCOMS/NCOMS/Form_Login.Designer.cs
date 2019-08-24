@@ -34,8 +34,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel_clock = new System.Windows.Forms.Panel();
-            this.lbl_clock = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_clock = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_signin = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
@@ -44,9 +46,8 @@
             this.tb_password = new System.Windows.Forms.TextBox();
             this.label_pswd_msg = new System.Windows.Forms.Label();
             this.label_un_msg = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.pb_success = new System.Windows.Forms.PictureBox();
+            this.btn_visible = new System.Windows.Forms.Button();
             this.panel_clock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_lock)).BeginInit();
@@ -112,6 +113,39 @@
             this.panel_clock.Size = new System.Drawing.Size(430, 500);
             this.panel_clock.TabIndex = 10;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(78, 270);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(256, 42);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Welcome Back!";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(55, 300);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(302, 18);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "__________________________________________";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(55, 252);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(302, 18);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "__________________________________________";
+            // 
             // lbl_clock
             // 
             this.lbl_clock.AutoSize = true;
@@ -123,17 +157,6 @@
             this.lbl_clock.TabIndex = 7;
             this.lbl_clock.Text = "-- : --";
             this.lbl_clock.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(78, 270);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(256, 42);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Welcome Back!";
             // 
             // pictureBox2
             // 
@@ -189,6 +212,7 @@
             this.tb_username.Name = "tb_username";
             this.tb_username.Size = new System.Drawing.Size(297, 26);
             this.tb_username.TabIndex = 13;
+            this.tb_username.Text = "Tharu";
             this.tb_username.TextChanged += new System.EventHandler(this.Tb_username_TextChanged);
             this.tb_username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_username_KeyDown);
             // 
@@ -199,6 +223,7 @@
             this.tb_password.Name = "tb_password";
             this.tb_password.Size = new System.Drawing.Size(297, 26);
             this.tb_password.TabIndex = 14;
+            this.tb_password.Text = "admin894";
             this.tb_password.UseSystemPasswordChar = true;
             this.tb_password.TextChanged += new System.EventHandler(this.Tb_password_TextChanged);
             this.tb_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_password_KeyDown);
@@ -225,28 +250,6 @@
             this.label_un_msg.TabIndex = 16;
             this.label_un_msg.Visible = false;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(55, 252);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(302, 18);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "__________________________________________";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(55, 300);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(302, 18);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "__________________________________________";
-            // 
             // pb_success
             // 
             this.pb_success.Enabled = false;
@@ -258,12 +261,27 @@
             this.pb_success.TabIndex = 17;
             this.pb_success.TabStop = false;
             // 
+            // btn_visible
+            // 
+            this.btn_visible.FlatAppearance.BorderSize = 0;
+            this.btn_visible.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_visible.Image = ((System.Drawing.Image)(resources.GetObject("btn_visible.Image")));
+            this.btn_visible.Location = new System.Drawing.Point(766, 366);
+            this.btn_visible.Name = "btn_visible";
+            this.btn_visible.Size = new System.Drawing.Size(26, 23);
+            this.btn_visible.TabIndex = 18;
+            this.btn_visible.UseVisualStyleBackColor = true;
+            this.btn_visible.Visible = false;
+            this.btn_visible.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Btn_visible_MouseDown);
+            this.btn_visible.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Btn_visible_MouseUp);
+            // 
             // Form_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(860, 500);
+            this.Controls.Add(this.btn_visible);
             this.Controls.Add(this.label_un_msg);
             this.Controls.Add(this.label_pswd_msg);
             this.Controls.Add(this.tb_password);
@@ -311,6 +329,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pb_success;
+        private System.Windows.Forms.Button btn_visible;
     }
 }
 

@@ -18888,6 +18888,17 @@
         4IddE53mrFtvsJZut+y26+67OUkJ77z0slYJilNgUMKJRGwVEAA7
 </value>
   </data>
+  <data name="btn_visible.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAATNJREFUOE/NUktKA0EQbV3ows9OBJPuiR8QvIMXEM8hnkDcZScENT0juYu/nUSj
+        C9e6USToCQJqXFT5qlPTtgERFMQHxdTU+1A90+b/wha0aJu0Ggq9jr8B84jNaRN163LmtKynG1fwhmhU
+        /RlLBU07TyfR5KkHU0dK+o8wOlpu0JTaBoB5PAhVhA0uqvtUUdpUCqrCeBl5T+crdR5TGuf11ChJCJ/n
+        9sjiuY75PcLuspzWai3K8P6S6HaCWdIh6pcE+rbMIejGmacHmclmia4ftsw819IAGM804DGZdTWgXc4Q
+        +ipbyRwEbyfieAR8vCcJ+uIIW8EcUOdRpJ+WJIQdd0DzyhrX5AUYrqIZf0s8Sg8w0+JJEMdJyBtCr0Oh
+        T8yHs7s0obYh/OYiDeNnV/nvYcw7ofc2krrir4cAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>84</value>
   </metadata>
