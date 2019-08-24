@@ -310,9 +310,9 @@
         </EntityType>
         <EntityType Name="Staff_Allocated_Site">
           <Key>
-            <PropertyRef Name="staff_id" />
-            <PropertyRef Name="site_id" />
+            <PropertyRef Name="staff_allocated_site_id" />
           </Key>
+          <Property Name="staff_allocated_site_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="staff_id" Type="int" Nullable="false" />
           <Property Name="site_id" Type="int" Nullable="false" />
           <Property Name="started_date" Type="date" />
@@ -713,7 +713,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_staff_allocated_site">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Staff_Allocated_Site" Type="Self.Staff_Allocated_Site" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -809,7 +811,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_staff_allocated_site">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Staff_Allocated_Site" Type="Self.Staff_Allocated_Site" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -1524,9 +1528,9 @@
         </EntityType>
         <EntityType Name="Staff_Allocated_Site">
           <Key>
-            <PropertyRef Name="staff_id" />
-            <PropertyRef Name="site_id" />
+            <PropertyRef Name="staff_allocated_site_id" />
           </Key>
+          <Property Name="staff_allocated_site_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="staff_id" Type="Int32" Nullable="false" />
           <Property Name="site_id" Type="Int32" Nullable="false" />
           <Property Name="started_date" Type="DateTime" Precision="0" />
@@ -2040,7 +2044,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_staff_allocated_site">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Staff_Allocated_Site" Type="Self.Staff_Allocated_Site" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -2088,7 +2094,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_staff_allocated_site">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Staff_Allocated_Site" Type="Self.Staff_Allocated_Site" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -2692,6 +2700,7 @@
           <EntitySetMapping Name="Staff_Allocated_Site">
             <EntityTypeMapping TypeName="NCOMSModel.Staff_Allocated_Site">
               <MappingFragment StoreEntitySet="Staff_Allocated_Site">
+                <ScalarProperty Name="staff_allocated_site_id" ColumnName="staff_allocated_site_id" />
                 <ScalarProperty Name="staff_id" ColumnName="staff_id" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />
                 <ScalarProperty Name="started_date" ColumnName="started_date" />

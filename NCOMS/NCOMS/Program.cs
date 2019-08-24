@@ -17,12 +17,16 @@ namespace NCOMS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form_Loading());
-            Application.Run(new Form_Login());
+            //Application.Run(new Form_Login());
             //Application.Run(new Form_ManagerMainWindow());
             //Application.Run(new Form_SupervisorMainWindow());
             //Application.Run(new Form_ClerkMainWindow());
             //Application.Run(new Form_StoreKeeperMainWindow());
             //Application.Run(new Form_CMW_Dashboard());
+            //Application.Run(new Form_Add_New_Staff());
+            Application.Run(new Form_MMW_Staff());
+
+
         }
     }
 }
