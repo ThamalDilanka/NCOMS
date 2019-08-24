@@ -81,6 +81,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Form_Add_New_Tool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Add_New_Tool.Designer.cs">
+      <DependentUpon>Form_Add_New_Tool.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_CMW_Tools.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CMW_Tools.Designer.cs">
+      <DependentUpon>Form_CMW_Tools.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Update_Vehicle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +293,12 @@
     <Compile Include="UserControl_Site_Item.Designer.cs">
       <DependentUpon>UserControl_Site_Item.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_Tool_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_Tool_Item.Designer.cs">
+      <DependentUpon>UserControl_Tool_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_Vehicle_Item.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -296,6 +314,12 @@
     <Compile Include="Weather_Report.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form_Add_New_Tool.resx">
+      <DependentUpon>Form_Add_New_Tool.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_CMW_Tools.resx">
+      <DependentUpon>Form_CMW_Tools.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Update_Vehicle.resx">
       <DependentUpon>Form_Update_Vehicle.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Site_Item.resx">
       <DependentUpon>UserControl_Site_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Tool_Item.resx">
+      <DependentUpon>UserControl_Tool_Item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Vehicle_Item.resx">
       <DependentUpon>UserControl_Vehicle_Item.cs</DependentUpon>

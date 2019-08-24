@@ -14,6 +14,7 @@ namespace NCOMS
     
     public partial class Staff_Allocated_Site
     {
+        public int staff_allocated_site_id { get; set; }
         public int staff_id { get; set; }
         public int site_id { get; set; }
         public Nullable<System.DateTime> started_date { get; set; }
