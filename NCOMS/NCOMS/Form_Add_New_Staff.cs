@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace NCOMS
 {
+
     public partial class Form_Add_New_Staff : Form
     {
         public Form_Add_New_Staff()
