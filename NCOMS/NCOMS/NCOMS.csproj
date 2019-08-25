@@ -81,6 +81,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Form_CMW_MoneyRequests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CMW_MoneyRequests.Designer.cs">
+      <DependentUpon>Form_CMW_MoneyRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Update_Vehicle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +287,12 @@
     <Compile Include="UserControl_Site_Item.Designer.cs">
       <DependentUpon>UserControl_Site_Item.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControl_MoneyRequest_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl_MoneyRequest_Item.Designer.cs">
+      <DependentUpon>UserControl_MoneyRequest_Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControl_Vehicle_Item.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -296,6 +308,9 @@
     <Compile Include="Weather_Report.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form_CMW_MoneyRequests.resx">
+      <DependentUpon>Form_CMW_MoneyRequests.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Update_Vehicle.resx">
       <DependentUpon>Form_Update_Vehicle.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Site_Item.resx">
       <DependentUpon>UserControl_Site_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_MoneyRequest_Item.resx">
+      <DependentUpon>UserControl_MoneyRequest_Item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Vehicle_Item.resx">
       <DependentUpon>UserControl_Vehicle_Item.cs</DependentUpon>
