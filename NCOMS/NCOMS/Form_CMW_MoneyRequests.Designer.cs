@@ -52,8 +52,6 @@
             this.tb_search.Name = "tb_search";
             this.tb_search.Size = new System.Drawing.Size(257, 26);
             this.tb_search.TabIndex = 1;
-            this.tb_search.TextChanged += new System.EventHandler(this.Tb_search_TextChanged);
-            this.tb_search.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tb_search_KeyDown);
             // 
             // btn_search
             // 
@@ -66,7 +64,6 @@
             this.btn_search.TabIndex = 2;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = false;
-            this.btn_search.Click += new System.EventHandler(this.Btn_search_Click);
             // 
             // label1
             // 
@@ -90,7 +87,6 @@
             this.btn_add_new.TabIndex = 4;
             this.btn_add_new.Text = "Add New";
             this.btn_add_new.UseVisualStyleBackColor = false;
-            this.btn_add_new.Click += new System.EventHandler(this.Btn_add_new_Click);
             // 
             // Form_CMW_MoneyRequests
             // 
@@ -106,7 +102,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_CMW_MoneyRequests";
             this.Text = "Form_CMW_Dashboard";
-            this.Load += new System.EventHandler(this.Form_CMW_Dashboard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
