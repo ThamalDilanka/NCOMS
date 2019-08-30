@@ -1,6 +1,6 @@
 ﻿namespace NCOMS
 {
-    partial class UserControl_MoneyRequest_Item
+    partial class UserControl_MoneyRequest_Item_D1
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,83 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl_MoneyRequest_Item));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btn_more = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl_MoneyRequest_Item_D1));
+            this.label_title = new System.Windows.Forms.Label();
+            this.label_site_id = new System.Windows.Forms.Label();
+            this.btn_approve = new System.Windows.Forms.Button();
+            this.btn_reject = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.label_amount = new System.Windows.Forms.Label();
+            this.label_requested_date = new System.Windows.Forms.Label();
+            this.label_requested_time = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label_description = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pb_status_new = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label_supervisor = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_status_new)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // label_title
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(161, 25);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Library Building";
+            this.label_title.AutoSize = true;
+            this.label_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_title.Location = new System.Drawing.Point(16, 14);
+            this.label_title.Name = "label_title";
+            this.label_title.Size = new System.Drawing.Size(161, 25);
+            this.label_title.TabIndex = 6;
+            this.label_title.Text = "Library Building";
             // 
-            // label2
+            // label_site_id
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(17, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "1045";
+            this.label_site_id.AutoSize = true;
+            this.label_site_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_site_id.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_site_id.Location = new System.Drawing.Point(17, 39);
+            this.label_site_id.Name = "label_site_id";
+            this.label_site_id.Size = new System.Drawing.Size(45, 20);
+            this.label_site_id.TabIndex = 7;
+            this.label_site_id.Text = "1045";
             // 
-            // btn_more
+            // btn_approve
             // 
-            this.btn_more.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btn_more.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_more.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_more.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_more.ForeColor = System.Drawing.Color.White;
-            this.btn_more.Location = new System.Drawing.Point(413, 250);
-            this.btn_more.Name = "btn_more";
-            this.btn_more.Size = new System.Drawing.Size(96, 37);
-            this.btn_more.TabIndex = 8;
-            this.btn_more.Text = "Approve";
-            this.btn_more.UseVisualStyleBackColor = false;
+            this.btn_approve.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btn_approve.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_approve.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_approve.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_approve.ForeColor = System.Drawing.Color.White;
+            this.btn_approve.Location = new System.Drawing.Point(413, 250);
+            this.btn_approve.Name = "btn_approve";
+            this.btn_approve.Size = new System.Drawing.Size(96, 37);
+            this.btn_approve.TabIndex = 8;
+            this.btn_approve.Text = "Approve";
+            this.btn_approve.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btn_reject
             // 
-            this.button1.BackColor = System.Drawing.Color.Coral;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(311, 250);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 37);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Reject";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_reject.BackColor = System.Drawing.Color.Coral;
+            this.btn_reject.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_reject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_reject.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reject.ForeColor = System.Drawing.Color.White;
+            this.btn_reject.Location = new System.Drawing.Point(311, 250);
+            this.btn_reject.Name = "btn_reject";
+            this.btn_reject.Size = new System.Drawing.Size(96, 37);
+            this.btn_reject.TabIndex = 9;
+            this.btn_reject.Text = "Reject";
+            this.btn_reject.UseVisualStyleBackColor = false;
             // 
             // label4
             // 
@@ -166,35 +166,35 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "Requested Time :";
             // 
-            // label6
+            // label_amount
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(116, 72);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 18);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Rs. 5800";
+            this.label_amount.AutoSize = true;
+            this.label_amount.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_amount.Location = new System.Drawing.Point(116, 72);
+            this.label_amount.Name = "label_amount";
+            this.label_amount.Size = new System.Drawing.Size(75, 18);
+            this.label_amount.TabIndex = 17;
+            this.label_amount.Text = "Rs. 5800";
             // 
-            // label7
+            // label_requested_date
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(173, 118);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 18);
-            this.label7.TabIndex = 18;
-            this.label7.Text = "2019.09.22";
+            this.label_requested_date.AutoSize = true;
+            this.label_requested_date.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_requested_date.Location = new System.Drawing.Point(173, 118);
+            this.label_requested_date.Name = "label_requested_date";
+            this.label_requested_date.Size = new System.Drawing.Size(80, 18);
+            this.label_requested_date.TabIndex = 18;
+            this.label_requested_date.Text = "2019.09.22";
             // 
-            // label8
+            // label_requested_time
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(174, 143);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 18);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "01:15 P.M.";
+            this.label_requested_time.AutoSize = true;
+            this.label_requested_time.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_requested_time.Location = new System.Drawing.Point(174, 143);
+            this.label_requested_time.Name = "label_requested_time";
+            this.label_requested_time.Size = new System.Drawing.Size(79, 18);
+            this.label_requested_time.TabIndex = 19;
+            this.label_requested_time.Text = "01:15 P.M.";
             // 
             // label9
             // 
@@ -206,15 +206,15 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Description :";
             // 
-            // label10
+            // label_description
             // 
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(19, 193);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(490, 42);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Miusov, as a man man of breeding and deilcacy, could not but feel some inwrd qual" +
+            this.label_description.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_description.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_description.Location = new System.Drawing.Point(19, 193);
+            this.label_description.Name = "label_description";
+            this.label_description.Size = new System.Drawing.Size(490, 42);
+            this.label_description.TabIndex = 21;
+            this.label_description.Text = "Miusov, as a man man of breeding and deilcacy, could not but feel some inwrd qual" +
     "ms";
             // 
             // pictureBox4
@@ -227,15 +227,15 @@
             this.pictureBox4.TabIndex = 22;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox5
+            // pb_status_new
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(477, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox5.TabIndex = 23;
-            this.pictureBox5.TabStop = false;
+            this.pb_status_new.Image = ((System.Drawing.Image)(resources.GetObject("pb_status_new.Image")));
+            this.pb_status_new.Location = new System.Drawing.Point(477, 3);
+            this.pb_status_new.Name = "pb_status_new";
+            this.pb_status_new.Size = new System.Drawing.Size(48, 48);
+            this.pb_status_new.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pb_status_new.TabIndex = 23;
+            this.pb_status_new.TabStop = false;
             // 
             // pictureBox6
             // 
@@ -247,15 +247,15 @@
             this.pictureBox6.TabIndex = 24;
             this.pictureBox6.TabStop = false;
             // 
-            // label11
+            // label_supervisor
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(139, 95);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(153, 18);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "Mr. Namal Wijesinghe";
+            this.label_supervisor.AutoSize = true;
+            this.label_supervisor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_supervisor.Location = new System.Drawing.Point(139, 95);
+            this.label_supervisor.Name = "label_supervisor";
+            this.label_supervisor.Size = new System.Drawing.Size(153, 18);
+            this.label_supervisor.TabIndex = 26;
+            this.label_supervisor.Text = "Mr. Namal Wijesinghe";
             // 
             // label12
             // 
@@ -267,38 +267,38 @@
             this.label12.TabIndex = 25;
             this.label12.Text = "Supervisor :";
             // 
-            // UserControl_MoneyRequest_Item
+            // UserControl_MoneyRequest_Item_D1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label_supervisor);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pb_status_new);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label_description);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label_requested_time);
+            this.Controls.Add(this.label_requested_date);
+            this.Controls.Add(this.label_amount);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_more);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Name = "UserControl_MoneyRequest_Item";
+            this.Controls.Add(this.btn_reject);
+            this.Controls.Add(this.btn_approve);
+            this.Controls.Add(this.label_site_id);
+            this.Controls.Add(this.label_title);
+            this.Name = "UserControl_MoneyRequest_Item_D1";
             this.Size = new System.Drawing.Size(528, 304);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_status_new)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -307,25 +307,25 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn_more;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label_title;
+        private System.Windows.Forms.Label label_site_id;
+        private System.Windows.Forms.Button btn_approve;
+        private System.Windows.Forms.Button btn_reject;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label_amount;
+        private System.Windows.Forms.Label label_requested_date;
+        private System.Windows.Forms.Label label_requested_time;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label_description;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pb_status_new;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label_supervisor;
         private System.Windows.Forms.Label label12;
     }
 }

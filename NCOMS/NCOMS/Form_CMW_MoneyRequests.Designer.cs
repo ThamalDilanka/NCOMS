@@ -33,20 +33,11 @@
             this.btn_search = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_add_new = new System.Windows.Forms.Button();
-            this.userControl_MoneyRequest_Item1 = new NCOMS.UserControl_MoneyRequest_Item();
-            this.userControl_MoneyRequest_Item2 = new NCOMS.UserControl_MoneyRequest_Item();
-            this.userControl_MoneyRequest_Item3 = new NCOMS.UserControl_MoneyRequest_Item();
-            this.userControl_MoneyRequest_Item4 = new NCOMS.UserControl_MoneyRequest_Item();
-            this.flp_site_item_container.SuspendLayout();
             this.SuspendLayout();
             // 
             // flp_site_item_container
             // 
             this.flp_site_item_container.AutoScroll = true;
-            this.flp_site_item_container.Controls.Add(this.userControl_MoneyRequest_Item4);
-            this.flp_site_item_container.Controls.Add(this.userControl_MoneyRequest_Item3);
-            this.flp_site_item_container.Controls.Add(this.userControl_MoneyRequest_Item2);
-            this.flp_site_item_container.Controls.Add(this.userControl_MoneyRequest_Item1);
             this.flp_site_item_container.Location = new System.Drawing.Point(22, 64);
             this.flp_site_item_container.Name = "flp_site_item_container";
             this.flp_site_item_container.Size = new System.Drawing.Size(1096, 614);
@@ -101,38 +92,6 @@
             this.btn_add_new.UseVisualStyleBackColor = false;
             this.btn_add_new.Click += new System.EventHandler(this.Btn_add_new_Click);
             // 
-            // userControl_MoneyRequest_Item1
-            // 
-            this.userControl_MoneyRequest_Item1.BackColor = System.Drawing.Color.White;
-            this.userControl_MoneyRequest_Item1.Location = new System.Drawing.Point(537, 313);
-            this.userControl_MoneyRequest_Item1.Name = "userControl_MoneyRequest_Item1";
-            this.userControl_MoneyRequest_Item1.Size = new System.Drawing.Size(528, 304);
-            this.userControl_MoneyRequest_Item1.TabIndex = 0;
-            // 
-            // userControl_MoneyRequest_Item2
-            // 
-            this.userControl_MoneyRequest_Item2.BackColor = System.Drawing.Color.White;
-            this.userControl_MoneyRequest_Item2.Location = new System.Drawing.Point(3, 313);
-            this.userControl_MoneyRequest_Item2.Name = "userControl_MoneyRequest_Item2";
-            this.userControl_MoneyRequest_Item2.Size = new System.Drawing.Size(528, 304);
-            this.userControl_MoneyRequest_Item2.TabIndex = 1;
-            // 
-            // userControl_MoneyRequest_Item3
-            // 
-            this.userControl_MoneyRequest_Item3.BackColor = System.Drawing.Color.White;
-            this.userControl_MoneyRequest_Item3.Location = new System.Drawing.Point(537, 3);
-            this.userControl_MoneyRequest_Item3.Name = "userControl_MoneyRequest_Item3";
-            this.userControl_MoneyRequest_Item3.Size = new System.Drawing.Size(528, 304);
-            this.userControl_MoneyRequest_Item3.TabIndex = 2;
-            // 
-            // userControl_MoneyRequest_Item4
-            // 
-            this.userControl_MoneyRequest_Item4.BackColor = System.Drawing.Color.White;
-            this.userControl_MoneyRequest_Item4.Location = new System.Drawing.Point(3, 3);
-            this.userControl_MoneyRequest_Item4.Name = "userControl_MoneyRequest_Item4";
-            this.userControl_MoneyRequest_Item4.Size = new System.Drawing.Size(528, 304);
-            this.userControl_MoneyRequest_Item4.TabIndex = 3;
-            // 
             // Form_CMW_MoneyRequests
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -148,7 +107,6 @@
             this.Name = "Form_CMW_MoneyRequests";
             this.Text = "Form_CMW_Dashboard";
             this.Load += new System.EventHandler(this.Form_CMW_Dashboard_Load);
-            this.flp_site_item_container.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,9 +119,5 @@
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_add_new;
-        private UserControl_MoneyRequest_Item userControl_MoneyRequest_Item4;
-        private UserControl_MoneyRequest_Item userControl_MoneyRequest_Item3;
-        private UserControl_MoneyRequest_Item userControl_MoneyRequest_Item2;
-        private UserControl_MoneyRequest_Item userControl_MoneyRequest_Item1;
     }
 }
