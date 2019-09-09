@@ -33,7 +33,6 @@ namespace NCOMS
         public virtual ICollection<GOS_Material> GOS_Material { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GOS_Money_Status> GOS_Money_Status { get; set; }
-        public virtual Staff Staff { get; set; }
         public virtual Order Order { get; set; }
         public virtual Vehicle Vehicle { get; set; }
     }

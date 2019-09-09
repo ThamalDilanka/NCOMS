@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flp_site_item_container = new System.Windows.Forms.FlowLayoutPanel();
+            this.flp_money_request_item_container = new System.Windows.Forms.FlowLayoutPanel();
             this.tb_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_add_new = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // flp_site_item_container
+            // flp_money_request_item_container
             // 
-            this.flp_site_item_container.AutoScroll = true;
-            this.flp_site_item_container.Location = new System.Drawing.Point(22, 64);
-            this.flp_site_item_container.Name = "flp_site_item_container";
-            this.flp_site_item_container.Size = new System.Drawing.Size(1096, 614);
-            this.flp_site_item_container.TabIndex = 0;
+            this.flp_money_request_item_container.AutoScroll = true;
+            this.flp_money_request_item_container.Location = new System.Drawing.Point(22, 64);
+            this.flp_money_request_item_container.Name = "flp_money_request_item_container";
+            this.flp_money_request_item_container.Size = new System.Drawing.Size(1096, 614);
+            this.flp_money_request_item_container.TabIndex = 0;
             // 
             // tb_search
             // 
@@ -98,10 +98,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.tb_search);
-            this.Controls.Add(this.flp_site_item_container);
+            this.Controls.Add(this.flp_money_request_item_container);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_CMW_MoneyRequests";
             this.Text = "Form_CMW_Dashboard";
+            this.Load += new System.EventHandler(this.Form_CMW_MoneyRequests_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,7 +110,7 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flp_site_item_container;
+        private System.Windows.Forms.FlowLayoutPanel flp_money_request_item_container;
         private System.Windows.Forms.TextBox tb_search;
         private System.Windows.Forms.Button btn_search;
         private System.Windows.Forms.Label label1;

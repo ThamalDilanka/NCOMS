@@ -85,7 +85,7 @@ namespace NCOMS
 
             if (Application.OpenForms["Form_ClerkMainWindow"] != null)
             {
-                (Application.OpenForms["Form_ClerkMainWindow"] as Form_ClerkMainWindow).Btn_menu_dashboard_Click(null, null);
+                (Application.OpenForms["Form_ClerkMainWindow"] as Form_ClerkMainWindow).Btn_nav_dashboard_Click(null, null);
             }
 
         }

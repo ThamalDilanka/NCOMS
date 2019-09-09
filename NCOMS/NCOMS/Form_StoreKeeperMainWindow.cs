@@ -15,15 +15,6 @@ namespace NCOMS
         public Form_StoreKeeperMainWindow()
         {
             InitializeComponent();
-            try
-            {
-                label_header_name.Text = String.Concat(Session.sessionMember.first_name, " ", Session.sessionMember.last_name);
-            }
-            
-            catch(NullReferenceException)
-            {
-                label_header_name.Text = "Session Doesn\'t created";
-            }
         }
 
         private void Btn_close_Click(object sender, EventArgs e)
@@ -36,11 +27,5 @@ namespace NCOMS
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void Btn_signout_Click(object sender, EventArgs e)
-        {
-            Form_Login form_Login = new Form_Login();
-            form_Login.Show();
-            this.Hide();
-        }
     }
 }

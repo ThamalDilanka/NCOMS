@@ -33,5 +33,11 @@ namespace NCOMS
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void Btn_staff_members_Click(object sender, EventArgs e)
+        {
+            Form_Add_New_StaffMember form_Add_New_StaffMember = new Form_Add_New_StaffMember();
+            form_Add_New_StaffMember.Show();
+        }
     }
 }

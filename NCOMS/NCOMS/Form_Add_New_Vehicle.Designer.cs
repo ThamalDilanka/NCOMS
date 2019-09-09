@@ -57,7 +57,6 @@
             // 
             this.btn_close.FlatAppearance.BorderSize = 0;
             this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Image = global::NCOMS.Properties.Resources.icons8_close_window_2;
             this.btn_close.Location = new System.Drawing.Point(479, 3);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(28, 28);

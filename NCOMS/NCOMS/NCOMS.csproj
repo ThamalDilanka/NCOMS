@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CircularButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Connectivity.cs" />
     <Compile Include="DataExchanger.cs" />
     <Compile Include="DBModel.Context.cs">
@@ -74,6 +80,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Add_New_StaffMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Add_New_StaffMember.Designer.cs">
+      <DependentUpon>Form_Add_New_StaffMember.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_CMW_MoneyRequests.cs">
       <SubType>Form</SubType>
@@ -302,6 +314,9 @@
     <Compile Include="Weather_Report.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form_Add_New_StaffMember.resx">
+      <DependentUpon>Form_Add_New_StaffMember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_CMW_MoneyRequests.resx">
       <DependentUpon>Form_CMW_MoneyRequests.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,6 +401,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ColorCodes.txt" />
     <Content Include="DBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBModel.edmx</DependentUpon>
@@ -396,21 +412,19 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Resources\application_12410.ico" />
-    <Content Include="Resources\icons8_attention_filled_50px.png" />
-    <Content Include="Resources\icons8_billing.ico" />
-    <Content Include="Resources\icons8_clock.ico" />
-    <None Include="Resources\icons8_shutdown_3.ico" />
-    <None Include="Resources\icons8_shutdown_1.ico" />
-    <None Include="Resources\icons8_close_window_2.ico" />
-    <Content Include="Resources\icons8_combo_chart_3.ico" />
-    <Content Include="Resources\icons8_edit_property.ico" />
-    <Content Include="Resources\icons8_error.ico" />
-    <Content Include="Resources\icons8_invite.ico" />
-    <Content Include="Resources\icons8_keep_dry.ico" />
-    <Content Include="Resources\icons8_partly_cloudy_day.ico" />
-    <Content Include="Resources\icons8_refund.ico" />
-    <None Include="Resources\user_avatar.png" />
+    <None Include="Resources\icons8_user.ico" />
+    <None Include="Resources\icons8_cash_.ico" />
+    <None Include="Resources\icons8_garage_open.ico" />
+    <None Include="Resources\icons8_initiate_money_transfer.ico" />
+    <None Include="Resources\icons8_trailer_unloading_1.ico" />
+    <None Include="Resources\icons8_group_1.ico" />
+    <None Include="Resources\icons8_doughnut_chart.ico" />
+    <None Include="Resources\close_16_red.ico" />
+    <None Include="Resources\minimize_16_blue.ico" />
+    <None Include="Resources\minimize_16_ash.ico" />
+    <None Include="Resources\close_16_blue.ico" />
+    <None Include="Resources\close_16_ash.ico" />
+    <None Include="Resources\Annotation 2019-09-08 154907.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

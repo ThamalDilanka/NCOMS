@@ -23,7 +23,6 @@ namespace NCOMS
         public Nullable<float> balance { get; set; }
         public string status { get; set; }
     
-        public virtual Money_Request Money_Request { get; set; }
         public virtual Staff Staff { get; set; }
     }
 }

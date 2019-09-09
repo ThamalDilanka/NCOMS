@@ -27,12 +27,20 @@ namespace NCOMS
         private string _requestedTime;
         private string _description;
         private string _status;
+        private int _moneyRequestId;
 
         [Category("MoneyRequest Item")]
         public int SiteId
         {
             get { return _siteId; }
             set { _siteId = value; label_site_id.Text = value.ToString(); }
+        }
+
+        [Category("MoneyRequest Item")]
+        public int MoneyRequestId
+        {
+            get { return _moneyRequestId; }
+            set { _moneyRequestId = value; }
         }
 
         [Category("MoneyRequest Item")]

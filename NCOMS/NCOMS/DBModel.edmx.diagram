@@ -4,47 +4,46 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f26cc4b7bbf5416aa99fb9a26794076d" Name="Diagram1">
-        <EntityTypeShape EntityType="NCOMSModel.GO" Width="1.5" PointX="5.25" PointY="28.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.GOS_Material" Width="1.5" PointX="7.5" PointY="27.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.GOS_Money_Status" Width="1.5" PointX="7.5" PointY="30.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.GRN" Width="1.5" PointX="3" PointY="21.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.GRN_Material" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Head_Office_Expenses" Width="1.5" PointX="3" PointY="25.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Issue_From_Stock" Width="1.5" PointX="5.25" PointY="35.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Issue_From_Stock_Material" Width="1.5" PointX="8" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Labor" Width="1.5" PointX="2.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Labor_advance" Width="1.5" PointX="6" PointY="22.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Labor_Attendance" Width="1.5" PointX="6" PointY="45.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Labor_Mobile" Width="1.5" PointX="6" PointY="8.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Labor_OT" Width="1.5" PointX="6" PointY="48.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Money_Request" Width="1.5" PointX="6" PointY="18.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Money_Request_Status" Width="1.5" PointX="8.25" PointY="19" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Order_Material" Width="1.5" PointX="5.25" PointY="38.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Order_Status" Width="1.5" PointX="5.25" PointY="41.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Order" Width="1.5" PointX="3" PointY="37.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Petty_Cash" Width="1.5" PointX="8.25" PointY="22.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Purchase_InTo_Stock" Width="1.5" PointX="3.25" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Purchase_InTo_Stock_Material" Width="1.5" PointX="8" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Site" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Site_Material_Report" Width="1.5" PointX="8" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Site_Note" Width="1.5" PointX="0.625" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Site_Other_Expenses" Width="1.5" PointX="3" PointY="14.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Staff" Width="1.5" PointX="0.75" PointY="20.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Staff_Allocated_Site" Width="1.5" PointX="3" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Staff_Attendance" Width="1.5" PointX="3" PointY="44.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Staff_Mobile" Width="1.5" PointX="3" PointY="47.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Staff_OT" Width="1.5" PointX="3" PointY="50" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Stock" Width="1.5" PointX="5.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Tool" Width="1.5" PointX="5.75" PointY="51.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Tool_Allocation" Width="1.5" PointX="8" PointY="14.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Tool_Repairs" Width="1.5" PointX="8" PointY="51.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Vehicle" Width="1.5" PointX="3" PointY="29.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Vehicle_Repairs" Width="1.5" PointX="5.25" PointY="55.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="NCOMSModel.Weather_Report" Width="1.5" PointX="3" PointY="32.625" IsExpanded="true" />
+      <Diagram DiagramId="33c935e05d8645cb913dfacf002b8825" Name="Diagram1">
+        <EntityTypeShape EntityType="NCOMSModel.GO" Width="1.5" PointX="5.25" PointY="30.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.GOS_Material" Width="1.5" PointX="7.5" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.GOS_Money_Status" Width="1.5" PointX="7.5" PointY="34.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.GRN" Width="1.5" PointX="3" PointY="24" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.GRN_Material" Width="1.5" PointX="5.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Head_Office_Expenses" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Issue_From_Stock" Width="1.5" PointX="8.25" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Issue_From_Stock_Material" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Labor" Width="1.5" PointX="3.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Labor_advance" Width="1.5" PointX="6" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Labor_Attendance" Width="1.5" PointX="6" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Labor_Mobile" Width="1.5" PointX="6" PointY="44.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Labor_OT" Width="1.5" PointX="6" PointY="47.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Money_Request" Width="1.5" PointX="6" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Money_Request_Status" Width="1.5" PointX="8.25" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Order_Material" Width="1.5" PointX="5.25" PointY="38.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Order_Status" Width="1.5" PointX="5.25" PointY="41.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Order" Width="1.5" PointX="3" PointY="31.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Petty_Cash" Width="1.5" PointX="3" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Purchase_InTo_Stock" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Purchase_InTo_Stock_Material" Width="1.5" PointX="8" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Site" Width="1.5" PointX="3.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Site_Material_Report" Width="1.5" PointX="8" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Site_Note" Width="1.5" PointX="6" PointY="50.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Site_Other_Expenses" Width="1.5" PointX="6" PointY="53" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Staff" Width="1.5" PointX="0.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Staff_Allocated_Site" Width="1.5" PointX="9" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Staff_Attendance" Width="1.5" PointX="3" PointY="42.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Staff_Mobile" Width="1.5" PointX="3" PointY="45.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Staff_OT" Width="1.5" PointX="3" PointY="47.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Stock" Width="1.5" PointX="5.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Tool" Width="1.5" PointX="6.75" PointY="60.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Tool_Allocation" Width="1.5" PointX="9" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Tool_Repairs" Width="1.5" PointX="9" PointY="60.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Vehicle" Width="1.5" PointX="3" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Vehicle_Repairs" Width="1.5" PointX="5.25" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="NCOMSModel.Weather_Report" Width="1.5" PointX="6" PointY="57.25" IsExpanded="true" />
         <AssociationConnector Association="NCOMSModel.fk_gos_gos_material" ManuallyRouted="false" />
         <AssociationConnector Association="NCOMSModel.fk_gos_gos_money_status" ManuallyRouted="false" />
-        <AssociationConnector Association="NCOMSModel.fk_labor_gos" ManuallyRouted="false" />
         <AssociationConnector Association="NCOMSModel.fk_order_gos" ManuallyRouted="false" />
         <AssociationConnector Association="NCOMSModel.fk_vehicle_gos" ManuallyRouted="false" />
         <AssociationConnector Association="NCOMSModel.fk_grn_grn_material" ManuallyRouted="false" />
@@ -61,7 +60,6 @@
         <AssociationConnector Association="NCOMSModel.fk_site_lobor" ManuallyRouted="false" />
         <AssociationConnector Association="NCOMSModel.fk_stafflabor_advance" ManuallyRouted="false" />
         <AssociationConnector Association="NCOMSModel.fk_money_request_money_request_status" ManuallyRouted="false" />
-        <AssociationConnector Association="NCOMSModel.fk_money_request_petty_cash" ManuallyRouted="false" />
         <AssociationConnector Association="NCOMSModel.fk_site_money_request" ManuallyRouted="false" />
         <AssociationConnector Association="NCOMSModel.fk_staff_money_request" ManuallyRouted="false" />
         <AssociationConnector Association="NCOMSModel.fk_orders_orders_material" ManuallyRouted="false" />

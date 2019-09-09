@@ -17,7 +17,6 @@ namespace NCOMS
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Staff()
         {
-            this.GOS = new HashSet<GO>();
             this.GRNs = new HashSet<GRN>();
             this.Head_Office_Expenses = new HashSet<Head_Office_Expenses>();
             this.Labor_advance = new HashSet<Labor_advance>();
@@ -43,12 +42,8 @@ namespace NCOMS
         public string email { get; set; }
         public string address { get; set; }
         public Nullable<System.DateTime> join_on { get; set; }
-        public Nullable<float> basic_salary { get; set; }
-        public Nullable<float> hourly_rate { get; set; }
-        public Nullable<float> ot_rate { get; set; }
+        public byte[] profile_picture { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GO> GOS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<GRN> GRNs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

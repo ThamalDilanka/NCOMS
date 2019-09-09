@@ -304,9 +304,7 @@
           <Property Name="email" Type="varchar" MaxLength="100" />
           <Property Name="address" Type="varchar" MaxLength="255" />
           <Property Name="join_on" Type="date" />
-          <Property Name="basic_salary" Type="real" />
-          <Property Name="hourly_rate" Type="real" />
-          <Property Name="ot_rate" Type="real" />
+          <Property Name="profile_picture" Type="image" />
         </EntityType>
         <EntityType Name="Staff_Allocated_Site">
           <Key>
@@ -423,7 +421,9 @@
           <Property Name="condition" Type="varchar" MaxLength="100" />
         </EntityType>
         <Association Name="fk_gos_gos_material">
-          <End Role="GOS" Type="Self.GOS" Multiplicity="1" />
+          <End Role="GOS" Type="Self.GOS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GOS_Material" Type="Self.GOS_Material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GOS">
@@ -435,7 +435,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_gos_gos_money_status">
-          <End Role="GOS" Type="Self.GOS" Multiplicity="1" />
+          <End Role="GOS" Type="Self.GOS" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GOS_Money_Status" Type="Self.GOS_Money_Status" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GOS">
@@ -447,7 +449,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_grn_grn_material">
-          <End Role="GRN" Type="Self.GRN" Multiplicity="0..1" />
+          <End Role="GRN" Type="Self.GRN" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GRN_Material" Type="Self.GRN_Material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GRN">
@@ -460,20 +464,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_labor_gos">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
-          <End Role="GOS" Type="Self.GOS" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Staff">
-              <PropertyRef Name="staff_id" />
-            </Principal>
-            <Dependent Role="GOS">
-              <PropertyRef Name="driver_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_labor_labor_advance">
-          <End Role="Labor" Type="Self.Labor" Multiplicity="1" />
+          <End Role="Labor" Type="Self.Labor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Labor_advance" Type="Self.Labor_advance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Labor">
@@ -487,7 +481,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_labor_labor_attendance">
-          <End Role="Labor" Type="Self.Labor" Multiplicity="1" />
+          <End Role="Labor" Type="Self.Labor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Labor_Attendance" Type="Self.Labor_Attendance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Labor">
@@ -501,7 +497,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_labor_labor_ot">
-          <End Role="Labor" Type="Self.Labor" Multiplicity="1" />
+          <End Role="Labor" Type="Self.Labor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Labor_OT" Type="Self.Labor_OT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Labor">
@@ -515,7 +513,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_labor_lobor_mobile">
-          <End Role="Labor" Type="Self.Labor" Multiplicity="0..1" />
+          <End Role="Labor" Type="Self.Labor" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Labor_Mobile" Type="Self.Labor_Mobile" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Labor">
@@ -529,7 +529,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_material_site_material_report">
-          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Site_Material_Report" Type="Self.Site_Material_Report" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
@@ -541,7 +543,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_money_request_money_request_status">
-          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="1" />
+          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Money_Request_Status" Type="Self.Money_Request_Status" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Money_Request">
@@ -554,22 +558,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_money_request_petty_cash">
-          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="1" />
-          <End Role="Petty_Cash" Type="Self.Petty_Cash" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Money_Request">
-              <PropertyRef Name="request_id" />
-              <PropertyRef Name="site_id" />
-            </Principal>
-            <Dependent Role="Petty_Cash">
-              <PropertyRef Name="request_id" />
-              <PropertyRef Name="site_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_order_gos">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GOS" Type="Self.GOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -581,7 +573,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_orders_issue_from_store">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Issue_From_Stock" Type="Self.Issue_From_Stock" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -593,7 +587,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_orders_order_status">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Order_Status" Type="Self.Order_Status" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -605,7 +601,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_orders_orders_material">
-          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Order_Material" Type="Self.Order_Material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -617,7 +615,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_purchase_into_stock_purchase_into_stock_material">
-          <End Role="Purchase_InTo_Stock" Type="Self.Purchase_InTo_Stock" Multiplicity="1" />
+          <End Role="Purchase_InTo_Stock" Type="Self.Purchase_InTo_Stock" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Purchase_InTo_Stock_Material" Type="Self.Purchase_InTo_Stock_Material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Purchase_InTo_Stock">
@@ -629,7 +629,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_grn">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GRN" Type="Self.GRN" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -641,7 +643,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_issue_from_store">
-          <End Role="Site" Type="Self.Site" Multiplicity="0..1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Issue_From_Stock" Type="Self.Issue_From_Stock" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -653,7 +657,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_lobor">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Labor" Type="Self.Labor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -665,7 +671,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_money_request">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -677,7 +685,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_site_material_report">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Site_Material_Report" Type="Self.Site_Material_Report" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -689,7 +699,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_site_note">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Site_Note" Type="Self.Site_Note" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -701,7 +713,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_site_other_expenses">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Site_Other_Expenses" Type="Self.Site_Other_Expenses" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -727,7 +741,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_tool_allocation">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Tool_Allocation" Type="Self.Tool_Allocation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -739,7 +755,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_weather_report">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Weather_Report" Type="Self.Weather_Report" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -751,7 +769,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_grn">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GRN" Type="Self.GRN" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -763,7 +783,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_head_office_expenses">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Head_Office_Expenses" Type="Self.Head_Office_Expenses" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -775,7 +797,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_money_request">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -787,7 +811,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_orders">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -799,7 +825,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_petty_cash">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Petty_Cash" Type="Self.Petty_Cash" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -825,7 +853,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_staff_attendance">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Staff_Attendance" Type="Self.Staff_Attendance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -837,7 +867,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_staff_mobile">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Staff_Mobile" Type="Self.Staff_Mobile" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -849,7 +881,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_staff_ot">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Staff_OT" Type="Self.Staff_OT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -861,7 +895,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_stafflabor_advance">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Labor_advance" Type="Self.Labor_advance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -873,7 +909,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_stock_purchase_into_stock_material">
-          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Purchase_InTo_Stock_Material" Type="Self.Purchase_InTo_Stock_Material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
@@ -885,7 +923,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_store_issue_from_store_material">
-          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Issue_From_Stock_Material" Type="Self.Issue_From_Stock_Material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
@@ -897,7 +937,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tool_tool_allocation">
-          <End Role="Tool" Type="Self.Tool" Multiplicity="1" />
+          <End Role="Tool" Type="Self.Tool" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Tool_Allocation" Type="Self.Tool_Allocation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tool">
@@ -909,7 +951,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tool_tool_repairs">
-          <End Role="Tool" Type="Self.Tool" Multiplicity="1" />
+          <End Role="Tool" Type="Self.Tool" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Tool_Repairs" Type="Self.Tool_Repairs" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tool">
@@ -921,7 +965,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_vehicle_gos">
-          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GOS" Type="Self.GOS" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Vehicle">
@@ -933,7 +979,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_vehicle_vehicle_repairs">
-          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="1" />
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Vehicle_Repairs" Type="Self.Vehicle_Repairs" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Vehicle">
@@ -994,10 +1042,6 @@
             <End Role="GRN" EntitySet="GRN" />
             <End Role="GRN_Material" EntitySet="GRN_Material" />
           </AssociationSet>
-          <AssociationSet Name="fk_labor_gos" Association="Self.fk_labor_gos">
-            <End Role="Staff" EntitySet="Staff" />
-            <End Role="GOS" EntitySet="GOS" />
-          </AssociationSet>
           <AssociationSet Name="fk_labor_labor_advance" Association="Self.fk_labor_labor_advance">
             <End Role="Labor" EntitySet="Labor" />
             <End Role="Labor_advance" EntitySet="Labor_advance" />
@@ -1021,10 +1065,6 @@
           <AssociationSet Name="fk_money_request_money_request_status" Association="Self.fk_money_request_money_request_status">
             <End Role="Money_Request" EntitySet="Money_Request" />
             <End Role="Money_Request_Status" EntitySet="Money_Request_Status" />
-          </AssociationSet>
-          <AssociationSet Name="fk_money_request_petty_cash" Association="Self.fk_money_request_petty_cash">
-            <End Role="Money_Request" EntitySet="Money_Request" />
-            <End Role="Petty_Cash" EntitySet="Petty_Cash" />
           </AssociationSet>
           <AssociationSet Name="fk_order_gos" Association="Self.fk_order_gos">
             <End Role="Orders" EntitySet="Orders" />
@@ -1169,7 +1209,6 @@
           <Property Name="total_amount" Type="Single" />
           <NavigationProperty Name="GOS_Material" Relationship="Self.fk_gos_gos_material" FromRole="GOS" ToRole="GOS_Material" />
           <NavigationProperty Name="GOS_Money_Status" Relationship="Self.fk_gos_gos_money_status" FromRole="GOS" ToRole="GOS_Money_Status" />
-          <NavigationProperty Name="Staff" Relationship="Self.fk_labor_gos" FromRole="GOS" ToRole="Staff" />
           <NavigationProperty Name="Order" Relationship="Self.fk_order_gos" FromRole="GOS" ToRole="Orders" />
           <NavigationProperty Name="Vehicle" Relationship="Self.fk_vehicle_gos" FromRole="GOS" ToRole="Vehicle" />
         </EntityType>
@@ -1343,7 +1382,6 @@
           <Property Name="approved_by" Type="Int32" />
           <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Money_Request_Status" Relationship="Self.fk_money_request_money_request_status" FromRole="Money_Request" ToRole="Money_Request_Status" />
-          <NavigationProperty Name="Petty_Cash" Relationship="Self.fk_money_request_petty_cash" FromRole="Money_Request" ToRole="Petty_Cash" />
           <NavigationProperty Name="Site" Relationship="Self.fk_site_money_request" FromRole="Money_Request" ToRole="Site" />
           <NavigationProperty Name="Staff" Relationship="Self.fk_staff_money_request" FromRole="Money_Request" ToRole="Staff" />
         </EntityType>
@@ -1408,7 +1446,6 @@
           <Property Name="date" Type="DateTime" Precision="0" />
           <Property Name="balance" Type="Single" />
           <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Money_Request" Relationship="Self.fk_money_request_petty_cash" FromRole="Petty_Cash" ToRole="Money_Request" />
           <NavigationProperty Name="Staff" Relationship="Self.fk_staff_petty_cash" FromRole="Petty_Cash" ToRole="Staff" />
         </EntityType>
         <EntityType Name="Purchase_InTo_Stock">
@@ -1511,10 +1548,7 @@
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="join_on" Type="DateTime" Precision="0" />
-          <Property Name="basic_salary" Type="Single" />
-          <Property Name="hourly_rate" Type="Single" />
-          <Property Name="ot_rate" Type="Single" />
-          <NavigationProperty Name="GOS" Relationship="Self.fk_labor_gos" FromRole="Staff" ToRole="GOS" />
+          <Property Name="profile_picture" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="GRNs" Relationship="Self.fk_staff_grn" FromRole="Staff" ToRole="GRN" />
           <NavigationProperty Name="Head_Office_Expenses" Relationship="Self.fk_staff_head_office_expenses" FromRole="Staff" ToRole="Head_Office_Expenses" />
           <NavigationProperty Name="Labor_advance" Relationship="Self.fk_stafflabor_advance" FromRole="Staff" ToRole="Labor_advance" />
@@ -1658,7 +1692,9 @@
           <NavigationProperty Name="Site" Relationship="Self.fk_site_weather_report" FromRole="Weather_Report" ToRole="Site" />
         </EntityType>
         <Association Name="fk_gos_gos_material">
-          <End Role="GOS" Type="Self.GO" Multiplicity="1" />
+          <End Role="GOS" Type="Self.GO" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GOS_Material" Type="Self.GOS_Material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GOS">
@@ -1670,7 +1706,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_gos_gos_money_status">
-          <End Role="GOS" Type="Self.GO" Multiplicity="1" />
+          <End Role="GOS" Type="Self.GO" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GOS_Money_Status" Type="Self.GOS_Money_Status" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GOS">
@@ -1681,20 +1719,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_labor_gos">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
-          <End Role="GOS" Type="Self.GO" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Staff">
-              <PropertyRef Name="staff_id" />
-            </Principal>
-            <Dependent Role="GOS">
-              <PropertyRef Name="driver_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_order_gos">
-          <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GOS" Type="Self.GO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -1706,7 +1734,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_vehicle_gos">
-          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1" />
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GOS" Type="Self.GO" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Vehicle">
@@ -1718,7 +1748,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_grn_grn_material">
-          <End Role="GRN" Type="Self.GRN" Multiplicity="0..1" />
+          <End Role="GRN" Type="Self.GRN" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GRN_Material" Type="Self.GRN_Material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GRN">
@@ -1732,7 +1764,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_grn">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GRN" Type="Self.GRN" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -1744,7 +1778,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_grn">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="GRN" Type="Self.GRN" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -1756,7 +1792,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_head_office_expenses">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Head_Office_Expenses" Type="Self.Head_Office_Expenses" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -1768,7 +1806,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_orders_issue_from_store">
-          <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Issue_From_Stock" Type="Self.Issue_From_Stock" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -1780,7 +1820,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_issue_from_store">
-          <End Role="Site" Type="Self.Site" Multiplicity="0..1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Issue_From_Stock" Type="Self.Issue_From_Stock" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -1792,7 +1834,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_store_issue_from_store_material">
-          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Issue_From_Stock_Material" Type="Self.Issue_From_Stock_Material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
@@ -1804,7 +1848,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_labor_labor_advance">
-          <End Role="Labor" Type="Self.Labor" Multiplicity="1" />
+          <End Role="Labor" Type="Self.Labor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Labor_advance" Type="Self.Labor_advance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Labor">
@@ -1818,7 +1864,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_labor_labor_attendance">
-          <End Role="Labor" Type="Self.Labor" Multiplicity="1" />
+          <End Role="Labor" Type="Self.Labor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Labor_Attendance" Type="Self.Labor_Attendance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Labor">
@@ -1832,7 +1880,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_labor_labor_ot">
-          <End Role="Labor" Type="Self.Labor" Multiplicity="1" />
+          <End Role="Labor" Type="Self.Labor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Labor_OT" Type="Self.Labor_OT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Labor">
@@ -1846,7 +1896,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_labor_lobor_mobile">
-          <End Role="Labor" Type="Self.Labor" Multiplicity="0..1" />
+          <End Role="Labor" Type="Self.Labor" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Labor_Mobile" Type="Self.Labor_Mobile" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Labor">
@@ -1860,7 +1912,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_lobor">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Labor" Type="Self.Labor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -1872,7 +1926,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_stafflabor_advance">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Labor_advance" Type="Self.Labor_advance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -1884,7 +1940,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_money_request_money_request_status">
-          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="1" />
+          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Money_Request_Status" Type="Self.Money_Request_Status" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Money_Request">
@@ -1897,22 +1955,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_money_request_petty_cash">
-          <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="1" />
-          <End Role="Petty_Cash" Type="Self.Petty_Cash" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Money_Request">
-              <PropertyRef Name="request_id" />
-              <PropertyRef Name="site_id" />
-            </Principal>
-            <Dependent Role="Petty_Cash">
-              <PropertyRef Name="request_id" />
-              <PropertyRef Name="site_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="fk_site_money_request">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -1924,7 +1970,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_money_request">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Money_Request" Type="Self.Money_Request" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -1936,7 +1984,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_orders_orders_material">
-          <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Order_Material" Type="Self.Order_Material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -1948,7 +1998,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_orders_order_status">
-          <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Order_Status" Type="Self.Order_Status" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Orders">
@@ -1960,7 +2012,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_orders">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Orders" Type="Self.Order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -1972,7 +2026,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_petty_cash">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Petty_Cash" Type="Self.Petty_Cash" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -1984,7 +2040,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_purchase_into_stock_purchase_into_stock_material">
-          <End Role="Purchase_InTo_Stock" Type="Self.Purchase_InTo_Stock" Multiplicity="1" />
+          <End Role="Purchase_InTo_Stock" Type="Self.Purchase_InTo_Stock" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Purchase_InTo_Stock_Material" Type="Self.Purchase_InTo_Stock_Material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Purchase_InTo_Stock">
@@ -1996,7 +2054,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_stock_purchase_into_stock_material">
-          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Purchase_InTo_Stock_Material" Type="Self.Purchase_InTo_Stock_Material" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
@@ -2008,7 +2068,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_site_material_report">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Site_Material_Report" Type="Self.Site_Material_Report" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -2020,7 +2082,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_site_note">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Site_Note" Type="Self.Site_Note" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -2032,7 +2096,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_site_other_expenses">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Site_Other_Expenses" Type="Self.Site_Other_Expenses" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -2058,7 +2124,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_tool_allocation">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Tool_Allocation" Type="Self.Tool_Allocation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -2070,7 +2138,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_site_weather_report">
-          <End Role="Site" Type="Self.Site" Multiplicity="1" />
+          <End Role="Site" Type="Self.Site" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Weather_Report" Type="Self.Weather_Report" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Site">
@@ -2082,7 +2152,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_material_site_material_report">
-          <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+          <End Role="Stock" Type="Self.Stock" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Site_Material_Report" Type="Self.Site_Material_Report" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Stock">
@@ -2108,7 +2180,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_staff_attendance">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Staff_Attendance" Type="Self.Staff_Attendance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -2120,7 +2194,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_staff_mobile">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Staff_Mobile" Type="Self.Staff_Mobile" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -2132,7 +2208,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_staff_staff_ot">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Staff_OT" Type="Self.Staff_OT" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Staff">
@@ -2144,7 +2222,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tool_tool_allocation">
-          <End Role="Tool" Type="Self.Tool" Multiplicity="1" />
+          <End Role="Tool" Type="Self.Tool" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Tool_Allocation" Type="Self.Tool_Allocation" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tool">
@@ -2156,7 +2236,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_tool_tool_repairs">
-          <End Role="Tool" Type="Self.Tool" Multiplicity="1" />
+          <End Role="Tool" Type="Self.Tool" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Tool_Repairs" Type="Self.Tool_Repairs" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tool">
@@ -2168,7 +2250,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_vehicle_vehicle_repairs">
-          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="1" />
+          <End Role="Vehicle" Type="Self.Vehicle" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="Vehicle_Repairs" Type="Self.Vehicle_Repairs" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Vehicle">
@@ -2224,10 +2308,6 @@
           <AssociationSet Name="fk_gos_gos_money_status" Association="Self.fk_gos_gos_money_status">
             <End Role="GOS" EntitySet="GOS" />
             <End Role="GOS_Money_Status" EntitySet="GOS_Money_Status" />
-          </AssociationSet>
-          <AssociationSet Name="fk_labor_gos" Association="Self.fk_labor_gos">
-            <End Role="Staff" EntitySet="Staffs" />
-            <End Role="GOS" EntitySet="GOS" />
           </AssociationSet>
           <AssociationSet Name="fk_order_gos" Association="Self.fk_order_gos">
             <End Role="Orders" EntitySet="Orders" />
@@ -2292,10 +2372,6 @@
           <AssociationSet Name="fk_money_request_money_request_status" Association="Self.fk_money_request_money_request_status">
             <End Role="Money_Request" EntitySet="Money_Request" />
             <End Role="Money_Request_Status" EntitySet="Money_Request_Status" />
-          </AssociationSet>
-          <AssociationSet Name="fk_money_request_petty_cash" Association="Self.fk_money_request_petty_cash">
-            <End Role="Money_Request" EntitySet="Money_Request" />
-            <End Role="Petty_Cash" EntitySet="Petty_Cash" />
           </AssociationSet>
           <AssociationSet Name="fk_site_money_request" Association="Self.fk_site_money_request">
             <End Role="Site" EntitySet="Sites" />
@@ -2691,9 +2767,7 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="address" ColumnName="address" />
                 <ScalarProperty Name="join_on" ColumnName="join_on" />
-                <ScalarProperty Name="basic_salary" ColumnName="basic_salary" />
-                <ScalarProperty Name="hourly_rate" ColumnName="hourly_rate" />
-                <ScalarProperty Name="ot_rate" ColumnName="ot_rate" />
+                <ScalarProperty Name="profile_picture" ColumnName="profile_picture" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

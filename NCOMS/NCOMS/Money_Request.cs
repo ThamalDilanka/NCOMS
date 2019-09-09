@@ -18,7 +18,6 @@ namespace NCOMS
         public Money_Request()
         {
             this.Money_Request_Status = new HashSet<Money_Request_Status>();
-            this.Petty_Cash = new HashSet<Petty_Cash>();
         }
     
         public int request_id { get; set; }
@@ -32,8 +31,6 @@ namespace NCOMS
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Money_Request_Status> Money_Request_Status { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Petty_Cash> Petty_Cash { get; set; }
         public virtual Site Site { get; set; }
         public virtual Staff Staff { get; set; }
     }
